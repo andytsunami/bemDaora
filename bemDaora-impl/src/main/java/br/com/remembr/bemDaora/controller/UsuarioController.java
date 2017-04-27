@@ -20,6 +20,9 @@ public class UsuarioController {
 	public void teste() throws DAOException{
 		Usuario usuario = new Usuario();
 		usuario.setNome("Teste2");
+		usuario.setEmail("teste@teste");
+		usuario.setSenha("1234");
+		usuario.setIdade(10);
 		usuarioDAO.insert(usuario);
 	}
 
