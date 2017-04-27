@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+   	<datasource jta="false" jndi-name="java:jboss/datasources/BemDaoraDS" pool-name="BemDaoraDS" enabled="true" use-ccm="false">
+	    <connection-url>jdbc:mysql://localhost:3306/BEMDAORA?profileSQL=true</connection-url>
+		<!-- com.mysql.jdbc.Driver -->
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+	    <driver>mysql</driver>
+	    <!-- 
+	    <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
+	    <pool>
+	        <min-pool-size>10</min-pool-size>
+	        <max-pool-size>100</max-pool-size>
+	        <prefill>true</prefill>
+    	</pool>
+	    -->
+	    <security>
+			<user-name>root</user-name>
+			<password>root</password>
+	    </security>
+	    <validation>
+			<validate-on-match>false</validate-on-match>
+			<background-validation>false</background-validation>
+	    </validation>
+	    <statement>
+			<share-prepared-statements>false</share-prepared-statements>
+	    </statement>
+	</datasource>
+</datasources>
