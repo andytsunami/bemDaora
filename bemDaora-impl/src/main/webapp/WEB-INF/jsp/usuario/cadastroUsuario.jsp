@@ -32,7 +32,7 @@
 	$().ready(function() {
 		$.context = {
 				accessToken : "",
-				contexto : "/bemdaora/usuario/",
+				contexto : "/bemdaora/usuario",
 			};
 		
 		$('#fb-logout').attr('style', 'display:none;');
@@ -146,7 +146,8 @@
 			  });
 			  
 			  $("#cadastrar").click(function(){
-				  $("#form").attr("action",$.context.contexto + "/salvar").submit();
+				  $("#form").attr("action",$.context.contexto + "/salvar");
+				  $("#form").submit();
 			  });
 			  
 			  function calculaData(dateold, datenew) {
@@ -184,28 +185,28 @@
 			<section class="" style="margin: auto; max-width: 348px; min-width: 300px; width: 100%;">
 
 			<span class="input input--hoshi"> 
-				<input class="input__field input__field--hoshi" type="text" id="nome" /> 
+				<input class="input__field input__field--hoshi" type="text" id="nome" name="usuario.nome" /> 
 				<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
 					<span class="input__label-content input__label-content--hoshi">Nome</span>
 				</label>
 			</span> 
 			<span class="input input--hoshi"> 
 			
-			<input class="input__field input__field--hoshi" type="text" id="email" />
+			<input class="input__field input__field--hoshi" type="text" id="email" name="usuario.email"/>
 			<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-5">
 				<span class="input__label-content input__label-content--hoshi">E-mail</span>
 			</label>
 
 				</span> <span class="input input--hoshi"> 
 				
-				<input class="input__field input__field--hoshi" type="password" id="senha" /> 
+				<input class="input__field input__field--hoshi" type="password" id="senha" name="usuario.senha"/> 
 				<label class="input__label input__label--hoshi input__label--hoshi-color-1"	for="input-5">
 					<span class="input__label-content input__label-content--hoshi">Senha</span>
 				</label>
 
 				</span> <span class="input input--hoshi"> 
 
-				<input class="input__field input__field--hoshi" type="date" id="idade" /> 
+				<input class="input__field input__field--hoshi" type="date" id="idade" name="usuario.idade"/> 
 				<label class="input__label input__label--hoshi input__label--hoshi-color-1"
 					for="input-5"> 
 					<span class="input__label-content input__label-content--hoshi">Idade</span>
@@ -215,7 +216,7 @@
 				</span> <span class="input input--hoshi">
 </form>
 					<center>
-						<input type="submit" value="CADASTRAR" class="botao" id="cadstrar">
+						<input type="button" value="CADASTRAR" class="botao" id="cadastrar">
 					</center>
 
 				</span>
