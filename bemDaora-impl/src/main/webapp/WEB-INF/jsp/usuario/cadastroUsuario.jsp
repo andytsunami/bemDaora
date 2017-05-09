@@ -32,7 +32,7 @@
 	$().ready(function() {
 		$.context = {
 				accessToken : "",
-				contexto : "/bemdaora/usuario",
+				contexto : "/bemdaora/usuario/",
 			};
 		
 		$('#fb-logout').attr('style', 'display:none;');
@@ -146,7 +146,7 @@
 			  });
 			  
 			  $("#cadastrar").click(function(){
-				  $("#form").attr("action",$.context.contexto + "/salvar");
+				  $("#form").attr("action",$.context.contexto + "salvar");
 				  $("#form").submit();
 			  });
 			  
@@ -229,14 +229,14 @@
 				<br />
 
 				<center>
-					<input type="submit" value="ENTRAR COM FACEBOOK" class="botao"
+					<input type="button" value="ENTRAR COM FACEBOOK" class="botao"
 						style="background: #3B5998" id="fb-login">
 				</center>
 
 				<br />
 
 				<center>
-					<input type="submit" value="ENTRAR COM GOOGLE+" class="botao"
+					<input type="button" value="ENTRAR COM GOOGLE+" class="botao"
 						style="background: #C20807">
 				</center>
 
