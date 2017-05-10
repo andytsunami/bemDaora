@@ -7,23 +7,23 @@ import com.google.common.base.Strings;
 public class Login implements Serializable {
 	
 	private static final long serialVersionUID = -972754403993075107L;
-	private String login;
+	private String email;
 	private String senha;
 	private String ip;
 
 	public Login() {}
 	
 	public Login(String login, String senha) {
-		this.login = (Strings.isNullOrEmpty(login) == true ? null : login.toLowerCase());
+		this.email = (Strings.isNullOrEmpty(login) == true ? null : login.toLowerCase());
 		this.senha = senha;
 	}
 	
-	public String getLogin() {
-		return login;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setLogin(String login) {
-		this.login = (Strings.isNullOrEmpty(login) == true ? null : login.toLowerCase());
+	public void setEmail(String login) {
+		this.email = (Strings.isNullOrEmpty(login) == true ? null : login.toLowerCase());
 	}
 
 	public String getSenha() {

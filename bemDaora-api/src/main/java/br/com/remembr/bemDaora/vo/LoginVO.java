@@ -24,5 +24,4 @@ public class LoginVO implements Serializable {
 	public void setTicket(String ticket) {
 		this.ticket = ticket;
 	}
-
 }
