@@ -12,6 +12,7 @@
 hs_err_pid*
 /target/
 
+.tern-project
 *.settings
 *.classpath
 *.project
