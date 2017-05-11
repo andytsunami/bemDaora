@@ -42,6 +42,14 @@ public class Usuario implements BaseEntity<Long>{
 	@Max(value = 110)
 	private int idade;
 	
+	@NotNull
+	@Column(name = "ATIVO", columnDefinition = "TINYINT(1)")
+	private boolean ativo = true;
+	
+	@NotNull
+	@Column(name = "RESETAR_SENHA", columnDefinition = "TINYINT(1)")
+	private boolean resetarSenha = true;
+	
 	public Long getId() {
 		return id;
 	}
@@ -71,5 +79,17 @@ public class Usuario implements BaseEntity<Long>{
 	}
 	public void setIdade(int idade) {
 		this.idade = idade;
+	}
+	public boolean isAtivo() {
+		return ativo;
+	}
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+	public boolean isResetarSenha() {
+		return resetarSenha;
+	}
+	public void setResetarSenha(boolean resetarSenha) {
+		this.resetarSenha = resetarSenha;
 	}
 }

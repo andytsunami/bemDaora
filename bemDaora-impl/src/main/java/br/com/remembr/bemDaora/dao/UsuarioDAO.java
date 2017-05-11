@@ -40,4 +40,18 @@ public class UsuarioDAO extends DAO<Usuario, Long>{
 			throw new DAOException(e);
 		}
 	}
+
+	public Usuario buscarPorEmailAtivo(String email) throws DAOException, NoResultException {
+		try {
+			TypedQuery<Usuario> query = this.em.createQuery("from " + Usuario.class.getSimpleName() + " where email = :pEmail and ativo = :pAtivo", Usuario.class);
+			query.setParameter("pEmail", email);
+			query.setParameter("pAtivo", true);
+
+			return query.getSingleResult();
+		} catch (NoResultException e) {
+			throw e;
+		} catch (Exception e) {
+			throw new DAOException(e);
+		}
+	}
 }

@@ -7,14 +7,18 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.NoResultException;
 
+import org.jboss.security.Base64Utils;
+
 import br.com.remembr.bemDaora.dao.AcessoDAO;
 import br.com.remembr.bemDaora.dao.UsuarioDAO;
 import br.com.remembr.bemDaora.enums.AcessoStatusEnum;
+import br.com.remembr.bemDaora.exception.SenhaExpiradaException;
 import br.com.remembr.bemDaora.exception.SingleSignOnException;
 import br.com.remembr.bemDaora.model.Acesso;
 import br.com.remembr.bemDaora.model.LockLogin;
 import br.com.remembr.bemDaora.model.Usuario;
 import br.com.remembr.bemDaora.service.sso.Login;
+import br.com.remembr.bemDaora.utils.PasswordEncrypter;
 import br.com.remembr.bemDaora.vo.LoginVO;
 
 @Named
@@ -23,7 +27,7 @@ public class SingleSignOnBusiness {
 	@Inject
 	private UsuarioDAO usuarioDao;
 	
-	@Inject
+	@Inject 
 	private AcessoDAO acessoDao;
 	
 	@Inject
@@ -41,7 +45,7 @@ public class SingleSignOnBusiness {
 				usuarioDao.lockLogin(email.getEmail());
 			}
 
-			Usuario usuario = usuarioDao.buscarPorLoginAtivo(email.getLogin());
+			Usuario usuario = usuarioDao.buscarPorEmailAtivo(email.getEmail());
 			if (usuario.getSenha() == null) {
 				usuario.setSenha("");
 			}

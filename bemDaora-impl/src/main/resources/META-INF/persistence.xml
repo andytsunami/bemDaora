@@ -9,6 +9,7 @@
 		<jta-data-source>java:jboss/datasources/BemDaoraDS</jta-data-source>
 
 		<class>br.com.remembr.bemDaora.model.Usuario</class>
+		<class>br.com.remembr.bemDaora.model.TokenResetSenha</class>
 
 		<properties>
 			<!--  <property name="hibernate.show_sql" value="true" />  -->
