@@ -14,6 +14,22 @@
 
   <name>Bem Daora - API</name>
   <description>Modulo API do aplicativo de doacao de horas</description>
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
+  	<jboss.home>${env.JBOSS_HOME}</jboss.home>
+  </properties>
+  
+  <dependencyManagement>
+  	<dependencies>
+  	<dependency>
+    		<groupId>org.jboss.spec</groupId>
+    		<artifactId>jboss-javaee-web-6.0</artifactId>
+    		<version>2.0.0.Final</version>
+    		<scope>import</scope>
+	</dependency>
+  	</dependencies>
+  </dependencyManagement>
   
   <dependencies>
   	<dependency>
