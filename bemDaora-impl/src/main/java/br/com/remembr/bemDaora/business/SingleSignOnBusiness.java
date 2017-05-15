@@ -87,5 +87,16 @@ public class SingleSignOnBusiness {
 	
 	private String gerarTicket(String email, String ip, Date data) {
 		return email + "|" + ip + "|" + data.getTime() + "|" + Math.abs(new Random().nextInt());
+	}
+
+	public void logout(String email) {
+		try {
+			Usuario usuario = usuarioDao.buscarPorEmail(email);
+			if(!usuario.getEmail().toLowerCase().equals("central")){				
+				acessoDao.deslogar(email);
+			}
+		} catch (Exception e) {
+			throw new SingleSignOnException(e);
+		}
 	}	
 }

@@ -57,10 +57,10 @@ public class AcessoDAO extends DAO<Acesso, Long> {
 		}
 	}
 	
-	public Acesso buscarPorLoginLogado(String login) throws DAOException {
+	public Acesso buscarPorLoginLogado(String email) throws DAOException {
 		try {
-			Query query = this.em.createQuery("from " + Acesso.class.getSimpleName() + " where usuario.login = :login and status = :status");
-			query.setParameter("login", login);
+			Query query = this.em.createQuery("from " + Acesso.class.getSimpleName() + " where usuario.email = :email and status = :status");
+			query.setParameter("email", email);
 			query.setParameter("status", AcessoStatusEnum.LOGADO);
 			query.setMaxResults(1);
 
@@ -73,10 +73,10 @@ public class AcessoDAO extends DAO<Acesso, Long> {
 		}
 	}
 	
-	public Acesso buscarLogadoPermanentePorLogin(String login) throws DAOException {
+	public Acesso buscarLogadoPermanentePorLogin(String email) throws DAOException {
 		try {
-			Query query = this.em.createQuery("from " + Acesso.class.getSimpleName() + " where usuario.login = :login and status = :status and permanente = true");
-			query.setParameter("login", login);
+			Query query = this.em.createQuery("from " + Acesso.class.getSimpleName() + " where usuario.email = :email and status = :status and permanente = true");
+			query.setParameter("email", email);
 			query.setParameter("status", AcessoStatusEnum.LOGADO);
 			query.setMaxResults(1);
 
@@ -89,13 +89,13 @@ public class AcessoDAO extends DAO<Acesso, Long> {
 		}
 	}
 
-	public void deslogar(String login) throws DAOException {
+	public void deslogar(String email) throws DAOException {
 		try {
-			Query query = this.em.createQuery("update " + Acesso.class.getSimpleName() + " set status = :deslogado, dataFim = :agora where usuario.id = (select u.id from " + Usuario.class.getSimpleName() + " u where u.login = :login) and status = :logado and permanente = false");
+			Query query = this.em.createQuery("update " + Acesso.class.getSimpleName() + " set status = :deslogado, dataFim = :agora where usuario.id = (select u.id from " + Usuario.class.getSimpleName() + " u where u.email = :email) and status = :logado and permanente = false");
 			query.setParameter("deslogado", AcessoStatusEnum.DESLOGADO);
 			query.setParameter("logado", AcessoStatusEnum.LOGADO);
 			query.setParameter("agora", new Date());
-			query.setParameter("login", login);
+			query.setParameter("email", email);
 
 			query.executeUpdate();
 		} catch (Exception e) {

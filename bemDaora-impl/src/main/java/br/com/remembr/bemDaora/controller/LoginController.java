@@ -66,6 +66,8 @@ public class LoginController {
 				sso.logout(usuarioLogado.getEmail());
 				//TODO SERVIDOR WEBSOCKET
 			}
+			request.getSession(false).invalidate();
+			result.redirectTo(IndexController.class).index();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

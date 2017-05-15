@@ -1,6 +1,9 @@
 package br.com.remembr.bemDaora.service.sso;
 
+import javax.enterprise.context.SessionScoped;
+import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.naming.InitialContext;
 
 import br.com.remembr.bemDaora.exception.SingleSignOnException;
@@ -12,6 +15,10 @@ public class UsuarioLogadoProducer {
 	@Inject
 	private UsuarioTicket ticket;
 	
+	@Produces
+	@SessionScoped
+	@UsuarioLogado
+	@Named("BD_UsuarioLogado")
 	public Usuario produceUsuarioLogado() throws SingleSignOnException {
 		SingleSignOnRemote sso;
 		

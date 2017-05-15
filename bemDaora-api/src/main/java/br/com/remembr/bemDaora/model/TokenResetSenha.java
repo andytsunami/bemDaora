@@ -31,6 +31,7 @@ public class TokenResetSenha implements BaseEntity<String> {
 	@Column(name = "ID_USUARIO")
 	private Long idUsuario;
 
+	@NotNull
 	@Column(name = "EMAIL_USUARIO")
 	private String emailUsuario;
 
