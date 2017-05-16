@@ -1,6 +1,7 @@
 package br.com.remembr.bemDaora.controller;
 
 import javax.inject.Inject;
+import javax.persistence.NoResultException;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 
@@ -17,6 +18,7 @@ import br.com.remembr.bemDaora.model.Usuario;
 import br.com.remembr.bemDaora.service.sso.Login;
 import br.com.remembr.bemDaora.service.sso.UsuarioLogado;
 import br.com.remembr.bemDaora.service.sso.UsuarioTicket;
+import br.com.remembr.bemDaora.vo.LoginVO;
 
 @Controller
 public class LoginController {
@@ -46,6 +48,8 @@ public class LoginController {
 	@Path("/login")
 	@Transactional
 	public void login(Login login){
+		try{
+			
 		
 		if(Strings.isNullOrEmpty(login.getEmail())){
 			throw new SingleSignOnException("Campo E-mail vazio");
@@ -55,7 +59,20 @@ public class LoginController {
 			logout();
 			return;
 		}
-	
+		
+		login.setIp(request.getRemoteAddr());
+		LoginVO acesso = sso.login(login);
+		usuarioTicket.setTicket(acesso.getTicket());
+		result.include("ticket", acesso.getTicket());
+		
+		result.redirectTo(HomeController.class).home();
+		
+		} catch (NoResultException | SingleSignOnException e) {
+			result.include("nt_information", "Não foi possível acessar com os dados preenchidos");
+			result.redirectTo(IndexController.class).index();
+		}	
+
+
 	}
 	
 	@Path("/logout")

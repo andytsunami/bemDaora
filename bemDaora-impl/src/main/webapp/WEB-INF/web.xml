@@ -18,17 +18,17 @@
     	<session-timeout>-1</session-timeout>
 	</session-config> 
 	
-	<!--  error-page>
+	<error-page>
 		<error-code>401</error-code>
 		<location>/WEB-INF/jsp/index/deslogado.jsp</location>
 	</error-page>
 	
 	<error-page>
-		<exception-type>br.com.preventsenior.core.client.exception.SingleSignOnException</exception-type>
+		<exception-type>br.com.remembr.bemDaora.exception.SingleSignOnException</exception-type>
 		<location>/WEB-INF/jsp/index/deslogado.jsp</location>
 	</error-page>
 	
-	<error-page>
+	<!-- error-page>
 		<error-code>404</error-code>
 		<location>/WEB-INF/jsp/error/404.jsp</location>
 	</error-page>
@@ -36,16 +36,16 @@
 	<error-page>
 		<error-code>500</error-code>
 		<location>/WEB-INF/jsp/error/error.jsp</location>
-	</error-page>
+	</error-page -->
 	
 	<filter>
-		<filter-name>PortalFilter</filter-name>
-		<filter-class>br.com.preventsenior.portalweb.client.sso.PortalFilter</filter-class>
+		<filter-name>AplicacaoFilter</filter-name>
+		<filter-class>br.com.remembr.bemDaora.service.sso.AplicacaoFilter</filter-class>
 	</filter>
 	<filter-mapping>
-		<filter-name>PortalFilter</filter-name>
+		<filter-name>AplicacaoFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping -->
+	</filter-mapping>
 	
 	<filter>
 		<filter-name>vraptor</filter-name>
