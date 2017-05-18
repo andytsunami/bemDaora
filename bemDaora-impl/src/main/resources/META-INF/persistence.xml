@@ -10,6 +10,10 @@
 
 		<class>br.com.remembr.bemDaora.model.Usuario</class>
 		<class>br.com.remembr.bemDaora.model.TokenResetSenha</class>
+		<class>br.com.remembr.bemDaora.model.Instituicao</class>
+		<class>br.com.remembr.bemDaora.model.Voluntario</class>
+		<class>br.com.remembr.bemDaora.model.FotosInstituicao</class>
+		
 
 		<properties>
 			<!--  <property name="hibernate.show_sql" value="true" />  -->

@@ -57,6 +57,10 @@ public class AplicacaoFilter implements Filter {
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/mapa",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/index",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/usuario/cadastro",
+			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm",
+			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/listaInstituicao",
+			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/cadastraInstituicao",
+			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/salvaInstituicao",
 			};
 
 	@Override
@@ -81,7 +85,7 @@ public class AplicacaoFilter implements Filter {
 		
 		for (String ignorado : IGNORADOS) {
 			if (uri.toLowerCase().endsWith(ignorado.toLowerCase())) {
-System.out.println("IGNORA ============ " + ignorado);
+//System.out.println("IGNORA ============ " + ignorado);
 				chain.doFilter(request, response);
 				return;
 			}

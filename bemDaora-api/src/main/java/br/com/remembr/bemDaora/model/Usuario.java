@@ -1,17 +1,24 @@
 package br.com.remembr.bemDaora.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "ID_TIPO_USUARIO")
 @Table(name = "USUARIO")
 public class Usuario implements BaseEntity<Long>{
 	
@@ -37,18 +44,22 @@ public class Usuario implements BaseEntity<Long>{
 	private String senha;
 	
 	@NotNull
-	@Column(name = "IDADE")
-	@Min(value = 10)
-	@Max(value = 110)
-	private int idade;
-	
-	@NotNull
 	@Column(name = "ATIVO", columnDefinition = "TINYINT(1)")
 	private boolean ativo = true;
 	
 	@NotNull
 	@Column(name = "RESETAR_SENHA", columnDefinition = "TINYINT(1)")
 	private boolean resetarSenha = true;
+	
+	@Column(name = "ID_TIPO_USUARIO", insertable = false, updatable = false)
+	private String idTipoUsuario;
+	
+	@Column(name = "ENDERECO")
+	private String endereco;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "DATA_CADASTRO")
+	private Date dataCadastro;
 	
 	public Long getId() {
 		return id;
@@ -74,12 +85,6 @@ public class Usuario implements BaseEntity<Long>{
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public int getIdade() {
-		return idade;
-	}
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
 	public boolean isAtivo() {
 		return ativo;
 	}
@@ -91,5 +96,23 @@ public class Usuario implements BaseEntity<Long>{
 	}
 	public void setResetarSenha(boolean resetarSenha) {
 		this.resetarSenha = resetarSenha;
+	}
+	public String getIdTipoUsuario() {
+		return idTipoUsuario;
+	}
+	public void setIdTipoUsuario(String idTipoUsuario) {
+		this.idTipoUsuario = idTipoUsuario;
+	}
+	public String getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	public Date getDataCadastro() {
+		return dataCadastro;
+	}
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
 	}
 }
