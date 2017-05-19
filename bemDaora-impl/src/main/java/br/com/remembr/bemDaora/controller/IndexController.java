@@ -23,7 +23,7 @@ public class IndexController {
 	@Path("/")
 	public void index() throws DAOException{
 		 
-		List<Instituicao> instituicoes = instituicaoDAO.listaParaHome();
+		List<Instituicao> instituicoes = instituicaoDAO.lista();
 		result.include("instituicoes",instituicoes);
 	}
 	

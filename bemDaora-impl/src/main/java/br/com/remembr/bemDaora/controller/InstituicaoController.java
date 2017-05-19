@@ -28,13 +28,20 @@ public class InstituicaoController {
 	
 	@Path("/adm/listaInstituicao")
 	public void listaInstituicoes() throws DAOException{
-		List<Instituicao> instituicoes = instituicaoDAO.list();
+		List<Instituicao> instituicoes = instituicaoDAO.lista();
 		result.include("instituicoes", instituicoes);
 	}
 	
 	@Path("/adm/cadastraInstituicao")
 	public void cadastraInstituicao(){
 		
+	}
+	
+	@Path("/adm/editarInstituicao/{idInstituicao}/adm")
+	public void editarInstituicao(Long idInstituicao) throws DAOException{
+		Instituicao instituicao = instituicaoDAO.find(idInstituicao);
+		result.include("instituicao",instituicao);
+		result.redirectTo(this).cadastraInstituicao();
 	}
 	
 	@Transactional
@@ -51,5 +58,12 @@ public class InstituicaoController {
 		
 		instituicaoDAO.insert(instituicao);
 		result.redirectTo(this).listaInstituicoes();
+	}
+	
+	@Transactional
+	@Post("/adm/excluiInstituicao")
+	public void excluiInstituicao(Long idInstituicao) throws DAOException{
+		instituicaoDAO.exclusaoLogica(idInstituicao);
+		result.nothing();
 	}
 }

@@ -48,6 +48,7 @@ public class AplicacaoFilter implements Filter {
 			".woff",
 			".mp3",
 			".ogg",
+			"/adm",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/login",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/loginMobile",
@@ -61,8 +62,9 @@ public class AplicacaoFilter implements Filter {
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/listaInstituicao",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/cadastraInstituicao",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/salvaInstituicao",
+			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/excluiInstituicao",
 			};
-
+	
 	@Override
 	public void destroy() {
 	}
