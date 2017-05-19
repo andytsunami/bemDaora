@@ -24,6 +24,7 @@ public class HomeController {
 	
 	@Path("/home")
 	public void home(){
+				
 		result.include("usuario",usuario);
 	}
 }

@@ -47,41 +47,20 @@
             </table>
           </div>
           <h3 class="title-pages">INSTITUIÇÕES MAIS PRÓXIMAS</h3>
-          <div class="intituicoes-proximas">
+          
+          <c:forEach items="${instituicoes}" var="inst">
+          	<div class="intituicoes-proximas">
           	<table>
             	<tr>
                 	<td><span><a href="company.html"><img src="imgs/inst.png" class="img-profile-company" /></span></a></td>
-                    <td><span class="name-profile-company"><a href="company.html">Abrigo para crianças Santa Sara</a></span></td>
+                    <td><span class="name-profile-company"><a href="company.html">${inst.nome}</a></span></td>
                 </tr>
             </table>
-			<p>O abrigo recebe crianças e adolescentes cujos direitos básicos tenham sido violados ou ameaçados e oferece a elas acolhimento, assistência, proteção e cuidados com a saúde, suprindo suas necessidades de acordo com cada faixa etária. Mais do que isso, oferece a elas uma família, que a acompanha em suas atividades escolares e de lazer, habilitando-a a uma vida plena e feliz, sem a perda do contato com seus familiares.
-O Abrigo foi fundado em 1988, por iniciativa do Pe. Jan Solak da congregação Cristo Ressucitado. É uma sociedade civil, beneficente e sem fins lucrativos. Desde seu início, mantém um trabalho de assistência social dirigido às famílias e comunidade, com destaque para a formação da criança e do adolescente.
-O trabalho é mantido através de inciativas de voluntários - Bazar / Brechó (aberto ao público às 3ª e 6ª feiras), Eventos (Bingos, Jantares, Festas), apoio da sociedade civil e de convênios celebrados com o Governo Estadual e Municipal de São Paulo.</p></td>
+			<p>${inst.sobre}</p></td>
           	<section><img src="imgs/1.jpg" /> <img src="imgs/4.jpg" /> <img src="imgs/2.jpg" /> <img src="imgs/3.jpg" /> </section>
             <center><a href="company.html" style="text-decoration:none"><p class="botao-company">SAIBA MAIS</p></a></center>
-          </div><!--intituicoes-proximas-->
-          <div class="intituicoes-proximas">
-          	<table>
-            	<tr>
-                	<td><span><a href="company.html"><img src="imgs/inst2.png" class="img-profile-company" /></span></a></td>
-                    <td><span class="name-profile-company"><a href="company.html">Escola Estadual Jão José Abraão</a></span></td>
-                </tr>
-            </table>
-			<p>A Secretaria Escolar Digital é uma plataforma on-line com vários módulos. Criada para centralizar, agilizar e facilitar todas as operações que envolvem a gestão diária da administração escolar, professores, alunos e seus responsáveis, de forma rápida, segura e eficiente promovendo a inclusão digital.</p></td>
-          	<section><img src="imgs/1.jpg" /> <img src="imgs/4.jpg"/> <img src="imgs/2.jpg" /> <img src="imgs/3.jpg" /> </section>
-            <center><a href="company.html" style="text-decoration:none"><p class="botao-company">SAIBA MAIS</p></a></center>
-          </div><!--intituicoes-proximas-->
-          <div class="intituicoes-proximas">
-          	<table>
-            	<tr>
-                	<td><span><a href="company.html"><img src="imgs/inst2.png" class="img-profile-company" /></span></a></td>
-                    <td><span class="name-profile-company"><a href="company.html">Restaurante Comunitario Carlos Alberto</a></span></td>
-                </tr>
-            </table>
-			<p>Funciona de segunda a sexta-feira das 11:30h da manhã às 13:30h oferecendo alimentação de qualidade, com um cardápio variado, optante por alimentos frescos, saudáveis e funcionais, o Restaurante Comunitário Carlos Alberto recebe moradores de rua e famílias em estado de privação social. Com uma cozinha industrial modelo, certificada pelos órgãos reguladores o espaço conta com uma excelente estrutura de som, imagem e ar-condicionado. Almoçam cerca de 100 pessoas por dia, os quais são cadastrados, assistidos socialmente, e alguns triados são encaminhados a comunidade terapêutica. Antes do almoço, ao meio dia, é liberada uma palavra evangelística para um tempo de adoração, intercessão e proclamação, pois o foco é emanar o amor incondicional de Deus aos convidados para o banquete.</p></td>
-          	<section><img src="imgs/1.jpg" /> <img src="imgs/4.jpg"/> <img src="imgs/2.jpg" /> <img src="imgs/3.jpg" /> </section>
-            <center><a href="company.html" style="text-decoration:none"><p class="botao-company">SAIBA MAIS</p></a></center>
-          </div><!--intituicoes-proximas-->
+          </div>          	
+          </c:forEach>
         </div>
         
 <div class="middle dragend-page">
@@ -452,29 +431,51 @@ O trabalho é mantido através de inciativas de voluntários - Bazar / Brechó (
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ0oVU7CttR8ps9vNZ8UMxwDFQ5eNeJM4&callback=initialize"></script>
 
 <script>
+
 console.log("Iniciando...");
 var locations = [
+	 <c:forEach items="${instituicoes}" var="inst">
+	 	['${inst.nome}','${inst.endereco}','...'],
+	 </c:forEach>
+	/*
     ['Abrigo para crianças Santa Sara', 'Rua Cesar Marengo 161, São Paulo, Brasil', 'Location 1 URL'],
     ['Escola Estadual Jão José Abraão', 'Rua Lourenço Marques 158, São Paulo, Brasil', 'Location 2 URL'],
     ['Restaurante Comunitario Carlos Alberto', 'Avenida Santo Amaro 50, São Paulo, Brasil', 'Location 3 URL']
+	*/
 ];
 
 var geocoder;
 var map;
 var bounds = new google.maps.LatLngBounds();
+/*
+ * 
+ function initialize() {
+	    var loc = {};
+	    var geocoder = new google.maps.Geocoder();
+	    if(google.loader.ClientLocation) {
+	        loc.lat = google.loader.ClientLocation.latitude;
+	        loc.lng = google.loader.ClientLocation.longitude;
 
+	        var latlng = new google.maps.LatLng(loc.lat, loc.lng);
+	        geocoder.geocode({'latLng': latlng}, function(results, status) {
+	            if(status == google.maps.GeocoderStatus.OK) {
+	                alert(results[0]['formatted_address']);
+	            };
+	        });
+	    }
+	}
+*/
+ 
 function initialize() {
     map = new google.maps.Map(
     document.getElementById("map"), {
-        center: new google.maps.LatLng(37.4419, -122.1419),
+    	center: new google.maps.LatLng(37.4419, -122.1419),
         zoom: 13,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     geocoder = new google.maps.Geocoder();
 
     for (i = 0; i < locations.length; i++) {
-
-
         geocodeAddress(locations, i);
     }
 }
@@ -506,33 +507,19 @@ function geocodeAddress(locations, i) {
             alert("geocode of " + address + " failed:" + status);
         }
     });
+    
 }
 
 function infoWindow(marker, map, title, address, url) {
     google.maps.event.addListener(marker, 'click', function () {
         var html = "<div><h3>" + title + "</h3><p>" + address + "<br></div><a href='" + url + "'>View location</a></p></div>";
-        iw = new google.maps.InfoWindow({
+        infoWindow = new google.maps.InfoWindow({
             content: html,
             maxWidth: 350
         });
-        iw.open(map, marker);
+        
+    	infoWindow.open(map, marker);
     });
-}
-
-function createMarker(results) {
-    var marker = new google.maps.Marker({
-        icon: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
-        map: map,
-        position: results[0].geometry.location,
-        title: title,
-        animation: google.maps.Animation.DROP,
-        address: address,
-        url: url
-    })
-    bounds.extend(marker.getPosition());
-    map.fitBounds(bounds);
-    infoWindow(marker, map, title, address, url);
-    return marker;
 }
     </script>
 </body>

@@ -13,6 +13,7 @@ import br.com.caelum.vraptor.Result;
 import br.com.remembr.bemDaora.business.SingleSignOnBusiness;
 import br.com.remembr.bemDaora.dao.TokenResetSenhaDAO;
 import br.com.remembr.bemDaora.dao.UsuarioDAO;
+import br.com.remembr.bemDaora.dao.generio.DAOException;
 import br.com.remembr.bemDaora.exception.SingleSignOnException;
 import br.com.remembr.bemDaora.model.Usuario;
 import br.com.remembr.bemDaora.service.sso.Login;
@@ -47,7 +48,7 @@ public class LoginController {
 	
 	@Path("/login")
 	@Transactional
-	public void login(Login login){
+	public void login(Login login) throws DAOException{
 		try{
 			
 		
