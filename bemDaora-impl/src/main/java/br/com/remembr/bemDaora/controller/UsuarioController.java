@@ -13,14 +13,19 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.remembr.bemDaora.dao.UsuarioDAO;
+import br.com.remembr.bemDaora.dao.VoluntarioDAO;
 import br.com.remembr.bemDaora.dao.generio.DAOException;
 import br.com.remembr.bemDaora.model.Usuario;
+import br.com.remembr.bemDaora.model.Voluntario;
 
 @Controller
 public class UsuarioController {
 	
 	@Inject
 	private UsuarioDAO usuarioDAO;
+	
+	@Inject
+	private VoluntarioDAO voluntarioDAO;
 	
 	@Inject
 	private Result result;
@@ -42,11 +47,13 @@ public class UsuarioController {
 	
 	@Transactional
 	@Post("/usuario/salvar")
-	public void salvar(Usuario usuario) throws DAOException{
+	public void salvar(Voluntario usuario) throws DAOException{
 		usuario.setNome(WordUtils.capitalizeFully(usuario.getNome()).trim());
 		
 		if(usuario.getId() == null){
-			usuarioDAO.insert(usuario);
+			Voluntario voluntario = voluntarioDAO.insert(usuario);
+			
+			usuarioDAO.alterarSenha(voluntario.getId(), usuario.getSenha());
 			System.out.println("Usuario incluido com sucesso");
 		} else {
 			usuarioDAO.update(usuario);

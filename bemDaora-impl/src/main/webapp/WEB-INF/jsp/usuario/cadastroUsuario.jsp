@@ -177,6 +177,7 @@
 </head>
 <body>
 <form id="form" method="post">
+	<input type="hidden" name="" value="VOL">
 	<div style="max-width: 600px; margin: auto; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 7px;">
 		<div id="cont" style="bottom: 30px; padding-top: 50px;">
 			<center>
