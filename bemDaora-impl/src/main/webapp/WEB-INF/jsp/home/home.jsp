@@ -10,5 +10,6 @@
 </head>
 <body>
 	<h1>Bem vindo ${usuario.nome} a home do sistema BEMDAORA!</h1>
+	<p>Seu ticket é: ${usuarioTicket.ticket}</p>
 </body>
 </html>
