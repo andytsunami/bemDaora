@@ -13,6 +13,8 @@
 		<class>br.com.remembr.bemDaora.model.Instituicao</class>
 		<class>br.com.remembr.bemDaora.model.Voluntario</class>
 		<class>br.com.remembr.bemDaora.model.FotosInstituicao</class>
+		<class>br.com.remembr.bemDaora.model.LockLogin</class>
+		<class>br.com.remembr.bemDaora.model.Acesso</class>
 		
 
 		<properties>

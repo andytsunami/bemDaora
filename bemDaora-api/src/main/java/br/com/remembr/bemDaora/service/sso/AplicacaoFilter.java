@@ -22,9 +22,6 @@ import br.com.remembr.bemDaora.constants.AplicacaoConstants;
 import br.com.remembr.bemDaora.exception.SingleSignOnException;
 import br.com.remembr.bemDaora.service.interfaces.SingleSignOnRemote;
 
-
-
-
 @WebFilter(filterName = "AplicacaoFilter", urlPatterns = {"/*"}, dispatcherTypes = { FORWARD, REQUEST })
 public class AplicacaoFilter implements Filter {
 	

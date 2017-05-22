@@ -39,7 +39,7 @@ public class Usuario implements BaseEntity<Long>{
 	@Column(name = "EMAIL")
 	private String email;
 	
-	@Size(min = 4, max = 255)
+	@Size(min = 1, max = 255)
 	@Column(name = "SENHA")
 	private String senha;
 	

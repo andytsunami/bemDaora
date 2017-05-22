@@ -37,7 +37,7 @@ public class SingleSignOnBusiness {
 		return login(email,true);
 	}
 
-	private LoginVO login(Login email, boolean deslogar) {
+	public LoginVO login(Login email, boolean deslogar) {
 		try {
 			LockLogin lockLogin = usuarioDao.lockLogin(email.getEmail());
 			if (lockLogin == null) {
@@ -99,4 +99,65 @@ public class SingleSignOnBusiness {
 			throw new SingleSignOnException(e);
 		}
 	}	
+	
+	public Usuario getUsuarioLogado(String ticket) throws SingleSignOnException {
+		try {
+			Usuario usuario = acessoDao.buscarUsuarioPorTicketLogado(ticket, false);
+			if (usuario == null) {
+				return null;
+			}
+			
+			return usuario;
+		} catch (Exception e) {
+			throw new SingleSignOnException(e);
+		}
+	}
+	
+	public boolean isTicketValido(String ticket) throws SingleSignOnException {
+		try {
+			boolean logado = acessoDao.isTicketValido(ticket);
+			return logado;
+		} catch (Exception e) {
+			throw new SingleSignOnException(e);
+		}
+	}
+	
+	public boolean isTicketsMesmoLogin(String ticket1, String ticket2) throws SingleSignOnException {
+		try {
+			String login1 = new String(Base64Utils.fromb64(ticket1), "UTF-8").split("[|]")[0];
+			String login2 = new String(Base64Utils.fromb64(ticket2), "UTF-8").split("[|]")[0];
+			
+			return login1.equals(login2);
+		} catch (Exception e) {
+			throw new SingleSignOnException("Erro ao checar se tickets são do mesmo usuário", e);
+		}
+	}
+	
+	public String ticketPermanente(String login) throws SingleSignOnException {
+		try {
+			String ticket;
+			Acesso acesso = acessoDao.buscarLogadoPermanentePorLogin(login);
+			if (acesso == null) {
+				acesso = new Acesso();
+				acesso.setDataInicio(new Date());
+				acesso.setIp("10.0.10.1");
+				acesso.setStatus(AcessoStatusEnum.LOGADO);
+				acesso.setPermanente(true);
+				
+				String preTicket = gerarTicket(login , acesso.getIp(), acesso.getDataInicio());
+				ticket = Base64Utils.tob64(preTicket.getBytes("UTF-8"));
+				
+				acesso.setTicket(ticket);
+				acesso.setUsuario(usuarioDao.buscarPorEmailAtivo((login)));
+				
+				acessoDao.insert(acesso);
+			} else {
+				ticket = acesso.getTicket();
+			}
+
+			return ticket;
+		} catch (Exception e) {
+			throw new SingleSignOnException("Erro ao criar/buscar ticket permamente para o login: " + login, e);
+		}
+	}
 }

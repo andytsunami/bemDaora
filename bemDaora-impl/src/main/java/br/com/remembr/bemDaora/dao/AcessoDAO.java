@@ -43,7 +43,7 @@ public class AcessoDAO extends DAO<Acesso, Long> {
 	
 	public Usuario buscarUsuarioPorTicketLogado(String ticket, boolean permanente) throws DAOException {
 		try {
-			TypedQuery<Usuario> query = this.em.createQuery("select a.usuario from " + Acesso.class.getSimpleName() + " a join fetch a.usuario.grupos where a.ticket = :ticket and a.status = :status", Usuario.class);
+			TypedQuery<Usuario> query = this.em.createQuery("select a.usuario from " + Acesso.class.getSimpleName() + " a where a.ticket = :ticket and a.status = :status", Usuario.class);
 			query.setParameter("ticket", ticket);
 			query.setParameter("status", AcessoStatusEnum.LOGADO);
 			query.setMaxResults(1);
@@ -115,5 +115,4 @@ public class AcessoDAO extends DAO<Acesso, Long> {
 			throw new DAOException(e);
 		}
 	}
-
 }

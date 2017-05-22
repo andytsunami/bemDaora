@@ -12,4 +12,8 @@ select * from USUARIO ORDER BY ID DESC;
 select * from INSTITUICAO ORDER BY ID DESC;
 select * from VOLUNTARIO;
 
+select * from ACESSO;
+
+select * from LOCK_LOGIN;
+
 

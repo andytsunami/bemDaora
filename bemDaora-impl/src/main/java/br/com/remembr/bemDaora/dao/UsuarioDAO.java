@@ -31,8 +31,15 @@ public class UsuarioDAO extends DAO<Usuario, Long>{
 		this.em.merge(new LockLogin(email));
 	}
 	
-	public LockLogin lockLogin(String login) {
-		return this.em.find(LockLogin.class, login, LockModeType.PESSIMISTIC_WRITE);
+	public LockLogin lockLogin(String login) throws DAOException {
+		try {
+			
+			LockLogin lockLogin = this.em.find(LockLogin.class, login, LockModeType.PESSIMISTIC_WRITE);
+			return lockLogin;
+		} catch (Exception e) {
+			throw new DAOException(e);
+		}
+		
 	}
 	
 	public Long buscarIdPorEmail(String email) throws DAOException {
@@ -53,7 +60,8 @@ public class UsuarioDAO extends DAO<Usuario, Long>{
 			query.setParameter("pEmail", email);
 			query.setParameter("pAtivo", true);
 
-			return query.getSingleResult();
+			Usuario usuario = query.getSingleResult();
+			return usuario;
 		} catch (NoResultException e) {
 			throw e;
 		} catch (Exception e) {

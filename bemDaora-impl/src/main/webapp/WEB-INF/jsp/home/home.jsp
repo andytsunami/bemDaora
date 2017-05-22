@@ -9,6 +9,6 @@
 <title>Bem vindo</title>
 </head>
 <body>
-	<h1>Bem ${usuario.nome} vindo a home do sistema BEMDAORA!</h1>
+	<h1>Bem vindo ${usuario.nome} a home do sistema BEMDAORA!</h1>
 </body>
 </html>
