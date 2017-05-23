@@ -42,6 +42,8 @@ public class AplicacaoFilter implements Filter {
 			".svg",
 			".ttf",
 			".eot",
+			"woff2",
+			"otf",
 			".woff",
 			".mp3",
 			".ogg",
