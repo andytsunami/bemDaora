@@ -57,11 +57,16 @@ public class AplicacaoFilter implements Filter {
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/mapa",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/index",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/usuario/cadastro",
+			
+			
+			/*ADMINISTRAÇÃO */
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/listaInstituicao",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/cadastraInstituicao",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/salvaInstituicao",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/excluiInstituicao",
+			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/publicaVaga",
+			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/adm/cadastraVaga",
 			};
 	
 	@Override

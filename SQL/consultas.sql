@@ -12,8 +12,14 @@ select * from USUARIO ORDER BY ID DESC;
 select * from INSTITUICAO ORDER BY ID DESC;
 select * from VOLUNTARIO;
 
+select * from VAGA;
+
 select * from ACESSO;
 
 select * from LOCK_LOGIN;
+
+SELECT * FROM RAMO_ATIVIDADE;
+
+
 
 

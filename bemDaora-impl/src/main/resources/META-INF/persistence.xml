@@ -15,6 +15,8 @@
 		<class>br.com.remembr.bemDaora.model.FotosInstituicao</class>
 		<class>br.com.remembr.bemDaora.model.LockLogin</class>
 		<class>br.com.remembr.bemDaora.model.Acesso</class>
+		<class>br.com.remembr.bemDaora.model.Vaga</class>
+		<class>br.com.remembr.bemDaora.model.RamoAtividade</class>
 		
 
 		<properties>

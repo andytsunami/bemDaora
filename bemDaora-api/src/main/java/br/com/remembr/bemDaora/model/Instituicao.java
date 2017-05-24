@@ -32,8 +32,11 @@ public class Instituicao extends Usuario implements BaseEntity<Long>{
 	@Column(name = "AVATAR")
 	private byte[] avatar;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "instituicao", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "instituicao", cascade = CascadeType.ALL)
 	private List<FotosInstituicao> fotosInstituicao;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "instituicao", cascade = CascadeType.ALL)
+	private List<Vaga> vagas;
 
 	public String getRazaoSocial() {
 		return razaoSocial;
@@ -73,5 +76,13 @@ public class Instituicao extends Usuario implements BaseEntity<Long>{
 
 	public void setFotosInstituicao(List<FotosInstituicao> fotosInstituicao) {
 		this.fotosInstituicao = fotosInstituicao;
+	}
+
+	public List<Vaga> getVagas() {
+		return vagas;
+	}
+
+	public void setVagas(List<Vaga> vagas) {
+		this.vagas = vagas;
 	}
 }

@@ -44,4 +44,19 @@ public class InstituicaoDAO extends DAO<Instituicao, Long>{
 			throw new DAOException(e);
 		}
 	}
+
+	public Instituicao buscar(Long idInstituicao) throws DAOException {
+		
+		String sql = "select i from  " + Instituicao.class.getSimpleName() 
+				+ " i join fetch i.vagas where i.id = :idInstituicao order by i.nome asc";
+		
+		try {
+			TypedQuery<Instituicao> query = this.em.createQuery(sql,Instituicao.class);
+			query.setParameter("idInstituicao", idInstituicao);
+			Instituicao instituicao = query.getSingleResult();
+			return instituicao;
+		} catch (Exception e) {
+			throw new DAOException(e);
+		}
+	}
 }

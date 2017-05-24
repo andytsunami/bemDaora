@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="bd" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -10,11 +11,7 @@
 		<meta name="author" content="remembr">
 		<title>cadastro de instituição</title>
 		
-		<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/normalize.css'/>">
-		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/materialize.min.css'/>">
-		<script type="text/javascript" src="<c:url value='/resources/jquery/jquery-1.12.4.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='/resources/js/materialize.min.js'/>"></script>
+		<bd:import-materialize/>
 		
 		<script type="text/javascript" src="<c:url value='/resources/js/cadastraInstituicao.js'/>"></script>
 		
@@ -26,9 +23,16 @@
 		
 	</head>
 	<body>
-		<h1>Cadastro de Instituição</h1>
+		<c:set var="h1" value="Cadastro de Instituição"/>
+		<c:if test="${not empty instituicao.id}">
+			<c:set var="h1" value="Editar instituição ${instituicao.nome}"/>
+		</c:if>
+		<h1>${h1}</h1>
 		<div class="row">
 			<form method="post" id="form" enctype="multipart/form-data" class="col s12">
+			
+			<input type="hidden" name="instituicao.id" value="${instituicao.id}" id="idInstituicao">
+			
 				<div class="row">
 					<div class="input-field col s6">
 						<input type="text" name="instituicao.nome" id="nome" class="validate" value="${instituicao.nome}"/>
@@ -77,7 +81,14 @@
 					</div>				
 				</div>
 				<a class="waves-effect waves-light btn" id="salvar"><i class="material-icons left">save</i>Salvar</a>			
-			</form>	
+			</form>
+			<c:if test="${not empty instituicao.id}">
+				<div class="fixed-action-btn">
+				    <a class="btn-floating btn-large red">
+				      <i class="large material-icons" id="add-vaga" title="Adicionar vagas">add</i>
+				    </a>
+			 	</div>
+		 	</c:if>	
 		</div>
 	</body>
 </html>
