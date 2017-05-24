@@ -9,6 +9,6 @@
  	});
  	
  	$("#add-vaga").click(function(){
- 		window.location = "/bemdaora/cadastraVaga/"+$("#idInstituicao").value()+"/adm";
+ 		window.location = "/bemdaora/cadastraVaga/"+$("#idInstituicao").val()+"/adm";
  	});
 });
