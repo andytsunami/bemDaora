@@ -48,7 +48,7 @@ public class InstituicaoDAO extends DAO<Instituicao, Long>{
 	public Instituicao buscar(Long idInstituicao) throws DAOException {
 		
 		String sql = "select i from  " + Instituicao.class.getSimpleName() 
-				+ " i join fetch i.vagas where i.id = :idInstituicao order by i.nome asc";
+				+ " i left join fetch i.vagas where i.id = :idInstituicao order by i.nome asc";
 		
 		try {
 			TypedQuery<Instituicao> query = this.em.createQuery(sql,Instituicao.class);

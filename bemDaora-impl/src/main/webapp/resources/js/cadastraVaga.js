@@ -10,5 +10,7 @@
  		$("#form").attr("action",$.paramsPage.contexto + "publicaVaga/adm").submit();
  	});
  	
- 	
+ 	$("#voltaInstituicao").click(function(){
+ 		window.location =  $.paramsPage.contexto + "adm/editarInstituicao/" + $("#idInstituicao").val() + "/adm";
+ 	});
 });

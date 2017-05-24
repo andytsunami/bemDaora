@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "VAGA")
@@ -36,6 +37,10 @@ public class Vaga implements BaseEntity<Long>{
 	@ManyToOne
 	@JoinColumn(name =  "ID_RAMO_ATIVIDADE")
 	private RamoAtividade ramoAtividade;
+	
+	@NotNull
+	@Column(name = "ATIVO", columnDefinition = "TINYINT(1)")
+	private boolean ativo = true; 
 	
 
 	public Long getId() {
@@ -84,5 +89,13 @@ public class Vaga implements BaseEntity<Long>{
 
 	public void setRamoAtividade(RamoAtividade ramoAtividade) {
 		this.ramoAtividade = ramoAtividade;
+	}
+
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
 	}
 }

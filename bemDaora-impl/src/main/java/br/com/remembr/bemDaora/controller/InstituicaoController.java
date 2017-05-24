@@ -52,11 +52,11 @@ public class InstituicaoController {
 	public void editarInstituicao(Long idInstituicao) throws DAOException{
 		Instituicao instituicao = instituicaoDAO.buscar(idInstituicao);
 		result.include("instituicao",instituicao);
-		result.redirectTo(this).cadastraInstituicao();
+		result.forwardTo(this).cadastraInstituicao();
 	}
 	
 	@Transactional
-	@Post("/adm/salvaInstituicao")
+	@Post("/salvaInstituicao/adm")
 	public void salvarInstituicao(Instituicao instituicao, UploadedFile avatar) throws Exception{
 		if(avatar != null){
 			instituicao.setAvatar(IOUtils.toByteArray(avatar.getFile()));
@@ -81,7 +81,7 @@ public class InstituicaoController {
 			instituicaoDAO.update(instituicaoBD);
 		}
 		
-		result.redirectTo(this).listaInstituicoes();
+		result.forwardTo(this).listaInstituicoes();
 	}
 	
 	@Transactional
@@ -104,7 +104,7 @@ public class InstituicaoController {
 		} else {
 			vagaDAO.update(vaga);
 		}
-		result.redirectTo(this).editarInstituicao(idInstituicao);
+		result.forwardTo(this).editarInstituicao(idInstituicao);
 	}
 	
 	@Path("/cadastraVaga/{idInstituicao}/adm")
@@ -114,5 +114,21 @@ public class InstituicaoController {
 		
 		result.include("instituicao",instituicao);
 		result.include("ramos",ramos);
+	}
+	
+	@Path("/editaVaga/{idVaga}/adm")
+	public void editaVaga(Long idVaga) throws DAOException{
+		Vaga vaga = vagaDAO.find(idVaga);
+		result.include("vaga",vaga);
+		
+		Instituicao instituicao = vaga.getInstituicao();
+		result.forwardTo(this).cadastraVaga(instituicao.getId());
+	}
+	
+	@Transactional
+	@Post("/excluiVaga/adm")
+	public void excluiVaga(Long idVaga) throws DAOException{
+		vagaDAO.exclusaoLogica(idVaga);
+		result.nothing();
 	}
 }

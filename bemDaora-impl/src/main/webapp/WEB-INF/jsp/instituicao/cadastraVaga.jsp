@@ -26,7 +26,7 @@
 		<div class="row">
 			<form method="post" id="form" class="col s12">
 			
-				<input type="hidden" name="vaga.instituicao.id" value="${instituicao.id}">
+				<input type="hidden" name="vaga.instituicao.id" value="${instituicao.id}" id="idInstituicao">
 				<input type="hidden" name="vaga.id" value="${vaga.id}">
 				<div class="row">
 					<div class="input-field col s6">
@@ -62,7 +62,12 @@
 						<a class="waves-effect waves-light btn" id="publicar"><i class="material-icons left">save</i>Publicar vaga</a>
 					</div>
 				</div>			
-			</form>	
+			</form>
+			<div class="fixed-action-btn">
+				<a class="btn-floating btn-large red">
+					<i class="large material-icons" id="voltaInstituicao" title="Voltar para a instituição">fast_rewind</i>
+				</a>
+			 </div>	
 		</div>
 	</body>
 </html>

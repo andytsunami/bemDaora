@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="bd" tagdir="/WEB-INF/tags" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,15 @@
 		
 		<style>
 			body{
-				margin-left: 25%;
+				margin-left: 5%;
+			}
+			.acao{
+				cursor: pointer;
+				
+			}
+			
+			.excluiVaga{
+				color: red;
 			}
 		</style>
 		
@@ -82,11 +90,55 @@
 				</div>
 				<a class="waves-effect waves-light btn" id="salvar"><i class="material-icons left">save</i>Salvar</a>			
 			</form>
+			
+			<c:if test="${not empty instituicao.vagas}">
+				<div class="row">
+						<h2>Vagas da instituição</h2>
+						
+						<table class="bordered striped col s6">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Titulo</th>
+								<th>Quantidade</th>
+								<th>Ramo de atividade</th>
+								<th></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${instituicao.vagas}" var="vaga">
+								<tr id="tr-${vaga.id}">
+									<td>${vaga.id}</td>
+									<td>${vaga.titulo}</td>
+									<td>${vaga.quantidade}</td>
+									<td class="material-icons editaVaga acao" data-vaga="${vaga.id}" title="Editar">mode_edit</td>
+									<td class="material-icons excluiVaga acao" data-vaga="${vaga.id}" title="Excluir">delete</td>
+									<td></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+						<tfoot>
+							<tr>
+								<th>ID</th>
+								<th>Titulo</th>
+								<th>Quantidade</th>
+								<th>Ramo de atividade</th>
+								<th></th>
+								<th></th>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</c:if>
 			<c:if test="${not empty instituicao.id}">
 				<div class="fixed-action-btn">
 				    <a class="btn-floating btn-large red">
 				      <i class="large material-icons" id="add-vaga" title="Adicionar vagas">add</i>
 				    </a>
+				    <ul>
+      					<li><a class="btn-floating blue" id="listar"><i class="material-icons" title="Listar instituições">list</i></a></li>
+      				</ul>
 			 	</div>
 		 	</c:if>	
 		</div>

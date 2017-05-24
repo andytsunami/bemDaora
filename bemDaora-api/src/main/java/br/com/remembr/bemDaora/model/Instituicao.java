@@ -1,5 +1,6 @@
 package br.com.remembr.bemDaora.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.inject.Vetoed;
@@ -79,7 +80,13 @@ public class Instituicao extends Usuario implements BaseEntity<Long>{
 	}
 
 	public List<Vaga> getVagas() {
-		return vagas;
+		List<Vaga> ativas = new ArrayList<>();
+		for (Vaga vaga : vagas) {
+			if(vaga.isAtivo()){
+				ativas.add(vaga);
+			}
+		}
+		return ativas;
 	}
 
 	public void setVagas(List<Vaga> vagas) {
