@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "FOTO_INSTITUICAO")
-public class FotosInstituicao implements BaseEntity<Long> {
+public class FotoInstituicao implements BaseEntity<Long> {
 	
 	private static final long serialVersionUID = 8451648711251735733L;
 

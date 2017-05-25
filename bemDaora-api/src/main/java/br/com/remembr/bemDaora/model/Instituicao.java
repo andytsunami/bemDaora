@@ -34,7 +34,7 @@ public class Instituicao extends Usuario implements BaseEntity<Long>{
 	private byte[] avatar;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "instituicao", cascade = CascadeType.ALL)
-	private List<FotosInstituicao> fotosInstituicao;
+	private List<FotoInstituicao> fotosInstituicao;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "instituicao", cascade = CascadeType.ALL)
 	private List<Vaga> vagas;
@@ -71,11 +71,11 @@ public class Instituicao extends Usuario implements BaseEntity<Long>{
 		this.avatar = avatar;
 	}
 
-	public List<FotosInstituicao> getFotosInstituicao() {
+	public List<FotoInstituicao> getFotosInstituicao() {
 		return fotosInstituicao;
 	}
 
-	public void setFotosInstituicao(List<FotosInstituicao> fotosInstituicao) {
+	public void setFotosInstituicao(List<FotoInstituicao> fotosInstituicao) {
 		this.fotosInstituicao = fotosInstituicao;
 	}
 

@@ -34,4 +34,14 @@
  	$("#listar").click(function(){
  		window.location = $.paramsPage.contexto + "adm/listaInstituicao"
  	});
+ 	
+ 	$("#limpar").click(function(){
+ 		$.post($.paramsPage.contexto + "limparGaleria/adm",{idInstituicao: $("#idInstituicao").val()})
+ 		.done(function(){
+ 			alert("Galeria limpa com sucesso.");
+ 		})
+ 		.fail(function(){
+ 			alert("Não foi possivel limpar a galeria.");
+ 		});
+ 	});
 });

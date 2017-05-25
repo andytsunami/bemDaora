@@ -88,11 +88,30 @@
 						</div>
 					</div>				
 				</div>
+				
+				<div class="row">
+					<div class="file-field input-field col s6">
+						<div class="btn">
+							<span>Galeria</span>						
+							<input type="file" name="galeria[]" id="galeria" multiple="multiple"/>
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text" placeholder="Selecione varias imagens para subir">
+						</div>
+						
+						<br/><br/><br/>
+						<div class="waves-effect waves-light btn red" id="limpar">
+							<span><i class="material-icons left">delete</i>Limpar a galeria</span>						
+						</div>
+					</div>				
+				</div>
+				<br/><br/><br/>
+				
 				<a class="waves-effect waves-light btn" id="salvar"><i class="material-icons left">save</i>Salvar</a>			
 			</form>
 			
 			<c:if test="${not empty instituicao.vagas}">
-				<div class="row">
+				<div class="row" id="listagemVagas">
 						<h2>Vagas da instituição</h2>
 						
 						<table class="bordered striped col s6">
@@ -133,7 +152,7 @@
 			</c:if>
 			<c:if test="${not empty instituicao.id}">
 				<div class="fixed-action-btn">
-				    <a class="btn-floating btn-large red">
+				    <a class="btn-floating btn-large green">
 				      <i class="large material-icons" id="add-vaga" title="Adicionar vagas">add</i>
 				    </a>
 				    <ul>
