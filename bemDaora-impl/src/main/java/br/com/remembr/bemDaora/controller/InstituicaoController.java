@@ -116,7 +116,7 @@ public class InstituicaoController {
 				instituicaoDAO.update(instituicaoBD);
 			}
 			
-			result.forwardTo(this).listaInstituicoes();
+			result.redirectTo(this).listaInstituicoes();
 		} catch (Exception e) {
 			throw new Exception(e);
 		}
