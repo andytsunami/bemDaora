@@ -10,9 +10,12 @@ import javax.transaction.Transactional;
 import org.apache.commons.io.IOUtils;
 
 import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.observer.download.ByteArrayDownload;
+import br.com.caelum.vraptor.observer.download.Download;
 import br.com.caelum.vraptor.observer.upload.UploadedFile;
 import br.com.remembr.bemDaora.dao.InstituicaoDAO;
 import br.com.remembr.bemDaora.dao.RamoAtividadeDAO;
@@ -175,5 +178,18 @@ public class InstituicaoController {
 	public void limparGaleriaInstituicao(Long idInstituicao) throws DAOException{
 		instituicaoDAO.limparGaleria(idInstituicao);
 		result.nothing();
+	}
+	
+	@Get("/imagem/{idImagemIntituicao}/adm")
+	public Download download(Long idImagemIntituicao) throws DAOException{
+		
+		FotoInstituicao fotoDaInstituicao = instituicaoDAO.buscaFotoDaInstituicao(idImagemIntituicao);
+		
+		return new ByteArrayDownload(fotoDaInstituicao.getFoto(), "image/jpg", fotoDaInstituicao.getId() + ".jpg");
+	}
+	
+	@Path("/testeDownload/adm")
+	public void testeDownload(){
+		
 	}
 }

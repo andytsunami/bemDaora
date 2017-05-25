@@ -71,4 +71,17 @@ public class InstituicaoDAO extends DAO<Instituicao, Long>{
 			throw new DAOException("Não foi possivel limpar a geleria. \n" + e);
 		}
 	}
+	
+	public FotoInstituicao buscaFotoDaInstituicao(Long idImagemIntituicao) throws DAOException{
+		String sql = "select f from " + FotoInstituicao.class.getSimpleName() + " f where f.id = :idImagemIntituicao";
+		try {
+			TypedQuery<FotoInstituicao> query = this.em.createQuery(sql,FotoInstituicao.class);
+			query.setParameter("idImagemIntituicao", idImagemIntituicao);
+			FotoInstituicao resultado = query.getSingleResult();
+			return resultado;
+		} catch (Exception e) {
+			throw new DAOException("Não foi possivel localizar a imagem. \n " + e);
+		}
+		
+	}
 }
