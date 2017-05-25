@@ -20,6 +20,8 @@ select * from LOCK_LOGIN;
 
 SELECT * FROM RAMO_ATIVIDADE;
 
+select * from FOTO_INSTITUICAO;
+
 
 
 
