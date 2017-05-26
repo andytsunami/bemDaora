@@ -13,21 +13,7 @@
 	
 	<title>cadastro</title>
 	
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
-	<link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet" type="text/css">
-	
-	
-	<bd:import-jquery/>
-	<!-- FONT AWESOME -->
-	<link rel="stylesheet" href="<c:url value='/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css'/>">
-	<!-- FONT AWESOME -->
-	
-	<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/normalize.css'/>" />
-	<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/demo.css'/>" />
-	<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/set1.css'/>" />
-	
-	<script src="<c:url value='/resources/js/classie.js'/>"></script>
+	<bd:import-estilos/>
 	
 	<script type="text/javascript" src="<c:url value='/resources/js/cadastroUsuario.js'/>"></script>
 	</head>
@@ -97,7 +83,7 @@
 							style="background: #C20807">
 					</center>
 	
-					<br /> <a href="#"><p style="font-size:12px; color: #999999; text-align: center;"> <i class="fa fa-arrow-left" aria-hidden="true"></i>
+					<br /> <a href="/bemdaora"><p style="font-size:12px; color: #999999; text-align: center;"> <i class="fa fa-arrow-left" aria-hidden="true"></i>
 	 VOLTAR</p></a>
 				</section>
 	

@@ -22,6 +22,9 @@ public class Voluntario extends Usuario implements BaseEntity<Long>{
 	
 	@Column(name = "AVATAR_GOOGLE")
 	private String avatarGoogle;
+	
+	@Column(name = "CADASTRO_COMPLETO")
+	private boolean cadastroCompleto;
 
 	public String getCpf() {
 		return cpf;
@@ -45,5 +48,13 @@ public class Voluntario extends Usuario implements BaseEntity<Long>{
 
 	public void setAvatarGoogle(String avatarGoogle) {
 		this.avatarGoogle = avatarGoogle;
+	}
+
+	public boolean isCadastroCompleto() {
+		return cadastroCompleto;
+	}
+
+	public void setCadastroCompleto(boolean cadastroCompleto) {
+		this.cadastroCompleto = cadastroCompleto;
 	}
 }

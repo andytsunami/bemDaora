@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="bd" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,14 +12,14 @@
   <meta name="author" content="">
   <title>Bemdaora</title>
   <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/normalize.css'/>" />
+  <!-- FONT AWESOME -->
+  <bd:import-jquery/>
+  <link rel="stylesheet" href="<c:url value='/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css'/>">
+  <!-- FONT AWESOME -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
   <link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet" type="text/css">
 
-  <!-- FONT AWESOME -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="font-awesome-4.7.0\css/font-awesome.min.css">
-  <!-- FONT AWESOME -->
   <style>
       #map {
         height: 100%;

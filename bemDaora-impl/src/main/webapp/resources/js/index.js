@@ -97,7 +97,7 @@
 				            FB.logout(function(response) {
 				              // Usuario agora está deslogado
 						          console.log(response);
-				            });
+				   });
 					  
 					  $('#fb-login').attr('style', 'display:display;');
 					  $('#fb-logout').attr('style', 'display:none;');

@@ -66,7 +66,7 @@ public class LoginController {
 		usuarioTicket.setTicket(acesso.getTicket());
 		result.include("ticket", acesso.getTicket());
 		
-		result.redirectTo(HomeController.class).home();
+		result.redirectTo(VoluntarioController.class).voluntarioHome(acesso.getIdUsuario());
 		
 		} catch (NoResultException | SingleSignOnException e) {
 			result.include("nt_information", "Não foi possível acessar com os dados preenchidos");
