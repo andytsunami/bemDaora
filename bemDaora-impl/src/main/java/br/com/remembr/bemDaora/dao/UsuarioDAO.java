@@ -71,7 +71,7 @@ public class UsuarioDAO extends DAO<Usuario, Long>{
 
 	public Usuario buscarPorEmail(String email) throws DAOException {
 		try {
-			TypedQuery<Usuario> query = this.em.createQuery("select u from " + Usuario.class.getSimpleName() + " u where u.login = :pLogin", Usuario.class);
+			TypedQuery<Usuario> query = this.em.createQuery("select u from " + Usuario.class.getSimpleName() + " u where u.email = :pLogin", Usuario.class);
 			query.setParameter("pLogin", email);
 			return query.getSingleResult();
 		} catch (NoResultException e) {
@@ -122,7 +122,7 @@ public class UsuarioDAO extends DAO<Usuario, Long>{
 
 	public void alterarSenha(Long idUsuario, String novaSenha) throws DAOException {
 		try {
-			novaSenha = PasswordEncrypter.encrypt(novaSenha);
+			novaSenha = PasswordEncrypter.encrypt(novaSenha.trim());
 			
 			Query query = this.em.createQuery("update " + Usuario.class.getSimpleName() + " set senha = :novaSenha where id = :idUsuario");
 			query.setParameter("idUsuario", idUsuario);

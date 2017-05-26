@@ -81,7 +81,12 @@ public class LoginController {
 	public void logout(){
 		try {
 			if(usuarioTicket.getTicket() != null){
-				sso.logout(usuarioLogado.getEmail());
+				try{
+					sso.logout(usuarioLogado.getEmail());
+					
+				} catch (Exception e) {
+					throw new Exception(e);
+				}
 				//TODO SERVIDOR WEBSOCKET
 			}
 			request.getSession(false).invalidate();

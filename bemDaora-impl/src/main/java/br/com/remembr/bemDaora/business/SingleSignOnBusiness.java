@@ -50,7 +50,7 @@ public class SingleSignOnBusiness {
 				usuario.setSenha("");
 			}
 			
-			String senhaCrypto = email.getSenha() != null ? PasswordEncrypter.encrypt(email.getSenha()) : "";
+			String senhaCrypto = email.getSenha() != null ? PasswordEncrypter.encrypt(email.getSenha().trim()) : "";
 			
 			if (!usuario.getSenha().equals(senhaCrypto)) {
 				throw new SingleSignOnException("usuário e/ou senha inválido(s)");

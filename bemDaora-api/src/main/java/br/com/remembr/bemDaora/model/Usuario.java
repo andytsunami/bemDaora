@@ -49,7 +49,7 @@ public class Usuario implements BaseEntity<Long>{
 	
 	@NotNull
 	@Column(name = "RESETAR_SENHA", columnDefinition = "TINYINT(1)")
-	private boolean resetarSenha = true;
+	private boolean resetarSenha = false;
 	
 	@Column(name = "ID_TIPO_USUARIO", insertable = false, updatable = false)
 	private String idTipoUsuario;

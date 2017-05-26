@@ -46,7 +46,7 @@ public class UsuarioController {
 	}
 	
 	@Transactional
-	@Post("/usuario/salvar")
+	@Post("/usuario/salvar/adm")
 	public void salvar(Voluntario usuario) throws DAOException{
 		usuario.setNome(WordUtils.capitalizeFully(usuario.getNome()).trim());
 		

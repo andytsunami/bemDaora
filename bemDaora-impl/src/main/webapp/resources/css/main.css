@@ -1,708 +1,490 @@
 @charset "utf-8";
-
 /* CSS Document */
 
-
-
-    * {
-
-
-
-      padding: 0;
-
-
-
-      margin: 0;
-
-
-
-      border: 0;
-
-
-
-    }
-
-
-
-
-
-
-
-    body {
-
-
-
-      background: #eee;
-
-
-
-      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-
-
-    }
-
-.bg-login{background: url(../imgs/bg.jpg); background-attachment:fixed; background-size:cover; background-position:center;}
-.master{max-width: 600px; margin: auto; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 7px;}
-
-
-
-
-    #demo {
-
-
-
-      width: 100%;
-
-
-
-      height: 100vh;
-
-
-
-      visibility: hidden;
-
-
-
-      cursor: hand;
-
-
-
-      cursor: -moz-grab;
-
-
-
-      cursor: -webkit-grab;
-
-
-
-      cursor: grab;
-
-
-
-	  background: #f1f1f1;
-
-
-
-    }
-
-
-
-	#cont {
-
-
-
-      width: 100%;
-
-
-
-      height: 100vh;
-
-
-
-	  background: #f1f1f1;
-
-
-
-    }
-
-
-
-
-
-    #demo li.first {
-
-
-
-      background: #577;
-
-
-
-    }
-
-
-
-
-
-
-
-    #demo li.middle {
-
-
-
-      background: #1e8;
-
-
-
-    }
-
-
-
-
-
-
-
-    #demo li.last {
-
-
-
-      background: #e8b;
-
-
-
-    }
-
-
-
-
-
-
-
-    #dragend {
-
-
-
-      position: absolute;
-
-
-
-      bottom: 50px;
-
-
-
-      right: 50px;
-
-
-
-      background: #345;
-
-
-
-      padding: 18px;
-
-
-
-      color: #fff;
-
-
-
-      border-radius: 3px;
-
-
-
-      width: 150px;
-
-
-
-      font-size: 15px;
-
-
-
-    }
-
-
-
-
-
-
-
-    #dragend h1 {
-
-
-
-      font-size: 15px;
-
-
-
-      font-weight: normal;
-
-
-
-      margin-bottom: 12px;
-
-
-
-    }
-
-
-
-
-
-
-
-    #dragend a {
-
-
-
-      text-decoration: underline;
-
-
-
-      color: #fff
-
-
-
-    }
-
-
-
-
-
-
-
-    .button {
-
-
-
-      height: 0;
-
-
-
-      width: 0;
-
-
-
-      position: absolute;
-
-
-
-      top: 250px;
-
-
-
-      left: 50%;
-
-
-
-      cursor: pointer;
-
-
-
-      border-style: solid;
-
-
-
-    }
-
-
-
-
-
-
-
-    .button.deactivated {
-
-
-
-      opacity: 0.2;
-
-
-
-      cursor: default;
-
-
-
-    }
-
-
-
-
-
-
-
-    .prev {
-
-
-
-      margin-left: -320px;
-
-
-
-      border-width: 50px 50px 50px 0;
-
-
-
-      border-color: transparent #333 transparent transparent;
-
-
-
-    }
-
-
-
-
-
-
-
-    .next {
-
-
-
-      margin-left: 270px;
-
-
-
-      border-width: 50px 0 50px 50px;
-
-
-
-      border-color: transparent transparent transparent #333;
-
-
-
-    }
-
-
-
-
-
-
-
-    .nav {
-
-
-
-      margin: auto;
-
-
-
-      width: 100%;
-
-
-
-      min-width: 300px;
-
-
-
-      max-width: 600px;
-
-
-
-      list-style: none;
-
-
-
-      bottom: 0px;
-
-
-
-      position: fixed;
-
-
-
-      background: white;
-
-	  
-
-	  	box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.14);	  
-
-
-
-      padding: 6px 0;
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-    .nav li.active {
-
-
-
-      color: #333333;
-
-
-
-    }
-
-
-
-
-
-
-
-    .nav li {
-
-
-
-      font-size: 29px;
-
-
-
-      width: 20%;
-
-
-
-      padding: 6px 6%;
-
-
-
-      display: inline;
-
-
-
-      text-align: center;
-
-
-
-      box-sizing: border-box;
-
-
-
-      cursor: pointer;
-
-
-
-      color: #ccc;
-
-
-
-    }
-
-
-
-
-
-
-
-    .nav li:last-child {
-
-
-
-	border-right: 0;
-
-
-
-    }
-
-	
-
-	.top-ranking{
-
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
-
-background: #1e5799; /* Old browsers */
-
-background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
-
-background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
-
-background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
-
-	height:60px; margin: 10px 10px; padding: 10px;
-
-	border-radius: 3px;
-	
-	color:#fff;
-
-
-
-	}
-
-	
-
-	.ranking{height:60px; margin: 10px 10px; padding: 10px; background:white;border-radius: 3px; color: #999999;}
-	
-	.medals{font-size:12px; font-weight:700;}
-	
-	.nome-ranking{font-weight: 600}
-	
-	.position{font-size: 30px; font-weight: 800;	}
-
-	.img-profile{border-radius: 100%; border: 2px #979797 solid; width: 45px; margin-left: 10px; margin-top: 2px;}
-
-
-
-	
-
-
-
-	.name-profile{font-weight: bold; color:#979797; font-size: 16px; margin-left: 20px;}
-
-
-
-	
-
-
-
-	.level-profile{font-weight: bold; color:#979797; font-size: 12px; float: right; padding: 19px;}
-
-
-
-	
-
-
-
-	.title-pages{font-weight: bold; color:#979797; font-size: 14px; text-align:center; margin-top: 30px;}
-
-
-
-	
-
-
-
-	.img-profile-company{width: 40px; margin-left: 10px; margin-top: 2px;}
-
-
-
-	
-
-
-
-	.name-profile-company a{font-weight: bold; color:#1b7dce; font-size: 15px; margin-left: 20px; text-decoration: none;}
-
-	
-
-	.botao{background: #27A9E1;	color: #fff; padding: 10px 35px; border-radius: 4px; width: 300px;}
-
-	
-
-	.img-ranking{width:90px; border-radius: 100%; border: 2px #979797 solid;}
-
-	
-
-	.intituicoes-proximas{margin: 10px 10px; background: white; padding: 10px;}
-
-	
-
-	.title-page{font-weight: bold; color:#979797; font-size: 18px; text-align:center; padding-top: 15px;}
-
-	
-
-	.saiba-mais p{padding: 15px 0; color:#4D4D4D; font-size: 16px; font-weight: 600;}
-
-	
-
-	
-
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+body {
+    background: #eee;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container{max-width: 600px; margin: auto; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 7px;}
+
+a{text-decoration: none}
+
+.bg-login {
+    background: url(../imgs/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.master {
+    max-width: 600px;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 7px;
+}
+#demo {
+    width: 100%;
+    height: 100vh;
+    visibility: hidden;
+    cursor: hand;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    cursor: grab;
+    background: #f1f1f1;
+}
+#cont {
+    width: 100%;
+	min-height:100vh;
+    height: 100%;
+    background: #f1f1f1;
+}
+#demo li.first {
+    background: #577;
+}
+#demo li.middle {
+    background: #1e8;
+}
+#demo li.last {
+    background: #e8b;
+}
+#dragend {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    background: #345;
+    padding: 18px;
+    color: #fff;
+    border-radius: 3px;
+    width: 150px;
+    font-size: 15px;
+}
+#dragend h1 {
+    font-size: 15px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+#dragend a {
+    text-decoration: underline;
+    color: #fff
+}
+.button {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    cursor: pointer;
+    border-style: solid;
+}
+.button.deactivated {
+    opacity: 0.2;
+    cursor: default;
+}
+.prev {
+    margin-left: -320px;
+    border-width: 50px 50px 50px 0;
+    border-color: transparent #333 transparent transparent;
+}
+.next {
+    margin-left: 270px;
+    border-width: 50px 0 50px 50px;
+    border-color: transparent transparent transparent #333;
+}
+.nav {
+    margin: auto;
+    width: 100%;
+    min-width: 300px;
+    max-width: 600px;
+    list-style: none;
+    bottom: 0px;
+    position: fixed;
+    background: white;
+    box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.14);
+    padding: 6px 0;
+}
+.nav li.active {
+    color: #007dbe;
+}
+.nav li {
+    font-size: 29px;
+    width: 20%;
+    padding: 6px 6%;
+    display: inline;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #ccc;
+}
+.nav li:last-child {
+    border-right: 0;
+}
+.top-ranking {
+    background: #f8931f;
+    height: 60px;
+    margin: 10px 10px;
+    padding: 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+.top-ranking2 {
+    background: #a8b7b7;  
+    height: 60px;
+    margin: 10px 10px;
+    padding: 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+.top-ranking3 {
+    background: #e4c490;
+    height: 60px;
+    margin: 10px 10px;
+    padding: 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+.ranking {
+    height: 60px;
+    margin: 10px 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 3px;
+    color: #999999;
+}
+
+.barra-concluir-perfil {
+	width: 250px;	
+	background-color: #FFF;	
+	border: #979797 2px solid;	
+	border-radius:30px;
+	margin: auto;
+}
+		
+.skills-concluir-perfil {
+	text-align: right;		
+	padding-right: 0;	
+	line-height: 20px;	
+	color: white;
+	border-radius:30px;	
+	font-size: 10px;
+}
+		
+.level-concluir-perfil {width: 60%; background-color: #179a47;}
+		
+.perfil-quase-pronto{background: #2072b5; color: white; padding: 20px 0;}
+.perfil-quase-pronto p{font-size: 18px; text-align: center;}
+
+.saiba-mais{padding:10px;}
+.saiba-mais img{vertical-align: middle; width: 40px; margin-right: 10px;}
+
+.medals {
+    font-size: 12px;
+    font-weight: 700;
+}
+.nome-ranking {
+    font-weight: 600
+}
+.position {
+    font-size: 30px;
+    font-weight: 800;
+}
+.img-profile {
+    border-radius: 100%;
+    border: 2px #fff solid;
+    width: 45px;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+.name-profile {
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 20px;
+}
+.level-profile {
+    font-weight: bold;
+    color: #fff;
+    font-size: 12px;
+    float: right;
+    padding: 19px;
+}
+.title-pages {
+    font-weight: bold;
+    color: #979797;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 30px;
+}
+.img-profile-company {
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+.name-profile-company a {
+    font-weight: bold;
+    color: #1b7dce;
+    font-size: 15px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+.botao {
+    background: #007dbe;
+    color: #fff;
+    padding: 10px 35px;
+    border-radius: 4px;
+    width: 300px;
+}
+.img-ranking {
+    width: 90px;
+    border-radius: 100%;
+    border: 2px #979797 solid;
+}
+.intituicoes-proximas {
+    margin: 10px 10px;
+    background: white;
+    padding: 10px;
+}
+.title-page {
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 15px;
+}
+.saiba-mais p {
+    margin: 25px 0;
+    color: #4D4D4D;
+    font-size: 16px;
+    font-weight: 600;
+}
 /*SKILLS*/
 
-
-
 .barra {
-
-  width: 250px;
-
-  background-color: #FFF;
-
-  border: #979797 2px solid;
-
-  border-radius:30px;
-
-  float: right;
-
+    width: 250px;
+    background-color: #FFF;
+    border: #979797 2px solid;
+    border-radius: 30px;
+    float: right;
 }
-
-
-
 .skills {
-
-  text-align: right;
-
-  padding-right: 0;
-
-  line-height: 20px;
-
-  color: white;
-
-  border-radius:30px;
-
-  font-size: 10px;
-
+    text-align: right;
+    padding-right: 0;
+    line-height: 20px;
+    color: white;
+    border-radius: 30px;
+    font-size: 10px;
 }
-
-
-
-.level {width: 60%; background-color: #27A9E1;}
+.level {
+    width: 60%;
+    background-color: #007dbe;
+}
 /*/skills*/
-
-
-
-
 /*menuzinho*/
-	.menu-company{}
 
+.menu-company {} 
 
-
-  .menu-company ul {
-
-    padding:0px;
-
-    margin:0px;
-
-    background-color:#FFF;
-
-    list-style:none;
-
-    border:1px solid #EDEDED;
-
-  }
-
-
-
-  .menu-company ul li a {
-
+.menu-company ul {
+    padding: 0px;
+    margin: 0px;
+    background-color: #FFF;
+    list-style: none;
+    border: 1px solid #EDEDED;
+	display: flex;
+}
+.menu-company ul li a {
     padding: 10px 20px;
-
     display: inline-block;
-
     color: #333;
-
     text-decoration: none;
-
-    border-right:1px solid #EDEDED;
-
-	}
-
-
-
-  .menu-company ul li { display: inline; }
+}
+.menu-company ul li {
+    display: inline;
+	border-right: 1px solid #EDEDED;
+	text-align: center;
+	width: 100%;
+	max-width: 150px;
+}
 /*/menuzinho*/
 
-
-
-.cadastro-esqueci-senha{
-	width: 250px;
-    margin: auto;	
+.menu-conquista ul {
+    padding: 0px;
+    margin: 0px;
+    background-color: #FFF;
+    list-style: none;
+    border: 1px solid #EDEDED;
+	display: flex;
+}
+.menu-conquista ul li a {
+	padding: 10px 10px;
+    display: inline-block;
+    color: #4d4d4d;
+	font-weight: 600;
+	text-transform: uppercase;
+    text-decoration: none;
+}
+.menu-conquista ul li {
+	display: inline;
+	border-right: 1px solid #EDEDED;
+	text-align: center;
+	width: 100%;
+	max-width: 300px;
 }
 
-.cadastro-esqueci-senha tr td{font-size: 12px;}
+.flex-badges{
+	display: flex;
+	max-width: 500px;
+	margin: auto;	
+	margin-top: 20px;
+}
 
-.cadastro-esqueci-senha tr td a{color: #999999}
+.flex-badges img{
+	max-width:70px;
+	height: 100%;
+	width: 100%;	
+	margin: auto;
+}
+.market{padding:10px;}
+.market h2{text-align:center; color: #4d4d4d; font-size: 40px;}
 
-.logo-company{background:white; border-radius: 100px;}
+.market h3{text-align:center; color: #4d4d4d; margin-top: 20px;}
 
-.bg-company{height: 130px; background: url(../imgs/bg-company.jpg); margin-bottom: -108px;}
+.market h2 i{text-align:center; color: #56ADFD; font-size: 42px; margin-top: 30px;}
 
-.top-layout{height: 58px; width: 100%; box-shadow: 1px 1px 6px rgba(204, 204, 204, 0.31); background: white;}
+.conquest h3{color: #4d4d4d; margin-top: 20px; text-align: center;}
+.conquest{padding: 10px;}
 
-.top-layout a{color: #979797; text-decoration: none}
+.cadastro-esqueci-senha {
+    width: 250px;
+    margin: auto;
+}
+.cadastro-esqueci-senha tr td {
+    font-size: 12px;
+}
+.cadastro-esqueci-senha tr td a {
+    color: #999999
+}
+.logo-company {
+    background: white;
+    border-radius: 100px;
+}
+.bg-company {
+    height: 130px;
+    background: url(../imgs/bg-company.jpg);
+    margin-bottom: -108px;
+}
+.top-layout {
+    height: 58px;
+    width: 100%;
+    box-shadow: 1px 1px 6px rgba(204, 204, 204, 0.31);
+    background: #007dbe;
+}
+.top-layout a {
+    color: #fff;
+    text-decoration: none
+}
+.vagas-company {
+    background: white;
+    border: 1px #E6E6E6 solid;
+    padding: 20px 25px;
+}
+.botao-saibamais {
+    background: #1F72B4;
+    border-radius: 4px;
+    padding: 8px 20px;
+}
+.botao-confirma {
+    border-radius: 4px;
+    padding: 8px 20px;
+    background: #66CC33;
+    margin-top: 50px;
+    color: #fff;
+}
+a .botao-saibamais {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    float: right;
+}
+.botao-company {
+    background: #1F72B4;
+    border-radius: 4px;
+    padding: 8px 20px;
+    margin-top: 20px;
+    width: 125px;
+    text-align: center;
+}
+a .botao-company {
+    color: white;
+    font-weight: 500;
+    text-decoration: none
+}
+.title-trab {
+    color: #EA7825;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+    background-color: lightgrey;
+}
+.flex-item {
+    background-color: ;
+    width: 100%;
+    height: 100%;
+    margin: 0 3px 0 3px;
+}
+.flex-item a img {
+    max-width: 194px;
+    width: 100%;
+}
 
+.perfil-badges{padding:10px;}
 
-.vagas-company{background: white; border: 1px #E6E6E6 solid; padding: 20px 25px;}
+.perfil-badges h3{color: #999; font-size: 16px; margin-bottom: 15px;}
 
-.botao-saibamais{background:#1F72B4; border-radius: 4px; padding: 8px 20px;}
+.perfil-badges a{color: #0092FF; font-size: 16px; margin-bottom: 15px; font-weight: 600; text-decoration: none; text-align: center;}
 
-.botao-confirma{border-radius: 4px; padding: 8px 20px; background:#66CC33; margin-top:50px; color: #fff;}
+.badges-container {
+    display: -webkit-flex;
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+	margin-bottom: 10px;
+}
+.badges-item {
+    background-color: ;
+    width: 100%;
+    height: 100%;
+    margin: 0 3px 0 3px;
+}
+.badges-item img {
+    max-width: 70px;
+    width: 100%;
+}
 
-a .botao-saibamais{color: white; font-weight: 500; text-decoration:none; float: right;}
+.perfil-timeline{padding:10px; background: #E6E6E6;}
 
-.botao-company{background:#1F72B4; border-radius: 4px; padding: 8px 20px; margin-top: 20px; width: 125px; text-align: center;}
-a .botao-company{color: white; font-weight: 500; text-decoration:none}
+.perfil-timeline h3{color: #4D4D4D; font-size: 16px; margin: 10px 0;}
 
-.title-trab{color: #EA7825; text-align: center; margin-bottom: 10px;}
+.card-perfil{
+    background: white;
+    padding: 10px;
+	border-radius: 3px;
+	margin-bottom: 15px;
+}
 
+.card-perfil p{
+	color: #999;
+}
 
+.timeline-img-profile{margin-right: 10px; width: 45px; border-radius: 50px; border: 2px #999999 solid;}
 
+.destination{margin: 0 15px; color: #999999;}
 
+.timeline-txt-profile{font-weight: 600; color: #474747; font-size:14px;}
