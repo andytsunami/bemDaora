@@ -28,30 +28,38 @@
             </div>
            <div class="" style="margin:auto; max-width: 348px; min-width: 300px;">
             	<h2 style="color:#2072b5; margin-top: 20px;">Informe seus dados abaixo</h2>
-            	<form id="form" method="post" accept-charset="UTF-8">
+            	<form id="form" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+            	<input type="hidden" name="voluntario.id" value="${voluntario.id}">
 	               	<span class="input input--hoshi">
-	               	<input class="input__field input__field--hoshi obrigatorio" type="text" id="" name="voluntario.endereco" value="${voluntario.endereco}"/>
-	               	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+	               	<input class="input__field input__field--hoshi" type="file" id="avatar" name="avatar" value=""/>
+	               	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="avatar">
+	              	<span class="input__label-content input__label-content--hoshi">Avatar</span>
+	               	</label>
+	               	</span>
+	               	
+	               	<span class="input input--hoshi">
+	               	<input class="input__field input__field--hoshi obrigatorio" type="text" id="endereco" name="voluntario.endereco" value="${voluntario.endereco}"/>
+	               	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="endereco">
 	              	<span class="input__label-content input__label-content--hoshi">Endereço</span>
 	               	</label>
 	               	</span>
 	               	
 	               	<span class="input input--hoshi">
-		               	<input class="input__field input__field--hoshi obrigatorio telefone" type="text" id="" value="${voluntario.telefone}" name="voluntario.telefone"/>
-		               	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-5">
+		               	<input class="input__field input__field--hoshi obrigatorio telefone" type="text" id="telefone" value="${voluntario.telefone}" name="voluntario.telefone"/>
+		               	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="telefone">
 		               	<span class="input__label-content input__label-content--hoshi">Telefone</span>
 	               	</label>
 	               	</span>
 	               	
 	               	<span class="input input--hoshi">
-	               	<textarea class="input__field input__field--hoshi default" rows="10" cols="10" name="voluntario.sobre">${voluntario.sobre}
+	               	<textarea class="input__field input__field--hoshi default" rows="5" cols="10" name="voluntario.sobre" id="sobre">${voluntario.sobre}
 	               	</textarea>
-	               	<label class="input__label input__label--hoshi input__label--hoshi-color-1 default obrigatorio" for="input-5">
+	               	<label class="input__label input__label--hoshi input__label--hoshi-color-1 default obrigatorio" for="sobre">
 	               	<span class="input__label-content input__label-content--hoshi">Sobre mim</span>
 	               	</label>
 	               	</span>
 	               	<span class="input input--hoshi">
-	                  <center><input type="button" value="COMPLETAR" class="botao" id="save"></center>
+	                  <center><input type="button" value="COMPLETAR" class="botao" id="saveTerceiro"></center>
 	               	</span>
                	</form>
             </div>

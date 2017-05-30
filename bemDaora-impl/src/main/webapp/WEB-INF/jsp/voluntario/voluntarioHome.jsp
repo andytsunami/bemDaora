@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="bd" tagdir="/WEB-INF/tags" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -11,15 +11,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Bemdaora</title>
-  <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/normalize.css'/>" />
-  <!-- FONT AWESOME -->
-  <bd:import-jquery/>
-  <link rel="stylesheet" href="<c:url value='/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css'/>">
-  <!-- FONT AWESOME -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
-  <link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet" type="text/css">
-
+	<bd:import-estilos/>
+  	<link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet" type="text/css">
   <style>
       #map {
         height: 100%;
@@ -39,28 +32,34 @@
     <div id="demo">
         <div class="first dragend-page">
           <div class="top-layout">
-			<span class="level-profile">Level 3</span>
+			<span class="level-profile">Level ${voluntario.level}</span>
             <table>
               <tr>
-                <td><a href="perfil.html"><img src="imgs/profile.jpg" class="img-profile" /></a></td>
+                <td><a href="perfil.html"><img src="<c:url value="/imagem/voluntario/${voluntario.id}"/>" class="img-profile" /></a></td>
                 <td><a href="perfil.html"><p class="name-profile">NOME USUARIO</p></a></td>
               </tr>
             </table>
           </div>
-          <h3 class="title-pages">INSTITUIÇÕES MAIS PRÓXIMAS</h3>
+          <h3 class="title-pages">INSTITUIÇÕES PRÓXIMAS</h3>
           
           <c:forEach items="${instituicoes}" var="inst">
-          	<div class="intituicoes-proximas">
-          	<table>
-            	<tr>
-                	<td><span><a href="company.html"><img src="imgs/inst.png" class="img-profile-company" /></span></a></td>
-                    <td><span class="name-profile-company"><a href="company.html">${inst.nome}</a></span></td>
-                </tr>
-            </table>
-			<p>${inst.sobre}</p></td>
-          	<section><img src="imgs/1.jpg" /> <img src="imgs/4.jpg" /> <img src="imgs/2.jpg" /> <img src="imgs/3.jpg" /> </section>
-            <center><a href="company.html" style="text-decoration:none"><p class="botao-company">SAIBA MAIS</p></a></center>
-          </div>          	
+	          	<div class="intituicoes-proximas">
+	          	<table>
+	            	<tr>
+						<c:if test="${not empty inst.avatar }">
+		                	<td><span><a href="/bemdaora/instituicao/${inst.id}"><img src="<c:url value="/avatar/instituicao/${inst.id}"/>" class="img-profile-company" /></span></a></td>
+						</c:if>	            	
+	                    <td><span class="name-profile-company"><a href="/bemdaora/instituicao/${inst.id}">${inst.razaoSocial}</a></span></td>
+	                </tr>
+	            </table>
+				<p>${inst.sobre}</p></td>
+	          	<section>
+		          	<c:forEach items="${inst.fotosInstituicao}" var="foto">
+		          		<img src="<c:url value="/imagem/instituicao/${foto.id}/adm"/>"  width="42"/>
+		          	</c:forEach>
+	          	</section>
+	            <center><a href="/bemdaora/instituicao/${inst.id}" style="text-decoration:none"><p class="botao-company">SAIBA MAIS</p></a></center>
+	          </div>          	
           </c:forEach>
         </div>
         
@@ -76,7 +75,7 @@
                 	<td><center><a href="perfil.html"><img src="imgs/profile.jpg" class="img-ranking"/></a></center></td>
                 </tr>
                 <tr>
-                	<td><p class="name-profile" style="text-align:center">ANDRÉ VASCONCELOS</td>
+                	<td><p class="name-profile" style="text-align:center">${voluntario.nome}</td>
                 </tr>
                 <tr>
                 	<td><center>Nº 2</center></td>

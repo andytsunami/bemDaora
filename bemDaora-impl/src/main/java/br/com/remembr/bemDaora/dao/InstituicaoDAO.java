@@ -45,6 +45,20 @@ public class InstituicaoDAO extends DAO<Instituicao, Long>{
 			throw new DAOException(e);
 		}
 	}
+	
+	public List<Instituicao> listaCompleto() throws DAOException{
+		String sql = "select i from " + Instituicao.class.getSimpleName() + " i left join fetch i.fotosInstituicao where i.ativo = :ativo order by i.dataCadastro desc";
+		
+		try {
+			TypedQuery<Instituicao> query = this.em.createQuery(sql,Instituicao.class);
+			query.setParameter("ativo", Boolean.TRUE);
+			query.setMaxResults(10);
+			List<Instituicao> resultado = query.getResultList();
+			return resultado;
+		} catch (Exception e) {
+			throw new DAOException(e);
+		}
+	}
 
 	public Instituicao buscar(Long idInstituicao) throws DAOException {
 		
@@ -82,6 +96,21 @@ public class InstituicaoDAO extends DAO<Instituicao, Long>{
 		} catch (Exception e) {
 			throw new DAOException("Não foi possivel localizar a imagem. \n " + e);
 		}
+		
+	}
+
+	public Instituicao buscaCompleto(Long idInstituicao) throws DAOException {
+		String sql = "select i from " + Instituicao.class.getSimpleName() + " i left join fetch i.fotosInstituicao where i.id = :idInstituicao";
+		
+		try{
+			TypedQuery<Instituicao> query = this.em.createQuery(sql,Instituicao.class);
+			query.setParameter("idInstituicao", idInstituicao);
+			Instituicao instituicao = query.getSingleResult();
+			return instituicao;
+		} catch (Exception e) {
+			throw new DAOException(e);
+		}
+		
 		
 	}
 }

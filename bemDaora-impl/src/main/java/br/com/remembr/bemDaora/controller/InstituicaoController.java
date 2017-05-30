@@ -180,7 +180,7 @@ public class InstituicaoController {
 		result.nothing();
 	}
 	
-	@Get("/imagem/{idImagemIntituicao}/adm")
+	@Get("/imagem/instituicao/{idImagemIntituicao}/adm")
 	public Download download(Long idImagemIntituicao) throws DAOException{
 		
 		FotoInstituicao fotoDaInstituicao = instituicaoDAO.buscaFotoDaInstituicao(idImagemIntituicao);
@@ -188,8 +188,22 @@ public class InstituicaoController {
 		return new ByteArrayDownload(fotoDaInstituicao.getFoto(), "image/jpg", fotoDaInstituicao.getId() + ".jpg");
 	}
 	
+	@Get("/avatar/instituicao/{idInstituicao}")
+	public Download downloadAvatar(Long idInstituicao) throws DAOException{
+		
+		Instituicao instituicao = instituicaoDAO.find(idInstituicao);
+		
+		return new ByteArrayDownload(instituicao.getAvatar(), "image/jpg", idInstituicao + ".jpg");
+	}
+	
 	@Path("/testeDownload/adm")
 	public void testeDownload(){
 		
+	}
+	
+	@Path("/instituicao/{idInstituicao}")
+	public void instituicao(Long idInstituicao) throws DAOException{
+		Instituicao instituicao = instituicaoDAO.buscaCompleto(idInstituicao);
+		result.include("instituicao",instituicao);
 	}
 }

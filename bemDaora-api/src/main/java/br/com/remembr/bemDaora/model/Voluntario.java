@@ -37,7 +37,13 @@ public class Voluntario extends Usuario implements BaseEntity<Long>{
 	
 	@Column(name = "SOBRE")
 	private String sobre;
-
+	
+	@Column(name = "AVATAR")
+	private byte[] avatar;
+	
+	@Column(name = "LEVEL")
+	private Integer level;
+	
 	public String getCpf() {
 		return cpf;
 	}
@@ -92,5 +98,21 @@ public class Voluntario extends Usuario implements BaseEntity<Long>{
 
 	public void setSobre(String sobre) {
 		this.sobre = sobre;
+	}
+
+	public byte[] getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(byte[] avatar) {
+		this.avatar = avatar;
+	}
+
+	public Integer getLevel() {
+		return level;
+	}
+
+	public void setLevel(Integer level) {
+		this.level = level;
 	}
 }
