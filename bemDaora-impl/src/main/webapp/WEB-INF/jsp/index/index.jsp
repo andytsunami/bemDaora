@@ -51,7 +51,7 @@
 								</label>
 							</span>
 			                <span class="input input--hoshi">
-			                <center><input type="submit" value="ENTRAR" class="botao"></center>
+			                <center><input type="button" value="ENTRAR" class="botao" id="entrar"></center>
 			                </span>
 						</section>
 			    	<center><input type="button" value="ENTRAR COM FACEBOOK" class="botao" style="background:#3B5998" id="fb-login"></center>

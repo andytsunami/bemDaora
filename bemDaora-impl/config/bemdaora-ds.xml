@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <datasources>
    	<datasource jta="false" jndi-name="java:jboss/datasources/BemDaoraDS" pool-name="BemDaoraDS" enabled="true" use-ccm="false">
-	    <connection-url>jdbc:mysql://localhost:3306/BEMDAORA?profileSQL=true</connection-url>
+	    <connection-url>jdbc:mysql://localhost:3306/BEMDAORA?useUnicode=yes&amp;characterEncoding=UTF-8</connection-url>
 		<!-- com.mysql.jdbc.Driver -->
 		<driver-class>com.mysql.jdbc.Driver</driver-class>
 	    <driver>mysql</driver>

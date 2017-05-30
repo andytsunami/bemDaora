@@ -110,6 +110,10 @@
 					  $("#form").submit();
 				  });
 				  
+				  $("#entrar").click(function(){
+					  $("#form").attr("action",$.context.contexto + "login").submit();
+				  });
+				  
 				  function calculaData(dateold, datenew) {
 			            var ynew = datenew.getFullYear();
 			            var mnew = datenew.getMonth();

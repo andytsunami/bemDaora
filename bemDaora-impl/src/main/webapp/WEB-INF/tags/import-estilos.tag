@@ -10,9 +10,12 @@
 	<!-- FONT AWESOME -->
 	<link rel="stylesheet" href="/bemdaora/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<!-- FONT AWESOME -->
-	
 	<link rel="stylesheet" type="text/css" href="/bemdaora/resources/css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="/bemdaora/resources/css/set1.css" />
+	<link rel="stylesheet" type="text/css" href="/bemdaora/resources/css/default.css" />
+	
+	<script src="/bemdaora/resources/js/contextAction.js"></script>
+	<script src="/bemdaora/resources/js/masked.js"></script>
 	
 	<script src="/bemdaora/resources/js/classie.js"></script>
 	

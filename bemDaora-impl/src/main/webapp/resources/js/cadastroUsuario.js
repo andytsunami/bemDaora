@@ -93,8 +93,10 @@
 				  });
 				  
 				  $("#cadastrar").click(function(){
-					  $("#rede").attr("name","usuario.senha");
-					  $("#senha").attr("name","");
+					  if($("#rede").val() != ''){
+						  $("#rede").attr("name","usuario.senha");
+						  $("#senha").attr("name","");
+					  }
 					  $("#form").attr("action",$.context.contexto + "salvar/adm");
 					  $("#form").submit();
 				  });

@@ -3,6 +3,8 @@ package br.com.remembr.bemDaora.model;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import br.com.remembr.bemDaora.settings.Defaults;
@@ -23,8 +25,18 @@ public class Voluntario extends Usuario implements BaseEntity<Long>{
 	@Column(name = "AVATAR_GOOGLE")
 	private String avatarGoogle;
 	
-	@Column(name = "CADASTRO_COMPLETO")
-	private boolean cadastroCompleto;
+	@Column(name = "SEGUNDO_CADASTRO_COMPLETO")
+	private boolean segundoCadastroCompleto;
+	
+	@Column(name = "ULTIMO_CADASTRO_COMPLETO")
+	private boolean ultimoCadastroCompleto;
+	
+	@ManyToOne
+	@JoinColumn(name = "ID_RAMO_ATIVIDADE")
+	private RamoAtividade profissao;
+	
+	@Column(name = "SOBRE")
+	private String sobre;
 
 	public String getCpf() {
 		return cpf;
@@ -50,11 +62,35 @@ public class Voluntario extends Usuario implements BaseEntity<Long>{
 		this.avatarGoogle = avatarGoogle;
 	}
 
-	public boolean isCadastroCompleto() {
-		return cadastroCompleto;
+	public boolean isSegundoCadastroCompleto() {
+		return segundoCadastroCompleto;
 	}
 
-	public void setCadastroCompleto(boolean cadastroCompleto) {
-		this.cadastroCompleto = cadastroCompleto;
+	public void setSegundoCadastroCompleto(boolean cadastroCompleto) {
+		this.segundoCadastroCompleto = cadastroCompleto;
+	}
+
+	public RamoAtividade getProfissao() {
+		return profissao;
+	}
+
+	public void setProfissao(RamoAtividade profissao) {
+		this.profissao = profissao;
+	}
+
+	public boolean isUltimoCadastroCompleto() {
+		return ultimoCadastroCompleto;
+	}
+
+	public void setUltimoCadastroCompleto(boolean ultimoCadastroCompleto) {
+		this.ultimoCadastroCompleto = ultimoCadastroCompleto;
+	}
+
+	public String getSobre() {
+		return sobre;
+	}
+
+	public void setSobre(String sobre) {
+		this.sobre = sobre;
 	}
 }

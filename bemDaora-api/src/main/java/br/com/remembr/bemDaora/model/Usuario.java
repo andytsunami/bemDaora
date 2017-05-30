@@ -61,6 +61,9 @@ public class Usuario implements BaseEntity<Long>{
 	@Column(name = "DATA_CADASTRO")
 	private Date dataCadastro;
 	
+	@Column(name = "TELEFONE")
+	private String telefone;
+	
 	public Long getId() {
 		return id;
 	}
@@ -114,5 +117,11 @@ public class Usuario implements BaseEntity<Long>{
 	}
 	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 }
