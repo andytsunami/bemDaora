@@ -68,7 +68,7 @@
 	               	</span>
                	</form>
             </div>
-            <a href="/bemdaora">
+            <a href="/bemdahora">
             	<p style="font-size:12px; color: #999999; text-align: center;"> <i class="fa fa-arrow-left" aria-hidden="true"></i>VOLTAR</p>
             </a>
          

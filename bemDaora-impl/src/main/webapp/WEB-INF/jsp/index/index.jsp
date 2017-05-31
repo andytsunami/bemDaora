@@ -11,7 +11,7 @@
 	  	<meta name="description" content="">
 	  	<meta name="author" content="">
 	
-		<title>Bem vindo ao Bemdaora</title>
+		<title>Bem vindo ao Bemdahora</title>
 		  
 		<bd:import-jquery/>
 		  <script src="<c:url value='/resources/js/classie.js'/>"></script>
@@ -60,7 +60,7 @@
 			        <br/>
 			        <table class="cadastro-esqueci-senha">
 			        	<tr>
-			            	<td style="border-right: 1px solid #999999; padding-right:  20px;"><a href="/bemdaora/usuario/cadastro">CADASTRAR</a></td>
+			            	<td style="border-right: 1px solid #999999; padding-right:  20px;"><a href="/bemdahora/usuario/cadastro">CADASTRAR</a></td>
 			                <td style="padding-left: 34px;"><a href="#">ESQUECI A SENHA</a></td>
 			            </tr>
 			        </table>

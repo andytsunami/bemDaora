@@ -1,6 +1,6 @@
  $(document).ready(function(){
  	$.paramsPage = {
-		contexto: "/bemdaora/",
+		contexto: "/bemdahora/",
 		uuid: ""
 	};
  	

@@ -118,7 +118,7 @@
 <title>Cadastro de usuario</title>
 </head>
 <body>
-	<form action="/bemdaora/usuario/salvar" method="post">
+	<form action="/bemdahora/usuario/salvar" method="post">
 		<label>Nome</label>
 		<input type="text" name="usuario.nome" value="${usuario.nome}" id="nome">
 		<label>Email</label>

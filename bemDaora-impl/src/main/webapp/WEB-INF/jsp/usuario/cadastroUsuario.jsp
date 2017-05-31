@@ -83,7 +83,7 @@
 							style="background: #C20807">
 					</center>
 	
-					<br /> <a href="/bemdaora"><p style="font-size:12px; color: #999999; text-align: center;"> <i class="fa fa-arrow-left" aria-hidden="true"></i>
+					<br /> <a href="/bemdahora"><p style="font-size:12px; color: #999999; text-align: center;"> <i class="fa fa-arrow-left" aria-hidden="true"></i>
 	 VOLTAR</p></a>
 				</section>
 	

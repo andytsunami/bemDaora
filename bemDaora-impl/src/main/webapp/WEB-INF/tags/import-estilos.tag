@@ -1,23 +1,23 @@
 <%@tag description="Importação dos estilos do aplicativo" pageEncoding="UTF-8"%>
 <%@taglib prefix="bd" tagdir="/WEB-INF/tags" %>
-	<link rel="stylesheet" type="text/css" href="/bemdaora/resources/css/normalize.css"/>
+	<link rel="stylesheet" type="text/css" href="/bemdahora/resources/css/normalize.css"/>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
-	<link href="/bemdaora/resources/css/main.css" rel="stylesheet" type="text/css">
+	<link href="/bemdahora/resources/css/main.css" rel="stylesheet" type="text/css">
 	
 	
 	<bd:import-jquery/>
 	<!-- FONT AWESOME -->
-	<link rel="stylesheet" href="/bemdaora/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/bemdahora/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<!-- FONT AWESOME -->
-	<link rel="stylesheet" type="text/css" href="/bemdaora/resources/css/demo.css" />
-	<link rel="stylesheet" type="text/css" href="/bemdaora/resources/css/set1.css" />
-	<link rel="stylesheet" type="text/css" href="/bemdaora/resources/css/default.css" />
+	<link rel="stylesheet" type="text/css" href="/bemdahora/resources/css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="/bemdahora/resources/css/set1.css" />
+	<link rel="stylesheet" type="text/css" href="/bemdahora/resources/css/default.css" />
 	
-	<script src="/bemdaora/resources/js/contextAction.js"></script>
-	<script src="/bemdaora/resources/js/masked.js"></script>
+	<script src="/bemdahora/resources/js/contextAction.js"></script>
+	<script src="/bemdahora/resources/js/masked.js"></script>
 	
-	<script src="/bemdaora/resources/js/classie.js"></script>
+	<script src="/bemdahora/resources/js/classie.js"></script>
 	
 	 <script>
          (function() {

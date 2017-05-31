@@ -2,7 +2,7 @@
 	<head>
 		<script type="text/javascript">
 			function redirecionar() {
-				window.top.location.href = "/bemdaora/";
+				window.top.location.href = "/bemdahora/";
 			}
 		</script>
 	</head>

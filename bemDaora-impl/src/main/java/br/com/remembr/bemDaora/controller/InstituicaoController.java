@@ -24,7 +24,9 @@ import br.com.remembr.bemDaora.dao.generio.DAOException;
 import br.com.remembr.bemDaora.model.FotoInstituicao;
 import br.com.remembr.bemDaora.model.Instituicao;
 import br.com.remembr.bemDaora.model.RamoAtividade;
+import br.com.remembr.bemDaora.model.Usuario;
 import br.com.remembr.bemDaora.model.Vaga;
+import br.com.remembr.bemDaora.service.sso.UsuarioLogado;
 
 @Controller
 public class InstituicaoController {
@@ -40,6 +42,10 @@ public class InstituicaoController {
 	
 	@Inject
 	private RamoAtividadeDAO ramoAtividadeDAO;
+	
+	@Inject
+	@UsuarioLogado
+	private Usuario usuario;
 	
 	
 	@Path("/adm/listaInstituicao")
@@ -205,5 +211,6 @@ public class InstituicaoController {
 	public void instituicao(Long idInstituicao) throws DAOException{
 		Instituicao instituicao = instituicaoDAO.buscaCompleto(idInstituicao);
 		result.include("instituicao",instituicao);
+		result.include("usuario",usuario);
 	}
 }

@@ -13,7 +13,7 @@ import br.com.remembr.bemDaora.vo.UsuarioVO;
 @Remote
 public interface UsuarioRemote {
 	
-	public static final String JNDI_NAME = "ejb:/bemdaora/UsuarioBean!br.com.remembr.bemDaora.interfaces.UsuarioRemote";
+	public static final String JNDI_NAME = "ejb:/bemdahora/UsuarioBean!br.com.remembr.bemDaora.interfaces.UsuarioRemote";
 
 	public Usuario buscaPorId(Long id) throws DAOException;
 

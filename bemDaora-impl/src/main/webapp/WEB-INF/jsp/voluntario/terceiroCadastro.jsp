@@ -63,7 +63,7 @@
 	               	</span>
                	</form>
             </div>
-            <a href="/bemdaora/voluntario/voltaSegundoCadastro/${voluntario.id}">
+            <a href="/bemdahora/voluntario/voltaSegundoCadastro/${voluntario.id}">
             	<p style="font-size:12px; color: #999999; text-align: center;"> <i class="fa fa-arrow-left" aria-hidden="true"></i>VOLTAR</p>
             </a>
          

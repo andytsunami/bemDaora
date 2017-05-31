@@ -2,7 +2,7 @@ package br.com.remembr.bemDaora.constants;
 
 public class AplicacaoConstants {
 	
-	public static final String CONTEXTO_APLICACAO = "bemdaora";
+	public static final String CONTEXTO_APLICACAO = "bemdahora";
 	public static final String PARAMETRO_REQUEST_TICKET = "ticket";
 	public static final String MENU_ACESSO = "menuAcesso";
 	public static final String TOKEN_EXTERNO = "tokenExterno";

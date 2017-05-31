@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Bemdaora</title>
+  <title>BemdaHora</title>
 	<bd:import-estilos/>
   	<link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet" type="text/css">
   <style>
@@ -47,9 +47,9 @@
 	          	<table>
 	            	<tr>
 						<c:if test="${not empty inst.avatar }">
-		                	<td><span><a href="/bemdaora/instituicao/${inst.id}"><img src="<c:url value="/avatar/instituicao/${inst.id}"/>" class="img-profile-company" /></span></a></td>
+		                	<td><span><a href="/bemdahora/instituicao/${inst.id}"><img src="<c:url value="/avatar/instituicao/${inst.id}"/>" class="img-profile-company" /></span></a></td>
 						</c:if>	            	
-	                    <td><span class="name-profile-company"><a href="/bemdaora/instituicao/${inst.id}">${inst.razaoSocial}</a></span></td>
+	                    <td><span class="name-profile-company"><a href="/bemdahora/instituicao/${inst.id}">${inst.razaoSocial}</a></span></td>
 	                </tr>
 	            </table>
 				<p>${inst.sobre}</p></td>
@@ -58,7 +58,7 @@
 		          		<img src="<c:url value="/imagem/instituicao/${foto.id}/adm"/>"  width="42"/>
 		          	</c:forEach>
 	          	</section>
-	            <center><a href="/bemdaora/instituicao/${inst.id}" style="text-decoration:none"><p class="botao-company">SAIBA MAIS</p></a></center>
+	            <center><a href="/bemdahora/instituicao/${inst.id}" style="text-decoration:none"><p class="botao-company">SAIBA MAIS</p></a></center>
 	          </div>          	
           </c:forEach>
         </div>

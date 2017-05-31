@@ -9,7 +9,7 @@
 <title>Bem vindo</title>
 </head>
 <body>
-	<h1>Bem vindo ${usuario.nome} a home do sistema BEMDAORA!</h1>
+	<h1>Bem vindo ${usuario.nome} a home do sistema BEMDAHORA!</h1>
 	<p>Seu ticket é: ${usuarioTicket.ticket}</p>
 </body>
 </html>

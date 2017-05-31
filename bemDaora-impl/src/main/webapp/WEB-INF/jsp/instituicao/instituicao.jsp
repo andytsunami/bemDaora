@@ -15,7 +15,7 @@
       <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
       <link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet" type="text/css">
       <!-- FONT AWESOME -->
-      <link rel="stylesheet" href="/bemdaora/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="/bemdahora/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
       <!-- FONT AWESOME -->
       <!--menuzin-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
@@ -36,7 +36,7 @@
       <div class="container">
          <div id="cont">
             <div class="top-layout">
-               <span style="float:left; padding: 16px 0 0 18px; font-size: 20px;"><a href="index.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
+               <span style="float:left; padding: 16px 0 0 18px; font-size: 20px;"><a href="/bemdahora/voluntario/home/${usuario.id}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
                <center>
                   <p class="title-page">PERFIL</p>
                </center>

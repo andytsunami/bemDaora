@@ -11,7 +11,7 @@ import br.com.remembr.bemDaora.vo.LoginVO;
 @Remote
 public interface SingleSignOnRemote {
 	
-	public static final String JNDI_NAME = "ejb:/bemdaora//SingleSignOnBean!br.com.remembr.bemDaora.service.interfaces.SingleSignOnRemote";
+	public static final String JNDI_NAME = "ejb:/bemdahora//SingleSignOnBean!br.com.remembr.bemDaora.service.interfaces.SingleSignOnRemote";
 	
 	public Usuario getUsuarioLogado(String ticket) throws SingleSignOnException;
 	

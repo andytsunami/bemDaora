@@ -2,7 +2,7 @@
 		$().ready(function() {
 			$.context = {
 					accessToken : "",
-					contexto : "/bemdaora/",
+					contexto : "/bemdahora/",
 				};
 			
 			$('#fb-logout').attr('style', 'display:none;');

@@ -2,7 +2,7 @@
 		$().ready(function() {
 			$.context = {
 					accessToken : "",
-					contexto : "/bemdaora/voluntario/",
+					contexto : "/bemdahora/voluntario/",
 				};
 				
 				$("#saveSegundo").click(function(){
