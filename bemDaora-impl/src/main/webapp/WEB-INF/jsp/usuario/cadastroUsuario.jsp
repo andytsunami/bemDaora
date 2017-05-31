@@ -50,7 +50,7 @@
 		
 						</span> <span class="input input--hoshi"> 
 		
-						<input class="input__field input__field--hoshi" type="date" id="idade" name="usuario.idade"/> 
+						<input class="input__field input__field--hoshi" type="text" id="idade" name="usuario.idade"/> 
 						<label class="input__label input__label--hoshi input__label--hoshi-color-1"
 							for="input-5"> 
 							<span class="input__label-content input__label-content--hoshi">Idade</span>
