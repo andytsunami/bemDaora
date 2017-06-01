@@ -1,5 +1,7 @@
 package br.com.remembr.bemDaora.model;
 
+import java.util.Base64;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -49,5 +51,9 @@ public class FotoInstituicao implements BaseEntity<Long> {
 
 	public void setInstituicao(Instituicao instituicao) {
 		this.instituicao = instituicao;
+	}
+	
+	public String getFotoNoJeito(){
+		return "data:image/png;base64,"+Base64.getEncoder().encodeToString(foto);
 	}
 }

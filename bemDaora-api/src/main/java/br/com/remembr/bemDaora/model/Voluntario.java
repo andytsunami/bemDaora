@@ -1,5 +1,7 @@
 package br.com.remembr.bemDaora.model;
 
+import java.util.Base64;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -114,5 +116,9 @@ public class Voluntario extends Usuario implements BaseEntity<Long>{
 
 	public void setLevel(Integer level) {
 		this.level = level;
+	}
+	
+	public String getAvatarNoJeito(){
+		return "data:image/png;base64,"+Base64.getEncoder().encodeToString(avatar);
 	}
 }

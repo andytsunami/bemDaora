@@ -35,8 +35,8 @@
 			<span class="level-profile">Level ${voluntario.level}</span>
             <table>
               <tr>
-                <td><a href="perfil.html"><img src="<c:url value="/imagem/voluntario/${voluntario.id}"/>" class="img-profile" /></a></td>
-                <td><a href="perfil.html"><p class="name-profile">NOME USUARIO</p></a></td>
+                <td><a href="perfil.html"><img src="${voluntario.avatarNoJeito}" class="img-profile" /></a></td>
+                <td><a href="perfil.html"><p class="name-profile">${voluntario.nome}</p></a></td>
               </tr>
             </table>
           </div>
@@ -47,7 +47,7 @@
 	          	<table>
 	            	<tr>
 						<c:if test="${not empty inst.avatar }">
-		                	<td><span><a href="/bemdahora/instituicao/${inst.id}"><img src="<c:url value="/avatar/instituicao/${inst.id}"/>" class="img-profile-company" /></span></a></td>
+		                	<td><span><a href="/bemdahora/instituicao/${inst.id}"><img src="${inst.avatarNoJeito}" class="img-profile-company" width="40" height="40"/></span></a></td>
 						</c:if>	            	
 	                    <td><span class="name-profile-company"><a href="/bemdahora/instituicao/${inst.id}">${inst.razaoSocial}</a></span></td>
 	                </tr>
@@ -55,7 +55,7 @@
 				<p>${inst.sobre}</p></td>
 	          	<section>
 		          	<c:forEach items="${inst.fotosInstituicao}" var="foto">
-		          		<img src="<c:url value="/imagem/instituicao/${foto.id}/adm"/>"  width="42"/>
+		          		<img src="${foto.fotoNoJeito}"  width="90" height="90"/>
 		          	</c:forEach>
 	          	</section>
 	            <center><a href="/bemdahora/instituicao/${inst.id}" style="text-decoration:none"><p class="botao-company">SAIBA MAIS</p></a></center>

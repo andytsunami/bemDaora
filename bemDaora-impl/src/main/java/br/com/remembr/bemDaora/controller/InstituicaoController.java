@@ -16,6 +16,7 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.observer.download.ByteArrayDownload;
 import br.com.caelum.vraptor.observer.download.Download;
+import br.com.caelum.vraptor.observer.upload.UploadSizeLimit;
 import br.com.caelum.vraptor.observer.upload.UploadedFile;
 import br.com.remembr.bemDaora.dao.InstituicaoDAO;
 import br.com.remembr.bemDaora.dao.RamoAtividadeDAO;
@@ -67,6 +68,7 @@ public class InstituicaoController {
 		result.forwardTo(this).cadastraInstituicao();
 	}
 	
+	@UploadSizeLimit(sizeLimit=40 * 1024 * 1024, fileSizeLimit=10 * 1024 * 1024)
 	@Transactional
 	@Post("/salvaInstituicao/adm")
 	public void salvarInstituicao(Instituicao instituicao, UploadedFile avatar, List<UploadedFile> galeria) throws Exception{
@@ -114,6 +116,8 @@ public class InstituicaoController {
 				instituicaoBD.setSobre(instituicao.getSobre());
 				instituicaoBD.setEndereco(instituicao.getEndereco());
 				instituicaoBD.setAvatar(instituicao.getAvatar());
+				instituicaoBD.setValores(instituicao.getValores());
+				instituicaoBD.setHistoria(instituicao.getHistoria());
 				
 				if(fotos != null && fotos.size() > 0){
 					for (FotoInstituicao foto : fotos) {
@@ -210,7 +214,12 @@ public class InstituicaoController {
 	@Path("/instituicao/{idInstituicao}")
 	public void instituicao(Long idInstituicao) throws DAOException{
 		Instituicao instituicao = instituicaoDAO.buscaCompleto(idInstituicao);
+		List<Vaga> vagas = vagaDAO.buscarVagasIntituicao(idInstituicao);
+		
+		
 		result.include("instituicao",instituicao);
+		result.include("vagas",vagas);
 		result.include("usuario",usuario);
+		
 	}
 }

@@ -44,4 +44,19 @@ public class VagaDAO extends DAO<Vaga, Long>{
 			throw new DAOException(e);
 		}
 	}
+
+	public List<Vaga> buscarVagasIntituicao(Long idInstituicao) throws DAOException {
+		String sql = "select v from " + Vaga.class.getSimpleName() + " v where v.ativo = :ativo and v.instituicao.id = :idInstituicao order by v.titulo asc";
+		
+		try{
+			TypedQuery<Vaga> query = this.em.createQuery(sql,Vaga.class);
+			query.setParameter("ativo", Boolean.TRUE);
+			query.setParameter("idInstituicao", idInstituicao);
+			
+			List<Vaga> resultado = query.getResultList();
+			return resultado;
+		} catch (Exception e) {
+			throw new DAOException(e);
+		}
+	}
 }

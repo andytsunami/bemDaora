@@ -38,7 +38,7 @@
             <div class="top-layout">
                <span style="float:left; padding: 16px 0 0 18px; font-size: 20px;"><a href="/bemdahora/voluntario/home/${usuario.id}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
                <center>
-                  <p class="title-page">PERFIL</p>
+                  <p class="title-page">${instituicao.nome}</p>
                </center>
                <span style="float: right; padding: 0 18px 0 0; margin-top: -20px; font-size: 20px;"><a href="#"><i class="fa fa-cog" aria-hidden="true"></i></a></span>
             </div>
@@ -49,8 +49,8 @@
                   <tr>
                      <td>
                      
-                     <c:if test="${not empty instituicao.avatar }">
-	                        <center><img src="<c:url value='/avatar/instituicao/${instituicao.id}'/>" class="logo-company" width="120"/></center>
+                     <c:if test="${not empty instituicao.avatar}">
+	                        <center><img src="${instituicao.avatarNoJeito}" class="logo-company" width="90" height="90"/></center>
 					</c:if>
                      
                      </td>
@@ -64,89 +64,41 @@
                <p>${instituicao.sobre}</p>
             </section>
             <br/>
+           
             <script type="text/ng-template" id="pages/sobre">
                <div class="intituicoes-proximas">
                 <h3 class="title-company">Historia</h3>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut pellentesque purus. Sed fermentum massa vel odio dignissim, sed bibendum nulla porttitor</p>
+               <p>${instituicao.historia}</p>
                <br/>
                <h3 class="title-company">Valores</h3>
-               <p>Sed fermentum massa vel odio dignissim, sed bibendum nulla porttitor</p>
+               <p>${instituicao.valores}</p>
                </div>
                
             </script>
+            
             <script type="text/ng-template" id="pages/vagas">
-               <div class="vagas-company">
-                <a href="job.html" style="text-decoration: none;"><span class="botao-saibamais">SAIBA MAIS</span></a>
-                <h3>Baba de Criança</h3>
-                <span style="color: green">3 Vagas</span>
-               </div>
-               
-               <div class="vagas-company">
-                <a href="job.html" style="text-decoration: none;"><span class="botao-saibamais">SAIBA MAIS</span></a>
-                <h3>Baba de Criança</h3>
-                <span style="color: red">Não há vagas</span>
-               </div>
-               
-               <div class="vagas-company">
-                <a href="job.html" style="text-decoration: none;"><span class="botao-saibamais">SAIBA MAIS</span></a>
-                <h3>Baba de Criança</h3>
-                <span style="color: green">3 Vagas</span>
-               </div>
+               <c:forEach items="${vagas}" var="vaga">
+            		<div class="vagas-company">
+                		<a href="job.html" style="text-decoration: none;"><span class="botao-saibamais">SAIBA MAIS</span></a>
+                		<h3>${vaga.titulo}</h3>
+                		<span style="color: green">${vaga.quantidade} Vagas</span>
+               		</div>
+            	</c:forEach>
             </script>
+            
+           
             <script type="text/ng-template" id="pages/fotos">
-               <div class="flex-container" id="">
-					<div class="flex-item">
-						<a href="imgs/serv1.jpg" title="" data-lightbox="galeria">
-							<img src="imgs/serv1.jpg">
-						</a>
-					</div>
-					<div class="flex-item">
-						<a href="imgs/serv2.jpg" title="" data-lightbox="galeria">
-							<img src="imgs/serv2.jpg">
-						</a>
-					</div>
-					<div class="flex-item">
-						<a href="imgs/serv3.jpg" title="" data-lightbox="galeria">
-							<img src="imgs/serv3.jpg">
-						</a>
-					</div>
-               </div>
-			   
-			   <div class="flex-container" id="">
-					<div class="flex-item">
-						<a href="imgs/serv4.jpg" title="" data-lightbox="galeria">
-							<img src="imgs/serv4.jpg">
-						</a>
-					</div>
-					<div class="flex-item">
-						<a href="imgs/serv5.jpg" title="" data-lightbox="galeria">
-							<img src="imgs/serv5.jpg">
-						</a>
-					</div>
-					<div class="flex-item">
-						<a href="imgs/serv1.jpg" title="" data-lightbox="galeria">
-							<img src="imgs/serv1.jpg">
-						</a>
-					</div>
-               </div>
-			   
-			   <div class="flex-container" id="">
-					<div class="flex-item">
-						<a href="imgs/serv1.jpg" title="" data-lightbox="galeria">
-							<img src="imgs/serv1.jpg">
-						</a>
-					</div>
-					<div class="flex-item">
-						<a href="imgs/serv2.jpg" title="" data-lightbox="galeria">
-							<img src="imgs/serv2.jpg">
-						</a>
-					</div>
-					<div class="flex-item">
-						<a href="imgs/serv3.jpg" title="" data-lightbox="galeria">
-							<img src="imgs/serv3.jpg">
-						</a>
-					</div>
-               </div>
+	            <div class="flex-container" id="galeria">
+					<c:forEach items="${instituicao.fotosInstituicao}" var="foto" varStatus="i">
+						<c:if test="${i.index <= 9 }">
+							<div class="flex-item">
+								<a href="<c:url value='/imagem/instituicao/${foto.id}/adm'/>" title="" data-lightbox="galeria">
+									<img src="${foto.fotoNoJeito}" width="288" height="288">
+								</a>
+							</div>
+						</c:if>
+		            </c:forEach>
+	               </div>
             </script>
             <script type="text/ng-template" id="pages/feed">
                <div>
@@ -167,11 +119,9 @@
                </ul>
             </div>
             <div ng-view></div>
-            <script src="js/menu-company.js"></script>
+            <script src="<c:url value='/resources/js/menu-company.js'/>"> </script>
          </div>
       </div>
-      <script type="text/javascript" src="jquery.min.js"></script>
-      <script type="text/javascript" src="dragend.js"></script>
-      
+      <script src="<c:url value='/resources/js/dragend.js'/>"> </script>
    </body>
 </html>

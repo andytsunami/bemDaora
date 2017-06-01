@@ -73,10 +73,23 @@
 				</div>
 				<div class="row">
 					<div class="input-field col s6">
+						<textarea name="instituicao.valores" class="materialize-textarea" id="sobre">${instituicao.valores}</textarea>
+						<label for="sobre">Valores da empresa</label>
+					</div>				
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<textarea name="instituicao.historia" class="materialize-textarea" id="sobre">${instituicao.historia}</textarea>
+						<label for="sobre">Historia da empresa</label>
+					</div>				
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
 						<input type="text" name="instituicao.endereco" class="validate" id="endereco" value="${instituicao.endereco}"/>
 						<label for="endereco">Endereco</label>
 					</div>				
 				</div>
+				
 				<div class="row">
 					<div class="file-field input-field col s6">
 						<div class="btn">

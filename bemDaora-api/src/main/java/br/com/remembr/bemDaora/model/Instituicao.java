@@ -1,6 +1,7 @@
 package br.com.remembr.bemDaora.model;
 
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import javax.enterprise.inject.Vetoed;
@@ -32,6 +33,12 @@ public class Instituicao extends Usuario implements BaseEntity<Long>{
 	
 	@Column(name = "AVATAR")
 	private byte[] avatar;
+	
+	@Column(name = "HISTORIA")
+	private String historia;
+	
+	@Column(name = "VALORES")
+	private String valores;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "instituicao", cascade = CascadeType.ALL)
 	private List<FotoInstituicao> fotosInstituicao;
@@ -91,5 +98,29 @@ public class Instituicao extends Usuario implements BaseEntity<Long>{
 
 	public void setVagas(List<Vaga> vagas) {
 		this.vagas = vagas;
+	}
+	
+	public String getAvatarNoJeito(){
+		return "data:image/png;base64,"+Base64.getEncoder().encodeToString(avatar);
+	}
+	
+	public List<FotoInstituicao> getGaleria() {
+		return fotosInstituicao.subList(0, 9);
+	}
+
+	public String getHistoria() {
+		return historia;
+	}
+
+	public void setHistoria(String historia) {
+		this.historia = historia;
+	}
+
+	public String getValores() {
+		return valores;
+	}
+
+	public void setValores(String valores) {
+		this.valores = valores;
 	}
 }

@@ -125,6 +125,7 @@ public class VoluntarioController {
 			}
 			
 			volBd.setUltimoCadastroCompleto(true);
+			volBd.setLevel(1);
 			voluntarioDAO.update(volBd);
 			
 			result.redirectTo(this).voluntarioHome(volBd.getId());
