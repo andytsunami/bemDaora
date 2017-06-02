@@ -79,9 +79,16 @@
             <script type="text/ng-template" id="pages/vagas">
                <c:forEach items="${vagas}" var="vaga">
             		<div class="vagas-company">
-                		<a href="job.html" style="text-decoration: none;"><span class="botao-saibamais">SAIBA MAIS</span></a>
+            			<c:if test="${vaga.quantidade > 0}">
+                			<a href="/bemdahora/vaga/${vaga.id}" style="text-decoration: none;"><span class="botao-saibamais">SAIBA MAIS</span></a>
+                		</c:if>
                 		<h3>${vaga.titulo}</h3>
-                		<span style="color: green">${vaga.quantidade} Vagas</span>
+                		<c:if test="${vaga.quantidade > 0}">
+                			<span style="color: green">${vaga.quantidade} Vagas</span>
+                		</c:if>
+                		<c:if test="${vaga.quantidade <= 0}">
+                			<span style="color: red">Não há vagas disponiveis</span>
+                		</c:if>
                		</div>
             	</c:forEach>
             </script>
@@ -103,9 +110,9 @@
             <script type="text/ng-template" id="pages/feed">
                <div>
                
-                 <h1>feed</h1>
+                 <h1>mapa</h1>
                
-                 <h3>{{message}}</h3>
+                 <h3>Tem um mapa aqui....</h3>
                
                </div>
                
@@ -115,7 +122,7 @@
                   <li><a href="#/">Sobre</a></li>
                   <li><a href="#/vagas">Vagas</a></li>
                   <li><a href="#/fotos">Fotos</a></li>
-                  <li><a href="#/feed">Feed</a></li>
+                  <li><a href="#/feed">Mapa</a></li>
                </ul>
             </div>
             <div ng-view></div>

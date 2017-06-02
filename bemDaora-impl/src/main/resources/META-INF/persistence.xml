@@ -17,6 +17,7 @@
 		<class>br.com.remembr.bemDaora.model.Acesso</class>
 		<class>br.com.remembr.bemDaora.model.Vaga</class>
 		<class>br.com.remembr.bemDaora.model.RamoAtividade</class>
+		<class>br.com.remembr.bemDaora.model.Atividade</class>
 		
 
 		<properties>

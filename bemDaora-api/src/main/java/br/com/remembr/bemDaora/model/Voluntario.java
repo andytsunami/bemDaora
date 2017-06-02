@@ -1,12 +1,16 @@
 package br.com.remembr.bemDaora.model;
 
 import java.util.Base64;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import br.com.remembr.bemDaora.settings.Defaults;
@@ -44,7 +48,13 @@ public class Voluntario extends Usuario implements BaseEntity<Long>{
 	private byte[] avatar;
 	
 	@Column(name = "LEVEL")
-	private Integer level;
+	private Integer level = 0;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "voluntario", cascade = CascadeType.ALL)
+	private List<Atividade> atividades;
+	
+	@Column(name = "PONTOS")
+	private Long pontos = 0L;
 	
 	public String getCpf() {
 		return cpf;
@@ -120,5 +130,21 @@ public class Voluntario extends Usuario implements BaseEntity<Long>{
 	
 	public String getAvatarNoJeito(){
 		return "data:image/png;base64,"+Base64.getEncoder().encodeToString(avatar);
+	}
+
+	public List<Atividade> getAtividades() {
+		return atividades;
+	}
+
+	public void setAtividades(List<Atividade> atividades) {
+		this.atividades = atividades;
+	}
+
+	public Long getPontos() {
+		return pontos;
+	}
+
+	public void setPontos(Long pontos) {
+		this.pontos = pontos;
 	}
 }
