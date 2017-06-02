@@ -56,7 +56,7 @@ public class LoginController {
 			throw new SingleSignOnException("Campo E-mail vazio");
 		}
 		
-		if(usuarioTicket.getTicket() != null && !login.getEmail().equals(usuarioLogado.getEmail())){
+		if(usuarioTicket.getTicket() != null && !login.getEmail().toUpperCase().equals(usuarioLogado.getEmail().toUpperCase())){
 			logout();
 			return;
 		}

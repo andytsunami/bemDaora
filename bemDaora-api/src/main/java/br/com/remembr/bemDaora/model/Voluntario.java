@@ -32,10 +32,10 @@ public class Voluntario extends Usuario implements BaseEntity<Long>{
 	private String avatarGoogle;
 	
 	@Column(name = "SEGUNDO_CADASTRO_COMPLETO")
-	private boolean segundoCadastroCompleto;
+	private boolean segundoCadastroCompleto = false;
 	
 	@Column(name = "ULTIMO_CADASTRO_COMPLETO")
-	private boolean ultimoCadastroCompleto;
+	private boolean ultimoCadastroCompleto = false;
 	
 	@ManyToOne
 	@JoinColumn(name = "ID_RAMO_ATIVIDADE")

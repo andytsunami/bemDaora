@@ -21,7 +21,7 @@
          <div id="cont">
             <div class="perfil-quase-pronto">
                 <p>Olá, ${voluntario.nome}!</p>
-                <p>Seu perfil está quase pronto ${voluntario.nome}</p>
+                <p>Seu perfil está quase pronto!</p>
                 <br/>
                 <div class="barra-concluir-perfil">
                     <div class="skills-concluir-perfil segundoCadastro"><center>60%</center></div>

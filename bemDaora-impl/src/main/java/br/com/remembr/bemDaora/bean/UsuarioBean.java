@@ -55,7 +55,7 @@ public class UsuarioBean implements UsuarioRemote {
 	public Usuario insert(Usuario usuario) throws DAOException {
 		usuarioDAO.insert(usuario);
 		if (!Strings.isNullOrEmpty(usuario.getSenha())){
-			usuarioDAO.alterarSenha(usuario.getId(), usuario.getSenha());
+			//usuarioDAO.alterarSenha(usuario.getId(), usuario.getSenha());
 		}
 		return usuario;
 	}
@@ -69,7 +69,7 @@ public class UsuarioBean implements UsuarioRemote {
 	public Usuario update(Usuario usuario) throws DAOException {
 		usuarioDAO.update(usuario);
 		if (!Strings.isNullOrEmpty(usuario.getSenha())){
-			usuarioDAO.alterarSenha(usuario.getId(), usuario.getSenha());
+			//usuarioDAO.alterarSenha(usuario.getId(), usuario.getSenha());
 		}
 		return usuario;
 	}
