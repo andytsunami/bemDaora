@@ -1,6 +1,6 @@
 (function($) {
 		$().ready(function() {
-			$.context = {
+			$.paramsPage = {
 					accessToken : "",
 					contexto : "/bemdahora/usuario/",
 				};
@@ -51,7 +51,7 @@
 				      
 				      // Salvar os dados no banco de dados ou verificar se ja existe e carregar dados do usuário.
 				      console.log(details);
-				      console.log("Token - " + $.context.accessToken);
+				      console.log("Token - " + $.paramsPage.accessToken);
 				      
 				      $("#nome").val(details.name);
 				      $("#email").val(details.email);
@@ -76,7 +76,7 @@
 				      // Se usuário está logado ....
 				      if(response.authResponse) {
 				          showDetails();
-				          $.context.accessToken = response.authResponse.accessToken;
+				          $.paramsPage.accessToken = response.authResponse.accessToken;
 				          console.log(response);
 				      }
 				    }, {scope: permissions});
@@ -93,12 +93,21 @@
 				  });
 				  
 				  $("#cadastrar").click(function(){
-					  if($("#rede").val() != ''){
-						  $("#rede").attr("name","usuario.senha");
-						  $("#senha").attr("name","");
+					  if($.preValidate()){
+						  if($("#rede").val() != ''){
+							  $("#rede").attr("name","usuario.senha");
+							  $("#senha").attr("name","");
+						  }
+						  $("#form").attr("action",$.paramsPage.contexto + "salvar/adm");
+						  $("#form").submit();
+					  } else {
+						  $.paramsPage.erros = "";
+							$($.context.mensagemErro).each(function() {
+								$.paramsPage.erros += "-" + this + "\n";
+							});
+							
+							alert($.paramsPage.erros);
 					  }
-					  $("#form").attr("action",$.context.contexto + "salvar/adm");
-					  $("#form").submit();
 				  });
 				  
 				  function calculaData(dateold, datenew) {

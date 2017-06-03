@@ -12,6 +12,7 @@
   <meta name="author" content="">
   <title>BemdaHora</title>
 	<bd:import-estilos/>
+	<script type="text/javascript" src="<c:url value='/resources/js/voluntarioHome.js'/>"></script>
   	<link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet" type="text/css">
   <style>
       #map {
@@ -28,6 +29,7 @@
 
 </head>
 <body>
+<input type="hidden" id="login" value="${voluntario.email}">
   <div style="max-width: 600px; margin: auto; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 7px;">
     <div id="demo">
         <div class="first dragend-page">

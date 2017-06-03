@@ -16,6 +16,7 @@
 	
 	<script src="/bemdahora/resources/js/contextAction.js"></script>
 	<script src="/bemdahora/resources/js/masked.js"></script>
+	<script src="/bemdahora/resources/js/jquery.numeric.js"></script>
 	
 	<script src="/bemdahora/resources/js/classie.js"></script>
 	

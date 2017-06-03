@@ -9,6 +9,11 @@ input[type=text].obrigatorio.error,select.obrigatorio.error,textarea.obrigatorio
 	background-color: #f8b0b0;
 }
 
+input[type=password].obrigatorio.error,select.obrigatorio.error,textarea.obrigatorio.error{
+	border-color: red;
+	background-color: #f8b0b0;
+}
+
 input[type=checkbox].obrigatorio.prevent.error + label:before,input[type=radio].obrigatorio.prevent.error + label:before {
 	border-color: red;
 	background-color: #f8b0b0;
@@ -24,4 +29,3 @@ input[type=text].modal.error,input[type=text].modal.error:hover,input[type=text]
 	border: solid 1px red;
 	background-color: #f8b0b0;
 }
-

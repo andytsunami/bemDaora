@@ -14,7 +14,10 @@
 		<title>Bem vindo ao Bemdahora</title>
 		  
 		<bd:import-jquery/>
+		  <script src="<c:url value='/resources/js/contextAction.js'/>"></script>
 		  <script src="<c:url value='/resources/js/classie.js'/>"></script>
+		  <script src="/bemdahora/resources/js/masked.js"></script>
+		  <script src="/bemdahora/resources/js/jquery.numeric.js"></script>
 		  
 		  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>

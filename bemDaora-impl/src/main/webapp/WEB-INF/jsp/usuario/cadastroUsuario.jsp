@@ -29,28 +29,28 @@
 					<section class="" style="margin: auto; max-width: 348px; min-width: 300px; width: 100%;">
 		
 					<span class="input input--hoshi"> 
-						<input class="input__field input__field--hoshi" type="text" id="nome" name="usuario.nome" /> 
+						<input class="input__field input__field--hoshi obrigatorio" type="text" id="nome" name="usuario.nome" /> 
 						<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
 							<span class="input__label-content input__label-content--hoshi">Nome</span>
 						</label>
 					</span> 
 					<span class="input input--hoshi"> 
 					
-					<input class="input__field input__field--hoshi" type="text" id="email" name="usuario.email"/>
+					<input class="input__field input__field--hoshi obrigatorio email" type="text" id="email" name="usuario.email"/>
 					<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-5">
 						<span class="input__label-content input__label-content--hoshi">E-mail</span>
 					</label>
 		
 						</span> <span class="input input--hoshi"> 
 						
-						<input class="input__field input__field--hoshi" type="password" id="senha" name="usuario.senha"/> 
+						<input class="input__field input__field--hoshi obrigatorio" type="password" id="senha" name="usuario.senha"/> 
 						<label class="input__label input__label--hoshi input__label--hoshi-color-1"	for="input-5">
 							<span class="input__label-content input__label-content--hoshi">Senha</span>
 						</label>
 		
 						</span> <span class="input input--hoshi"> 
 		
-						<input class="input__field input__field--hoshi" type="text" id="idade" name="usuario.idade"/> 
+						<input class="input__field input__field--hoshi obrigatorio numerico" type="text" id="idade" name="usuario.idade"/> 
 						<label class="input__label input__label--hoshi input__label--hoshi-color-1"
 							for="input-5"> 
 							<span class="input__label-content input__label-content--hoshi">Idade</span>

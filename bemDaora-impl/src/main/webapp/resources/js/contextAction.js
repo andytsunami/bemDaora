@@ -7,10 +7,14 @@ $().ready(function() {
 			tempFiltersHeight: 0,
 			mensagemErro: [],
 			botoesDesativados: false,
-			travarVoltar : null
+			travarVoltar : null,
+			
 		};
 	
+	
 	$(".cpf").mask("999.999.999-99");
+	//$(".email").mask("999.999.999-99");
+	$(".numerico").numeric({decimal:false,negative:false});
 	
 	$(".telefone").focusout(function(){
 	    var phone, element;

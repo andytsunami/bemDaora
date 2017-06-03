@@ -57,6 +57,7 @@ public class AplicacaoFilter implements Filter {
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/mapa",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/index",
 			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/usuario/cadastro",
+			"/" + AplicacaoConstants.CONTEXTO_APLICACAO + "/socket",
 			
 			
 			/*ADMINISTRAÇÃO */

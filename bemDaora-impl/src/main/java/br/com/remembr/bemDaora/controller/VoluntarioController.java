@@ -15,6 +15,8 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.observer.download.ByteArrayDownload;
 import br.com.caelum.vraptor.observer.download.Download;
 import br.com.caelum.vraptor.observer.upload.UploadedFile;
+import br.com.remembr.bemDaora.chat.WSEndpoint;
+import br.com.remembr.bemDaora.chat.model.Mensagem;
 import br.com.remembr.bemDaora.dao.InstituicaoDAO;
 import br.com.remembr.bemDaora.dao.RamoAtividadeDAO;
 import br.com.remembr.bemDaora.dao.VoluntarioDAO;
@@ -44,7 +46,6 @@ public class VoluntarioController {
 	@Inject
 	private RamoAtividadeDAO profissaoDAO;
 	
-	
 	@Path("/voluntario/home/{idVoluntario}")
 	public void voluntarioHome(Long idVoluntario) throws DAOException{
 		
@@ -61,10 +62,6 @@ public class VoluntarioController {
 		} else if (!voluntario.isUltimoCadastroCompleto()) {
 			result.redirectTo(this).terceiroCadastro(voluntario);
 		}
-		
-		
-		
-		
 		
 	}
 	
@@ -136,7 +133,7 @@ public class VoluntarioController {
 	}
 	
 	@Get("/imagem/voluntario/{idVoluntario}")
-	public Download download(Long idVoluntario) throws DAOException{
+	public Download download(Long idVoluntario) throws DAOException {
 		
 		byte[] foto = voluntarioDAO.buscaFotoDoVoluntario(idVoluntario);
 		

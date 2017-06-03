@@ -18,6 +18,8 @@ import br.com.caelum.vraptor.observer.download.ByteArrayDownload;
 import br.com.caelum.vraptor.observer.download.Download;
 import br.com.caelum.vraptor.observer.upload.UploadSizeLimit;
 import br.com.caelum.vraptor.observer.upload.UploadedFile;
+import br.com.remembr.bemDaora.chat.WSEndpoint;
+import br.com.remembr.bemDaora.chat.model.Mensagem;
 import br.com.remembr.bemDaora.dao.InstituicaoDAO;
 import br.com.remembr.bemDaora.dao.RamoAtividadeDAO;
 import br.com.remembr.bemDaora.dao.VagaDAO;
@@ -48,11 +50,22 @@ public class InstituicaoController {
 	@UsuarioLogado
 	private Usuario usuario;
 	
+	@Inject
+	private WSEndpoint wSEndpoint;
 	
 	@Path("/adm/listaInstituicao")
 	public void listaInstituicoes() throws DAOException{
 		List<Instituicao> instituicoes = instituicaoDAO.lista();
 		result.include("instituicoes", instituicoes);
+		
+		
+		//TODO ARRANCAR DAQUI!
+		//https://github.com/atao60/javaee7-websocket-chat/blob/master/app/src/main/webapp/index.html
+		//https://yakovfain.com/2014/12/29/pushing-data-to-multiple-websocket-clients-from-a-java-server/
+		Mensagem mensagem = new Mensagem();
+		mensagem.setMensagem("Seje bem vindo!");
+		mensagem.setUsuario("andytsunami@hotmail.com");
+		wSEndpoint.enviaMensagem(mensagem);
 	}
 	
 	@Path("/adm/cadastraInstituicao")
@@ -215,7 +228,6 @@ public class InstituicaoController {
 	public void instituicao(Long idInstituicao) throws DAOException{
 		Instituicao instituicao = instituicaoDAO.buscaCompleto(idInstituicao);
 		List<Vaga> vagas = vagaDAO.buscarVagasIntituicao(idInstituicao);
-		
 		
 		result.include("instituicao",instituicao);
 		result.include("vagas",vagas);
