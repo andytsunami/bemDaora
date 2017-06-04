@@ -101,7 +101,11 @@ public class Instituicao extends Usuario implements BaseEntity<Long>{
 	}
 	
 	public String getAvatarNoJeito(){
-		return "data:image/png;base64,"+Base64.getEncoder().encodeToString(avatar);
+		if(avatar != null){
+			return "data:image/png;base64,"+Base64.getEncoder().encodeToString(avatar);
+		} else {
+			return null;
+		}
 	}
 	
 	public List<FotoInstituicao> getGaleria() {

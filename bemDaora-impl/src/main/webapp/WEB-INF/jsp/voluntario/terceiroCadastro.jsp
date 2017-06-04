@@ -33,7 +33,7 @@
 	               	<span class="input input--hoshi">
 	               	<input class="input__field input__field--hoshi" type="file" id="avatar" name="avatar" value=""/>
 	               	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="avatar">
-	              	<span class="input__label-content input__label-content--hoshi">Avatar</span>
+	              	<span class="input__label-content input__label-content--hoshi">Escolha uma foto para ser seu Avatar</span>
 	               	</label>
 	               	</span>
 	               	
@@ -50,10 +50,8 @@
 		               	<span class="input__label-content input__label-content--hoshi">Telefone</span>
 	               	</label>
 	               	</span>
-	               	
 	               	<span class="input input--hoshi">
-	               	<textarea class="input__field input__field--hoshi default" rows="5" cols="10" name="voluntario.sobre" id="sobre">${voluntario.sobre}
-	               	</textarea>
+	               	<textarea class="input__field input__field--hoshi default" rows="3" cols="1" name="voluntario.sobre" id="sobre">${voluntario.sobre}</textarea>
 	               	<label class="input__label input__label--hoshi input__label--hoshi-color-1 default obrigatorio" for="sobre">
 	               	<span class="input__label-content input__label-content--hoshi">Sobre mim</span>
 	               	</label>

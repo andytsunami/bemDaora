@@ -47,9 +47,11 @@ public class WSEndpoint {
 	}
 	
 	public void enviaMensagem(Mensagem mensagem){
-		for (Session session : allSessions) {
-			if(session.getUserProperties().get("login").toString().equals(mensagem.getUsuario())){
-				onMessage(mensagem, session);
+		if(allSessions != null){
+			for (Session session : allSessions) {
+				if(session.getUserProperties().get("login").toString().equals(mensagem.getUsuario())){
+					onMessage(mensagem, session);
+				}
 			}
 		}
 	}

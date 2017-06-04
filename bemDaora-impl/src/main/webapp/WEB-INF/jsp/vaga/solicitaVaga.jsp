@@ -52,7 +52,7 @@
                <table style="width: 300px; margin: 0px auto; padding-top: 50px;">
                   <tr>
                      <td>
-                        <center><img src="${vaga.instituicao.avatarNoJeito}" class="logo-company"/></center>
+                        <center><img src="${vaga.instituicao.avatarNoJeito}" class="logo-company" width="64" height="64"/></center>
                      </td>
                   </tr>
                </table>
