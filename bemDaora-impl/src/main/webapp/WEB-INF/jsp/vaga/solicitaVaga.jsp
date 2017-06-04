@@ -11,6 +11,8 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <title>Solicitação</title>
+      <link rel="stylesheet" type="text/css" href="/bemdahora/resources/css/normalize.css" />
+      
       <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
       <link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet" type="text/css">
@@ -24,8 +26,6 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
       
       <bd:import-jquery/>
-      
-      <link rel="stylesheet" type="text/css" href="/bemdahora/resources/css/normalize.css" />
       <link rel="stylesheet" type="text/css" href="/bemdahora/resources/css/demo.css" />
 	  <link rel="stylesheet" type="text/css" href="/bemdahora/resources/css/set1.css" />
       

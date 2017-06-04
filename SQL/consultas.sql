@@ -21,7 +21,7 @@ select * from LOCK_LOGIN;
 
 SELECT * FROM RAMO_ATIVIDADE order by NOME;
 
-
+SELECT * FROM ATIVIDADE;
 
 select * from FOTO_INSTITUICAO;
 

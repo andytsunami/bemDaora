@@ -7,14 +7,22 @@
 				};
 			
 			
-			
+			$("#confirmaa").click(function(){
+				alert(toDate($("#dataAgendada").val()));
+			});
+
+			function toDate(dateStr) {
+			    var parts = dateStr.split("-");
+			    var diaPart = parts[2].split("T")
+			    return diaPart[0] + "/" + parts[1] + "/" + parts[0] + " " + diaPart[1];
+			}
 			
 			$("#confirma").click(function(){
 				if($("#dataAgendada").val() != ""){
 					$.post($.context.contexto + "agenda",{
 						idVaga : $("#idVaga").val(),
 						idVoluntario : $("#idVoluntario").val(),
-						dataAgendada : new Date($("#dataAgendada").val()).toISOString(),
+						dataAgendada : toDate($("#dataAgendada").val()),
 					})
 					.done(function(data){
 						if(data != undefined){

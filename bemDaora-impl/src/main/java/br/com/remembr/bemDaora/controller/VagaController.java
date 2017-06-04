@@ -1,5 +1,8 @@
 package br.com.remembr.bemDaora.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.inject.Inject;
@@ -61,18 +64,21 @@ public class VagaController {
 	
 	@Transactional
 	@Post("/vaga/agenda")
-	public void realizaAgendamento(Long idVaga, Long idVoluntario, DateTime dataAgendada) throws DAOException{
+	public void realizaAgendamento(Long idVaga, Long idVoluntario, String dataAgendada) throws DAOException, ParseException{
 		Vaga vaga = vagaDAO.find(idVaga);
 		
 		Atividade atividadeBd = atividadeDAO.buscaPorUsuarioVaga(idVaga,idVoluntario);
 		
-		if(vaga.getQuantidade() > 0 && atividadeBd != null){
+		if(vaga.getQuantidade() > 0 && atividadeBd == null){
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+			Date dtAgendada = sdf.parse(dataAgendada);
 			
 			Atividade atividade = new Atividade();
 			Voluntario voluntario = voluntarioDAO.find(idVoluntario);
 			atividade.setVaga(vaga);
 			atividade.setVoluntario(voluntario);
-			atividade.setDataAgendada(dataAgendada.toDate());
+			atividade.setDataAgendada(dtAgendada);
 			
 			vaga.setQuantidade(vaga.getQuantidade()-1);
 			
