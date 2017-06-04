@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Solicitação</title>
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+      <link href="css/main.css" rel="stylesheet" type="text/css">
+      <!-- FONT AWESOME -->
+      <link rel="stylesheet" href="font-awesome-4.7.0\css/font-awesome.min.css">
+      <!-- FONT AWESOME -->
+      <!--menuzin-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+      <link rel="stylesheet" type="text/css" href="css/demo.css" />
+      <link rel="stylesheet" type="text/css" href="css/set1.css" />
+   </head>
+   <body>
+      <div class="container">
+         <div id="cont">
+            <div class="top-layout">
+               <span style="float:left; padding: 16px 0 0 18px; font-size: 20px;"><a href="job.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
+               <center>
+                  <p class="title-page">PERFIL</p>
+               </center>
+               <span style="float: right; padding: 0 18px 0 0; margin-top: -20px; font-size: 20px;"><a href="#"><i class="fa fa-cog" aria-hidden="true"></i></a></span>
+            </div>
+            <div class="bg-company">
+            </div>
+            <section style="padding:10px;">
+               <table style="width: 300px; margin: 0px auto; padding-top: 50px;">
+                  <tr>
+                     <td>
+                        <center><img src="imgs/inst.png" class="logo-company"/></center>
+                     </td>
+                  </tr>
+               </table>
+            </section>
+            <section>
+               <div class="intituicoes-proximas">
+                  <h3>Escolha a melhor data e hora:</h3>
+                  <span class="input input--hoshi">
+                  <input class="input__field input__field--hoshi" type="date" id="" />
+                  <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-5">
+                  <span class="input__label-content input__label-content--hoshi">Data de Nascimento</span>
+                  </label>
+                  </span>
+                  <br/>
+                  <span class="input input--hoshi" >
+                  <input class="input__field input__field--hoshi" type="time" id="" />
+                  <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-5">
+                  <span class="input__label-content input__label-content--hoshi">Horário</span>
+                  </label>
+                  </span>
+                  <br/>
+                  <h4 style="color:#378DB7;">Termos de responsabilidade</h4>
+                  <p>Ao continuar declaro que li e concordo com os termos de responsabilidade</p>
+                  <br/><br/>
+                  <center><a href="index.html" style="text-decoration: none;"><span class="botao-confirma">CONFIRMAR</span></a></center>
+                  <br/>
+               </div>
+            </section>
+         </div>
+         <script src="js/menu-company.js"></script>
+      </div>
+      </div>
+      <script type="text/javascript" src="jquery.min.js"></script>
+      <script type="text/javascript" src="dragend.js"></script>
+      <script>
+         $(function() {
+         
+         
+         
+           $("#demo").dragend({
+         
+         
+         
+             afterInitialize: function() {
+         
+         
+         
+               this.container.style.visibility = "visible";
+         
+         
+         
+             },
+         
+         
+         
+             onSwipeEnd: function() {
+         
+         
+         
+               var first = this.pages[0],
+         
+         
+         
+                   last = this.pages[this.pages.length - 1];
+         
+         
+         
+         
+         
+         
+         
+               $(".prev, .next").removeClass("deactivated");
+         
+         
+         
+               $(".nav li").removeClass("active");
+         
+         
+         
+         
+         
+         
+         
+               if (first === this.activeElement) {
+         
+         
+         
+                 $(".prev").addClass("deactivated")
+         
+         
+         
+               };
+         
+         
+         
+         
+         
+         
+         
+               if (last === this.activeElement) {
+         
+         
+         
+                 $(".next").addClass("deactivated")
+         
+         
+         
+               }
+         
+         
+         
+         
+         
+         
+         
+               $(".nav li").eq(this.page).addClass("active");
+         
+         
+         
+         
+         
+         
+         
+             }
+         
+         
+         
+           });
+         
+         
+         
+         
+         
+         
+         
+           $(".prev").click(function() {
+         
+         
+         
+             $("#demo").dragend("right");
+         
+         
+         
+           });
+         
+         
+         
+         
+         
+         
+         
+           $(".next").click(function() {
+         
+         
+         
+             $("#demo").dragend("left");
+         
+         
+         
+           });
+         
+         
+         
+         
+         
+         
+         
+           $(".nav").click(function() {
+         
+         
+         
+             var page = $(event.target).data("page");
+         
+         
+         
+         
+         
+         
+         
+             $("#demo").dragend({
+         
+         
+         
+               scrollToPage: page
+         
+         
+         
+             });
+         
+         
+         
+         
+         
+         
+         
+             $(event.target).addClass("active");
+         
+         
+         
+         
+         
+         
+         
+           })
+         
+         
+         
+         
+         
+         
+         
+         });
+         
+         
+         
+         
+         
+         
+         
+         var _gaq = _gaq || [];
+         
+         
+         
+         _gaq.push(['_setAccount', 'UA-219062-10']);
+         
+         
+         
+         _gaq.push(['_trackPageview']);
+         
+         
+         
+         
+         
+         
+         
+         (function() {
+         
+         
+         
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         
+         
+         
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         
+         
+         
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         
+         
+         
+         })();
+         
+         
+         
+         
+         
+         
+         
+      </script>
+   </body>
+</html>

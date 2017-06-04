@@ -37,7 +37,7 @@
 			<span class="level-profile">Level ${voluntario.level}</span>
             <table>
               <tr>
-                <td><a href="perfil.html"><img src="${voluntario.avatarNoJeito}" class="img-profile" /></a></td>
+                <td><a href="perfil.html"><img src="${voluntario.avatarNoJeito}" class="img-profile" width="49" height="49"/></a></td>
                 <td><a href="perfil.html"><p class="name-profile">${voluntario.nome}</p></a></td>
               </tr>
             </table>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>login</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+  <link href="css/main-adm.css" rel="stylesheet" type="text/css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="font-awesome-4.7.0\css/font-awesome.min.css">
+  <!-- FONT AWESOME -->
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/set1.css" />
+
+</head>
+<body>
+  <div class="container">
+    <div id="cont" style="bottom: 30px;padding-top:30px;">
+    	<center><img src="imgs/logo2.png" /></center>
+			<section class="" style="margin:auto; max-width: 348px; min-width: 300px; width: 100%;">
+				<span class="input input--hoshi">
+					<input class="input__field input__field--hoshi" type="text" id="" />
+					<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+						<span class="input__label-content input__label-content--hoshi">e-mail</span>
+					</label>
+				</span>
+				<span class="input input--hoshi">
+					<input class="input__field input__field--hoshi" type="text" id="" />
+					<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-5">
+						<span class="input__label-content input__label-content--hoshi">senha</span>
+					</label>
+				</span>
+                <span class="input input--hoshi">
+                <center><input type="submit" value="entrar" class="botao"></center>
+                </span>
+			</section>
+            <br/>
+			<div class="btn-cadastro-redes">
+               	<span class="icon-face"><i class="fa fa-facebook-square fa-fw"></i></span>
+                <input class="btn-face" style="" type="button" value="entrar com o Facebook">
+            </div>
+                
+            <br/>
+                
+            <div class="btn-cadastro-redes">
+             	<span class="icon-googleplus"><i class="fa fa-google-plus-square fa-fw"></i></span>
+                <input class="btn-googleplus" style="" type="button" value="entrar com o Google +">
+            </div>
+
+            <br/>
+        <table class="cadastro-esqueci-senha">
+        	<tr>
+            	<td style="border-right: 1px solid #999999; padding-right:  20px;"><a href="#">CADASTRAR</a></td>
+                <td style="padding-left: 34px;"><a href="#">ESQUECI A SENHA</a></td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+	</div>
+  </div>
+
+<script src="js/classie.js"></script>
+		<script>
+			(function() {
+				if (!String.prototype.trim) {
+
+					(function() {
+
+						var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+
+						String.prototype.trim = function() {
+
+							return this.replace(rtrim, '');
+
+						};
+
+					})();
+
+				}
+
+
+
+				[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+					if( inputEl.value.trim() !== '' ) {
+
+						classie.add( inputEl.parentNode, 'input--filled' );
+
+					}
+					inputEl.addEventListener( 'focus', onInputFocus );
+
+					inputEl.addEventListener( 'blur', onInputBlur );
+
+				} );
+
+
+
+				function onInputFocus( ev ) {
+
+					classie.add( ev.target.parentNode, 'input--filled' );
+
+				}
+
+
+
+				function onInputBlur( ev ) {
+
+					if( ev.target.value.trim() === '' ) {
+
+						classie.remove( ev.target.parentNode, 'input--filled' );
+
+					}
+
+				}
+
+			})();
+
+		</script>
+</body>
+</html>
