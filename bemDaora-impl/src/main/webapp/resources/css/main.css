@@ -9,6 +9,8 @@
 	
 }
 
+/*Daqui pra baixo é do Guilherme*/
+
 * {
     padding: 0;
     margin: 0;
@@ -488,7 +490,7 @@ a .botao-saibamais {
     border-radius: 4px;
     padding: 8px 20px;
     margin-top: 20px;
-    width: 126px;
+    width: 125px;
     text-align: center;
 }
 a .botao-company {
@@ -590,4 +592,3 @@ a .botao-company {
 .icon-googleplus{background: #C20807;color: #fff;padding: 0px 5px 1px 3px; border-radius: 4px 0 0 4px; font-size: 30px; float: left;}
 
 .btn-googleplus{background: #C20807;color: #fff;padding: 10px 71px 10px 15px; border-radius: 0 4px 4px 0; margin-left:-1px;}
-

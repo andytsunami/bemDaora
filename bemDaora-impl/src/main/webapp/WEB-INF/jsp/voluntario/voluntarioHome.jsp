@@ -206,10 +206,10 @@
 		        	<h3 class="title-page">SAIBA MAIS...</h3>
 		        </div>
 		        <div class="saiba-mais">
-		        	<a href="guia.pdf" download><p><img src="<c:url value='/resources/images/termos-de-voluntariado.png'/>"> Termos de Voluntariado <i class="fa fa-download" aria-hidden="true"></i></p></a>
+		        	<a href="<c:url value='/resources/files/guia.pdf'/>" download><p><img src="<c:url value='/resources/images/termos-de-voluntariado.png'/>"> Termos de Voluntariado <i class="fa fa-download" aria-hidden="true"></i></p></a>
 		            <a href="#"><p><img src="<c:url value='/resources/images/ndh.png'/>"> Sobre Bem da Hora</p></a>
-		            <a href="manual-de-praticas-e-condutas-eticas.html"><p><img src="<c:url value='/resources/images/manual.png'/>"> Manual de Condutas e práticas </p></a>
-		            <a href="legislacao-do-trabalho-voluntario.html"><p><img src="<c:url value='/resources/images/legislacao.png'/>"> Legislação e Direitos do Trabalhador Voluntário</p></a>               
+		            <a href="/bemdahora/manual/${voluntario.id}"><p><img src="<c:url value='/resources/images/manual.png'/>"> Manual de Condutas e práticas </p></a>
+		            <a href="/bemdahora/legislacao/${voluntario.id}"><p><img src="<c:url value='/resources/images/legislacao.png'/>"> Legislação e Direitos do Trabalhador Voluntário</p></a>               
 		            <!--<a href="#"><p><img src="imgs/eticas.png"> Éticas do Voluntário</p></a>-->
 		        </div>
 		      </div><!--app-panel--four-->

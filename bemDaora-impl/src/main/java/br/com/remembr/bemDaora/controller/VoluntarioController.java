@@ -140,4 +140,14 @@ public class VoluntarioController {
 		
 		return new ByteArrayDownload(foto, "image/jpg", idVoluntario + ".jpg");
 	}
+	
+	@Path("/legislacao/{idVoluntario}")
+	public void legislacao(Long idVoluntario){
+		result.include("idVoluntario",idVoluntario);
+	}
+	
+	@Path("/manual/{idVoluntario}")
+	public void manual(Long idVoluntario){
+		result.include("idVoluntario",idVoluntario);
+	}
 }
