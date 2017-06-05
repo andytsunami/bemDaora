@@ -11,9 +11,10 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <title>${instituicao.nome}</title>
+      <bd:import-jquery/>
       <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
-      <link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet" type="text/css">
+      <link href="<c:url value='/resources/css/main.css?version=3'/>" rel="stylesheet" type="text/css">
       <!-- FONT AWESOME -->
       <link rel="stylesheet" href="/bemdahora/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
       <!-- FONT AWESOME -->
@@ -29,7 +30,8 @@
       <link href="<c:url value='/resources/jquery/lightbox/css/lightbox.css'/>" type="text/css" rel="stylesheet" />
         
         <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
-
+		<script src="<c:url value='/resources/js/alerta.js?v=3'/>"> </script>
+		
 <!-- Fim do Lightbox -->
    </head>
    <body>
@@ -44,6 +46,16 @@
             </div>
             <div class="bg-company">
             </div>
+            
+            <c:set value="${agendado ? '' : 'hidden'}" var="hidden"/>       
+		        <div class="alerta ${hidden}">
+						<table>
+							<tr>
+								<td><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i></td>
+								<td><h3 style="margin-left: 15px;">Sua solicitação está em analize.</h3></td>
+							</tr>
+						</table>
+		        </div>
             <section style="padding:10px;">
                <table style="width: 300px; margin: 0px auto; padding-top: 50px;">
                   <tr>
@@ -129,6 +141,5 @@
             <script src="<c:url value='/resources/js/menu-company.js'/>"> </script>
          </div>
       </div>
-      <script src="<c:url value='/resources/js/dragend.js'/>"> </script>
    </body>
 </html>

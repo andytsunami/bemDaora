@@ -224,14 +224,15 @@ public class InstituicaoController {
 		
 	}
 	
-	@Path("/instituicao/{idInstituicao}")
-	public void instituicao(Long idInstituicao) throws DAOException{
+	@Path({"/instituicao/{idInstituicao}","/instituicao/{idInstituicao}/{agendado}"})
+	public void instituicao(Long idInstituicao,boolean agendado) throws DAOException{
 		Instituicao instituicao = instituicaoDAO.buscaCompleto(idInstituicao);
 		List<Vaga> vagas = vagaDAO.buscarVagasIntituicao(idInstituicao);
 		
 		result.include("instituicao",instituicao);
 		result.include("vagas",vagas);
 		result.include("usuario",usuario);
+		result.include("agendado",agendado);
 		
 	}
 }

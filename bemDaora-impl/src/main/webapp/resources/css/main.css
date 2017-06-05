@@ -1,6 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
 
+.hidden{
+	display: none;
+}
+.alerta{
+	cursor: pointer;
+	
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -16,7 +24,7 @@ body {
 a{text-decoration: none}
 
 .bg-login {
-    background: url(/bemdahora/resources/images/bg.jpg);
+    background: url(../imgs/bg.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -173,8 +181,6 @@ a{text-decoration: none}
 }
 		
 .level-concluir-perfil {width: 60%; background-color: #179a47;}
-.segundoCadastro {width: 60%; background-color: #179a47;}
-.ultimoCadastro {width: 80%; background-color: #179a47;}
 		
 .perfil-quase-pronto{background: #2072b5; color: white; padding: 20px 0;}
 .perfil-quase-pronto p{font-size: 18px; text-align: center;}
@@ -441,7 +447,7 @@ a{text-decoration: none}
 }
 .bg-company {
     height: 130px;
-    background: url(/bemdahora/resources/images/bg-company.jpg);
+    background: url(../imgs/bg-company.jpg);
     margin-bottom: -108px;
 }
 .top-layout {
@@ -482,7 +488,7 @@ a .botao-saibamais {
     border-radius: 4px;
     padding: 8px 20px;
     margin-top: 20px;
-    width: 125px;
+    width: 126px;
     text-align: center;
 }
 a .botao-company {
@@ -497,19 +503,16 @@ a .botao-company {
 }
 .flex-container {
     display: -webkit-flex;
-	display: flex;
-	max-width: 600px;
-	width: 100%;
-	background-color: lightgrey;
-	min-width: 288px;
-	flex-flow: wrap;
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+    background-color: lightgrey;
 }
 .flex-item {
     background-color: ;
-	width: 32%;
-	height: 100%;
-	margin: 0 3px 0 3px;
-	flex-flow: column;
+    width: 100%;
+    height: 100%;
+    margin: 0 3px 0 3px;
 }
 .flex-item a img {
     max-width: 194px;
@@ -577,4 +580,14 @@ a .botao-company {
 
 .instrucoes h2{text-align: center; color:#E97825; margin-bottom: 15px;}
 
+
+.btn-cadastro-redes{width:300px; margin:auto;}
+
+.icon-face{background: #3B5998;color: #fff;padding: 0px 5px 1px 3px; border-radius: 4px 0 0 4px; font-size: 30px; float: left;}
+
+.btn-face{background: #3B5998;color: #fff;padding: 10px 65px 10px 15px; border-radius: 0 4px 4px 0; margin-left:-1px;}
+
+.icon-googleplus{background: #C20807;color: #fff;padding: 0px 5px 1px 3px; border-radius: 4px 0 0 4px; font-size: 30px; float: left;}
+
+.btn-googleplus{background: #C20807;color: #fff;padding: 10px 71px 10px 15px; border-radius: 0 4px 4px 0; margin-left:-1px;}
 
