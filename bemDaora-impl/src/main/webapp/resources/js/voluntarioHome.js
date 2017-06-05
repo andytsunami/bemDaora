@@ -14,8 +14,13 @@
 			 ws.onmessage = function (evt) 
 			 { 			     	
 				var msg = JSON.parse(evt.data);
-				alert("Quem é o ususario? " +  msg.usuario);
-				alert("Qual tipo? " +  msg.tipoMensagem);
+				
+				if(msg.tipoMensagem == "sucesso"){
+					$(".sucesso h3").html(msg.mensagem);
+					$(".sucesso a").attr("href",msg.link);
+					$(".sucesso").removeClass("hidden");
+				}
+				
 			 };
 			 ws.onclose = function()
 			 { 
