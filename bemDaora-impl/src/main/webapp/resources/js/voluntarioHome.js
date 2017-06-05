@@ -16,9 +16,11 @@
 				var msg = JSON.parse(evt.data);
 				
 				if(msg.tipoMensagem == "sucesso"){
-					$(".sucesso h3").html(msg.mensagem);
-					$(".sucesso a").attr("href",msg.link);
-					$(".sucesso").removeClass("hidden");
+					$.sucesso(msg);
+				}
+				
+				if(msg.tipoMensagem == "erro"){
+					$.erro(msg);
 				}
 				
 			 };
@@ -29,12 +31,19 @@
 			 /*FIM WEBSOCKET*/
 			 
 			 $.extend({
-					
 					sendMessage: function(){
 						ws.send("Mensagem enviada para o servidor");
 					},
-					
-						
+					sucesso: function(msg){
+						$(".sucesso h3").html(msg.mensagem);
+						$(".sucesso a").attr("href",msg.link);
+						$(".sucesso").removeClass("hidden");
+					},
+					erro: function(msg){
+						$(".erro h3").html(msg.mensagem);
+						$(".erro a").attr("href",msg.link);
+						$(".erro").removeClass("hidden");
+					}
 				});
 		});
 })(jQuery);
