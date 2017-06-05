@@ -2,19 +2,19 @@ package br.com.remembr.bemDaora.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-
-import org.joda.time.DateTime;
 
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.view.Results;
+import br.com.remembr.bemDaora.business.MensagemBusiness;
+import br.com.remembr.bemDaora.chat.model.Mensagem;
 import br.com.remembr.bemDaora.dao.AtividadeDAO;
 import br.com.remembr.bemDaora.dao.VagaDAO;
 import br.com.remembr.bemDaora.dao.VoluntarioDAO;
@@ -43,6 +43,9 @@ public class VagaController {
 	
 	@Inject
 	private AtividadeDAO atividadeDAO;
+	
+	@Inject
+	private MensagemBusiness mensagemBusiness;
 	
 	@Path("/vaga/{idVaga}")
 	public void vaga(Long idVaga) throws DAOException{
@@ -86,5 +89,36 @@ public class VagaController {
 			
 			result.use(Results.json()).from(atividade).serialize();
 		}
+	}
+	
+	@Path("/vaga/instituicao/{idInstituicao}/adm")
+	public void listaVagasInstituicao(Long idInstituicao) throws DAOException{
+		List<Vaga> vagas = vagaDAO.listaPorInstituicao(idInstituicao);
+		result.include("vagas",vagas);
+	}
+	
+	@Path("/vaga/listaCandidatos/{idVaga}/adm")
+	public void listaCandidatos(Long idVaga) throws DAOException{
+		List<Atividade> atividades = vagaDAO.listaAtividades(idVaga);
+		Vaga vaga = vagaDAO.find(idVaga);
+		result.include("atividades",atividades);
+		result.include("vaga",vaga);
+	}
+	
+	@Transactional
+	@Post("/aprova/adm")
+	public void aprovaCandidato(Long idAtividade) throws DAOException{
+		Atividade atividade = atividadeDAO.find(idAtividade);
+		atividade.setAprovado(true);
+		atividadeDAO.update(atividade);
+
+		Mensagem mensagem = new Mensagem();
+		mensagem.setMensagem("Sua solicitacao foi aceita1");
+		mensagem.setEmailUsuario(atividade.getVoluntario().getEmail());
+		mensagem.setVoluntario(atividade.getVoluntario());
+		mensagem.setTipoMensagem("sucesso");
+		mensagemBusiness.enviarMensagem(mensagem);
+		
+		result.nothing();
 	}
 }

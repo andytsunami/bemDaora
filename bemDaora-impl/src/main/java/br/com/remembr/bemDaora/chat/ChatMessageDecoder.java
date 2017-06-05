@@ -24,7 +24,7 @@ public class ChatMessageDecoder implements Decoder.Text<Mensagem>{
 	public Mensagem decode(String corpo) throws DecodeException {
 		Mensagem mensagem = new Mensagem();
 		JsonObject obj = Json.createReader(new StringReader(corpo)).readObject();
-		mensagem.setUsuario(obj.getString("usuario"));
+		mensagem.setEmailUsuario(obj.getString("usuario"));
 		mensagem.setMensagem(obj.getString("mensagem"));
 		return mensagem;
 	}

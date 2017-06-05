@@ -23,6 +23,6 @@ public class ChatMessageEncoder implements Encoder.Text<Mensagem>{
 
 	@Override
 	public String encode(final Mensagem mensagem) throws EncodeException {
-		return Json.createObjectBuilder().add("usuario", mensagem.getUsuario()).add("mensagem", mensagem.getMensagem()).build().toString();
+		return Json.createObjectBuilder().add("usuario", mensagem.getEmailUsuario()).add("mensagem", mensagem.getMensagem()).build().toString();
 	}
 }

@@ -9,6 +9,7 @@ import javax.persistence.TypedQuery;
 
 import br.com.remembr.bemDaora.dao.generio.DAO;
 import br.com.remembr.bemDaora.dao.generio.DAOException;
+import br.com.remembr.bemDaora.model.Atividade;
 import br.com.remembr.bemDaora.model.Vaga;
 
 public class VagaDAO extends DAO<Vaga, Long>{
@@ -54,6 +55,30 @@ public class VagaDAO extends DAO<Vaga, Long>{
 			query.setParameter("idInstituicao", idInstituicao);
 			
 			List<Vaga> resultado = query.getResultList();
+			return resultado;
+		} catch (Exception e) {
+			throw new DAOException(e);
+		}
+	}
+
+	public List<Vaga> listaPorInstituicao(Long idInstituicao) throws DAOException {
+		String sql = "select v from " + Vaga.class.getSimpleName() + " v where v.instituicao.id = :idInstituicao and v.ativo = true order by id asc";
+		try {
+			TypedQuery<Vaga> query = this.em.createQuery(sql,Vaga.class);
+			query.setParameter("idInstituicao", idInstituicao);
+			List<Vaga> resultado = query.getResultList();
+			return resultado;
+		} catch (Exception e) {
+			throw new DAOException(e);
+		}
+	}
+
+	public List<Atividade> listaAtividades(Long idVaga) throws DAOException {
+		String sql = "select a from " + Atividade.class.getSimpleName() + " a where a.vaga.id = :idVaga";
+		try {
+			TypedQuery<Atividade> query = this.em.createQuery(sql,Atividade.class);
+			query.setParameter("idVaga", idVaga);
+			List<Atividade> resultado = query.getResultList();
 			return resultado;
 		} catch (Exception e) {
 			throw new DAOException(e);

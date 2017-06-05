@@ -1,3 +1,5 @@
+// https://github.com/atao60/javaee7-websocket-chat/blob/master/app/src/main/webapp/index.html
+// https://yakovfain.com/2014/12/29/pushing-data-to-multiple-websocket-clients-from-a-java-server/
 package br.com.remembr.bemDaora.chat;
 
 import java.util.Set;
@@ -46,14 +48,18 @@ public class WSEndpoint {
 		}
 	}
 	
-	public void enviaMensagem(Mensagem mensagem){
+	public boolean enviaMensagem(Mensagem mensagem){
 		if(allSessions != null){
 			for (Session session : allSessions) {
-				if(session.getUserProperties().get("login").toString().equals(mensagem.getUsuario())){
+				if(session.getUserProperties().get("login").toString().equals(mensagem.getEmailUsuario())){
 					onMessage(mensagem, session);
-				}
+					return true;
+				} 
 			}
+		} else {
+			return false;
 		}
+		return false;
 	}
 	
 	

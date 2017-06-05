@@ -50,22 +50,13 @@ public class InstituicaoController {
 	@UsuarioLogado
 	private Usuario usuario;
 	
-	@Inject
-	private WSEndpoint wSEndpoint;
-	
 	@Path("/adm/listaInstituicao")
 	public void listaInstituicoes() throws DAOException{
 		List<Instituicao> instituicoes = instituicaoDAO.lista();
 		result.include("instituicoes", instituicoes);
 		
 		
-		//TODO ARRANCAR DAQUI!
-		//https://github.com/atao60/javaee7-websocket-chat/blob/master/app/src/main/webapp/index.html
-		//https://yakovfain.com/2014/12/29/pushing-data-to-multiple-websocket-clients-from-a-java-server/
-		Mensagem mensagem = new Mensagem();
-		mensagem.setMensagem("Seje bem vindo!");
-		mensagem.setUsuario("andytsunami@hotmail.com");
-		wSEndpoint.enviaMensagem(mensagem);
+		
 	}
 	
 	@Path("/adm/cadastraInstituicao")
