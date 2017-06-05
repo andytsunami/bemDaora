@@ -1,0 +1,579 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+body {
+    background: #eee;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container{max-width: 600px; margin: auto; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 7px;}
+
+a{text-decoration: none}
+
+.bg-login {
+    background: url(/bemdahora/resources/images/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.master {
+    max-width: 600px;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 7px;
+}
+#demo {
+    width: 100%;
+    height: 100vh;
+    visibility: hidden;
+    cursor: hand;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    cursor: grab;
+    background: #f1f1f1;
+}
+#cont {
+    width: 100%;
+	min-height:100vh;
+    height: 100%;
+    background: #f1f1f1;
+}
+#demo li.first {
+    background: #577;
+}
+#demo li.middle {
+    background: #1e8;
+}
+#demo li.last {
+    background: #e8b;
+}
+#dragend {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    background: #345;
+    padding: 18px;
+    color: #fff;
+    border-radius: 3px;
+    width: 150px;
+    font-size: 15px;
+}
+#dragend h1 {
+    font-size: 15px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+#dragend a {
+    text-decoration: underline;
+    color: #fff
+}
+.button {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    cursor: pointer;
+    border-style: solid;
+}
+.button.deactivated {
+    opacity: 0.2;
+    cursor: default;
+}
+.prev {
+    margin-left: -320px;
+    border-width: 50px 50px 50px 0;
+    border-color: transparent #333 transparent transparent;
+}
+.next {
+    margin-left: 270px;
+    border-width: 50px 0 50px 50px;
+    border-color: transparent transparent transparent #333;
+}
+.nav {
+    margin: auto;
+    width: 100%;
+    min-width: 300px;
+    max-width: 600px;
+    list-style: none;
+    bottom: 0px;
+    position: fixed;
+    background: white;
+    box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.14);
+    padding: 6px 0;
+}
+.nav li.active {
+    color: #007dbe;
+}
+.nav li {
+    font-size: 29px;
+    width: 20%;
+    padding: 6px 6%;
+    display: inline;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #ccc;
+}
+.nav li:last-child {
+    border-right: 0;
+}
+.top-ranking {
+    background: #f8931f;
+    height: 60px;
+    margin: 10px 10px;
+    padding: 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+.top-ranking2 {
+    background: #a8b7b7;  
+    height: 60px;
+    margin: 10px 10px;
+    padding: 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+.top-ranking3 {
+    background: #e4c490;
+    height: 60px;
+    margin: 10px 10px;
+    padding: 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+.ranking {
+    height: 60px;
+    margin: 10px 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 3px;
+    color: #999999;
+}
+
+.barra-concluir-perfil {
+	width: 250px;	
+	background-color: #FFF;	
+	border: #979797 2px solid;	
+	border-radius:30px;
+	margin: auto;
+}
+		
+.skills-concluir-perfil {
+	text-align: right;		
+	padding-right: 0;	
+	line-height: 20px;	
+	color: white;
+	border-radius:30px;	
+	font-size: 10px;
+}
+		
+.level-concluir-perfil {width: 60%; background-color: #179a47;}
+.segundoCadastro {width: 60%; background-color: #179a47;}
+.ultimoCadastro {width: 80%; background-color: #179a47;}
+		
+.perfil-quase-pronto{background: #2072b5; color: white; padding: 20px 0;}
+.perfil-quase-pronto p{font-size: 18px; text-align: center;}
+
+.saiba-mais{padding:10px;}
+.saiba-mais img{vertical-align: middle; width: 40px; margin-right: 10px;}
+
+.medals {
+    font-size: 12px;
+    font-weight: 700;
+}
+.nome-ranking {
+    font-weight: 600
+}
+.position {
+    font-size: 30px;
+    font-weight: 800;
+}
+.img-profile {
+    border-radius: 100%;
+    border: 2px #fff solid;
+    width: 45px;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+.name-profile {
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 20px;
+}
+.level-profile {
+    font-weight: bold;
+    color: #fff;
+    font-size: 12px;
+    float: right;
+    padding: 19px;
+}
+.title-pages {
+    font-weight: bold;
+    color: #979797;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 30px;
+}
+.img-profile-company {
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+.name-profile-company a {
+    font-weight: bold;
+    color: #1b7dce;
+    font-size: 15px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+.botao {
+    background: #007dbe;
+    color: #fff;
+    padding: 10px 35px;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.botao-confirmacao{
+    background: #1C9A48;
+    color: #fff;
+    padding: 13px 0;
+    border-radius: 4px;
+    max-width: 300px;
+	width: 100%;
+	font-size:16px;
+}
+.botao-cancelamento{
+    background: #E03534;
+    color: #fff;
+    padding: 13px 0;
+    border-radius: 4px;
+    max-width: 300px;
+	width: 100%;
+	font-size:16px;
+}
+
+.img-ranking {
+    width: 90px;
+    border-radius: 100%;
+    border: 2px #979797 solid;
+}
+.intituicoes-proximas {
+    margin: 10px 10px;
+    background: white;
+    padding: 10px;
+	border-radius: 3px;
+
+}
+
+.sucesso a{color: white;}
+.erro a{color: white;}
+.alerta a{color: black;}
+
+.sucesso {
+    margin: 10px 10px;
+    background: #1C9A48;
+    padding: 10px;
+	border-radius: 3px;
+	color: white;
+}
+
+.erro {
+    margin: 10px 10px;
+    background: #E03534;
+    padding: 10px;
+	border-radius: 3px;
+	color: white;
+}
+
+
+.alerta {
+    margin: 10px 10px;
+    background: #FCD41A;
+    padding: 10px;
+	border-radius: 3px;
+}
+
+
+
+.title-page {
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 15px;
+}
+.saiba-mais p {
+    margin: 25px 0;
+    color: #4D4D4D;
+    font-size: 16px;
+    font-weight: 600;
+}
+/*SKILLS*/
+
+.barra {
+    width: 250px;
+    background-color: #FFF;
+    border: #979797 2px solid;
+    border-radius: 30px;
+    float: right;
+}
+.skills {
+    text-align: right;
+    padding-right: 0;
+    line-height: 20px;
+    color: white;
+    border-radius: 30px;
+    font-size: 10px;
+}
+.level {
+    width: 60%;
+    background-color: #007dbe;
+}
+/*/skills*/
+/*menuzinho*/
+
+.menu-company {} 
+
+.menu-company ul {
+    padding: 0px;
+    margin: 0px;
+    background-color: #FFF;
+    list-style: none;
+    border: 1px solid #EDEDED;
+	display: flex;
+}
+.menu-company ul li a {
+    padding: 10px 20px;
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+}
+.menu-company ul li {
+    display: inline;
+	border-right: 1px solid #EDEDED;
+	text-align: center;
+	width: 100%;
+	max-width: 150px;
+}
+/*/menuzinho*/
+
+.menu-conquista ul {
+    padding: 0px;
+    margin: 0px;
+    background-color: #FFF;
+    list-style: none;
+    border: 1px solid #EDEDED;
+	display: flex;
+}
+.menu-conquista ul li a {
+	padding: 10px 10px;
+    display: inline-block;
+    color: #4d4d4d;
+	font-weight: 600;
+	text-transform: uppercase;
+    text-decoration: none;
+}
+.menu-conquista ul li {
+	display: inline;
+	border-right: 1px solid #EDEDED;
+	text-align: center;
+	width: 100%;
+	max-width: 300px;
+}
+
+.badge-unlocked{width: 70px;}
+
+.badge-locked{
+	-webkit-filter: brightness(0.6); /* Safari */
+    filter: brightness(0.6);
+}
+
+.locked{
+	position:absolute;
+    z-index: 1;
+    margin-top: 14px;
+    margin-left: 21px;
+}
+
+.flex-badges{
+	display: flex;
+	max-width: 500px;
+	margin: auto;	
+	margin-top: 20px;
+}
+
+.flex-badges .badge-conquista{
+	max-width:70px;
+	height: 100%;
+	width: 100%;	
+	margin: auto;
+}
+.market{padding:10px;}
+.market h2{text-align:center; color: #4d4d4d; font-size: 40px;}
+
+.market h3{text-align:center; color: #4d4d4d; margin-top: 20px;}
+
+.market h2 i{text-align:center; color: #56ADFD; font-size: 42px; margin-top: 30px;}
+
+.conquest h3{color: #4d4d4d; margin-top: 20px; text-align: center;}
+.conquest{padding: 10px;}
+
+.cadastro-esqueci-senha {
+    width: 250px;
+    margin: auto;
+}
+.cadastro-esqueci-senha tr td {
+    font-size: 12px;
+}
+.cadastro-esqueci-senha tr td a {
+    color: #999999
+}
+.logo-company {
+    background: white;
+    border-radius: 100px;
+}
+.bg-company {
+    height: 130px;
+    background: url(/bemdahora/resources/images/bg-company.jpg);
+    margin-bottom: -108px;
+}
+.top-layout {
+    height: 58px;
+    width: 100%;
+    box-shadow: 1px 1px 6px rgba(204, 204, 204, 0.31);
+    background: #007dbe;
+}
+.top-layout a {
+    color: #fff;
+    text-decoration: none
+}
+.vagas-company {
+    background: white;
+    border: 1px #E6E6E6 solid;
+    padding: 20px 25px;
+}
+.botao-saibamais {
+    background: #1F72B4;
+    border-radius: 4px;
+    padding: 8px 20px;
+}
+.botao-confirma {
+    border-radius: 4px;
+    padding: 8px 20px;
+    background: #66CC33;
+    margin-top: 50px;
+    color: #fff;
+}
+a .botao-saibamais {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    float: right;
+}
+.botao-company {
+    background: #1F72B4;
+    border-radius: 4px;
+    padding: 8px 20px;
+    margin-top: 20px;
+    width: 125px;
+    text-align: center;
+}
+a .botao-company {
+    color: white;
+    font-weight: 500;
+    text-decoration: none
+}
+.title-trab {
+    color: #EA7825;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.flex-container {
+    display: -webkit-flex;
+	display: flex;
+	max-width: 600px;
+	width: 100%;
+	background-color: lightgrey;
+	min-width: 288px;
+	flex-flow: wrap;
+}
+.flex-item {
+    background-color: ;
+	width: 32%;
+	height: 100%;
+	margin: 0 3px 0 3px;
+	flex-flow: column;
+}
+.flex-item a img {
+    max-width: 194px;
+    width: 100%;
+}
+
+.perfil-badges{padding:10px;}
+
+.perfil-badges h3{color: #999; font-size: 16px; margin-bottom: 15px;}
+
+.perfil-badges a{color: #0092FF; font-size: 16px; margin-bottom: 15px; font-weight: 600; text-decoration: none; text-align: center;}
+
+.badges-container {
+    display: -webkit-flex;
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+	margin-bottom: 10px;
+}
+.badges-item {
+    background-color: ;
+    width: 100%;
+    height: 100%;
+    margin: 0 3px 0 3px;
+}
+.badges-item img {
+    max-width: 70px;
+    width: 100%;
+}
+
+.perfil-timeline{padding:10px; background: #E6E6E6;}
+
+.perfil-timeline h3{color: #4D4D4D; font-size: 16px; margin: 10px 0;}
+
+.card-perfil{
+    background: white;
+    padding: 10px;
+	border-radius: 3px;
+	margin-bottom: 15px;
+}
+
+.card-perfil p{
+	color: #999;
+}
+
+.timeline-img-profile{margin-right: 10px; width: 45px; border-radius: 50px; border: 2px #999999 solid;}
+
+.destination{margin: 0 15px; color: #999999;}
+
+.timeline-txt-profile{font-weight: 600; color: #474747; font-size:14px;}
+
+.badge-locked:after{content:url(../imgs/badges/cadeado.png) }
+
+.table-confirma{max-width: 350px; margin: auto;}
+
+.table-confirma p{color:#444; padding: 6px;}
+
+.table-confirma h5{font-size:16px; text-align:right;}
+
+.instrucoes{background: white; padding: 15px; border-radius: 3px; max-width:380px; margin:auto;}
+
+.instrucoes table p{padding: 15px 0px;}
+
+.instrucoes span{ background: #E97825; border: #E97825 solid 2px; border-radius: 100px; padding: 6px 14px; font-weight: 600; margin-right: 10px; font-size: 20px; color:#fff;}
+
+.instrucoes h2{text-align: center; color:#E97825; margin-bottom: 15px;}
+

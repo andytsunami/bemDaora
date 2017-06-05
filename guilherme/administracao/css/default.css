@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+input[type=text].default.error,select.default.error,textarea.default.error, .selectize-control.obrigatorio .selectize-input.error{
+	border-color: red;
+	background-color: #f8b0b0;
+}
+
+input[type=text].obrigatorio.error,select.obrigatorio.error,textarea.obrigatorio.error{
+	border-color: red;
+	background-color: #f8b0b0;
+}
+
+input[type=checkbox].obrigatorio.prevent.error + label:before,input[type=radio].obrigatorio.prevent.error + label:before {
+	border-color: red;
+	background-color: #f8b0b0;
+}
+
+input[type=checkbox].obrigatorio.default.error + label,input[type=radio].obrigatorio.default.error + label {
+	border-color: red;
+	background-color: #f8b0b0;
+}
+h2.modal.obrigatorio:after{content: ' *';color:#ff0000;}
+
+input[type=text].modal.error,input[type=text].modal.error:hover,input[type=text].modal.error:focus,select.modal.error,select.modal.error:hover,select.modal.error:focus{
+	border: solid 1px red;
+	background-color: #f8b0b0;
+}
+

@@ -17,19 +17,19 @@
 		<style>
 			
 			
+			.exclui{
+				color: red;
+			}
+			
+			.material-icons{
+				cursor: pointer;	
+			}
 		</style>
 		
-        <link href="<c:url value='/resources/css/adm/main-adm.css?v=3'/>" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-    <div style="background:white; box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 7px; padding: 1px 0; margin-bottom: 40px; border-top: #007dbe 4px solid;">
-        <div class="contain">
-        	<input id="add" type="submit" value="CADASTRAR INSTITUIÇÃO" class="btn blue" style="float:right; margin-top: 22px;">									
-	        <h1 class="title-adm"><img src="<c:url value='/resources/images/adm/logo.png'/>" class="logo-title" />Lista Instituições</h1>
-        </div>
-    </div>
-    <div class="contain">
-		<table class="bordered striped table-top">
+		<h1>Lista Instituições</h1>
+		<table class="bordered striped">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -37,7 +37,6 @@
 					<th>Endereço</th>
 					<th></th>
 					<th></th>
-                    <th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -62,7 +61,10 @@
 				</tr>
 			</tfoot>
 		</table>
-	</div><!--container-->
-	
+		<div class="fixed-action-btn">
+		    <a class="btn-floating btn-large red">
+		      <i class="large material-icons" id="add">add</i>
+		    </a>
+		 </div>
 	</body>
 </html>

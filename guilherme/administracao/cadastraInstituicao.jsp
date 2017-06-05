@@ -11,34 +11,32 @@
 		<meta name="author" content="remembr">
 		<title>cadastro de instituição</title>
 		
-		
-		
 		<bd:import-materialize/>
+		
 		<script type="text/javascript" src="<c:url value='/resources/js/cadastraInstituicao.js'/>"></script>
 		
 		<style>
-        input:focus{border-bottom:1px solid #f0f;}
-        </style>
-        
+			body{
+				margin-left: 5%;
+			}
+			.acao{
+				cursor: pointer;
+				
+			}
+			
+			.excluiVaga{
+				color: red;
+			}
+		</style>
 		
-        <link href="<c:url value='/resources/css/adm/set1.css?v=3'/>" rel="stylesheet" type="text/css">
-        <link href="<c:url value='/resources/css/adm/main-adm.css?v=3'/>" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<c:set var="h1" value="Cadastro de Instituição"/>
 		<c:if test="${not empty instituicao.id}">
 			<c:set var="h1" value="Editar instituição ${instituicao.nome}"/>
 		</c:if>
-        
-		<div style="background:white; box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 7px; padding: 1px 0; margin-bottom: 40px; border-top: #007dbe 4px solid;">
-            <div class="contain">
-                <h1 class="title-adm"><img src="<c:url value='/resources/images/adm/logo.png'/>" class="logo-title" />Cadastro de Instituição</h1>
-				
-            </div>
-   		</div>
-        
+		<h1>${h1}</h1>
 		<div class="row">
-		<div class="contain">
 			<form method="post" id="form" enctype="multipart/form-data" class="col s12">
 			
 			<input type="hidden" name="instituicao.id" value="${instituicao.id}" id="idInstituicao">
@@ -94,7 +92,7 @@
 				
 				<div class="row">
 					<div class="file-field input-field col s6">
-						<div class="btn blue">
+						<div class="btn">
 							<span>Avatar</span>						
 							<input type="file" name="avatar" id="avatar"/>
 						</div>
@@ -106,9 +104,9 @@
 				
 				<div class="row">
 					<div class="file-field input-field col s6">
-						<div class="btn blue">
+						<div class="btn">
 							<span>Galeria</span>						
-							<input type="file" name="galeria[]" id="galeria" multiple/>
+							<input type="file" name="galeria[]" id="galeria" multiple="multiple"/>
 						</div>
 						<div class="file-path-wrapper">
 							<input class="file-path validate" type="text" placeholder="Selecione varias imagens para subir">
@@ -122,7 +120,7 @@
 				</div>
 				<br/><br/><br/>
 				
-				<a class="waves-effect waves-light btn blue" id="salvar"><i class="material-icons left">save</i>Salvar</a>			
+				<a class="waves-effect waves-light btn" id="salvar"><i class="material-icons left">save</i>Salvar</a>			
 			</form>
 			
 			<c:if test="${not empty instituicao.vagas}">
@@ -165,7 +163,6 @@
 					</table>
 				</div>
 			</c:if>
-			
 			<c:if test="${not empty instituicao.id}">
 				<div class="fixed-action-btn">
 				    <a class="btn-floating btn-large green">
@@ -175,8 +172,7 @@
       					<li><a class="btn-floating blue" id="listar"><i class="material-icons" title="Listar instituições">list</i></a></li>
       				</ul>
 			 	</div>
-		 	</c:if>
-		 </div>	<!--contain-->
-		</div><!--row-->
+		 	</c:if>	
+		</div>
 	</body>
 </html>

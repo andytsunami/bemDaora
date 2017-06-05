@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{background:#eee;}
+
+.exclui{
+	color: #CD1D20;
+}
+			
+.edita{color: #44A74C;}
+
+.title-adm{text-align:left; margin: 12px 0; color:#007dbe; font-size: 40px;}
+
+.material-icons{
+	cursor: pointer;	
+}
+			
+.table-top{max-width:1180px; margin:auto;}
+			
+.table-top thead tr th{
+	background:#007dbe;
+	color: white;
+	text-align: center;
+	border-radius:0;
+}
+
+.logo-title{
+	vertical-align: middle;
+	width:60px;
+	margin-right: 15px;
+}
+
+.blue{background: #007dbe}
+
+.btn{box-shadow: none}
+.btn:hover{box-shadow: none}
+
+.contain{
+	padding:10px;
+    max-width: 1200px;
+    margin: auto;
+}
