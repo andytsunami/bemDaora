@@ -9,5 +9,4 @@
  			$(this).addClass("hidden");
  		});
  	});
- 	
 });
