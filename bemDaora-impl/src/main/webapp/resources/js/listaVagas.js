@@ -38,7 +38,7 @@
 	*/
  	
 	$(".aprova").click(function(){
-		$.post($.paramsPage.contextoVaga + "aprova/adm",{idAtividade: $(this).attr("data-vaga")}).
+		$.post($.paramsPage.contextoVaga + "aprova/adm",{idAtividade: $(this).attr("data-atividade")}).
 		done(function(){
 			alert("Candidato foi aprovado e informado com sucesso!");
 			//window.location = $.paramsPage.contextoVaga + "instituicao/" + $("#idVaga").val() + "/adm"; 

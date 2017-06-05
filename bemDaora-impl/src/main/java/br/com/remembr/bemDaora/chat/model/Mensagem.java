@@ -48,6 +48,9 @@ public class Mensagem implements BaseEntity<Long>{
 	@Column(name = "DT_VIZUALIZADO")
 	private Date visualizado;
 	
+	@Column(name = "LINK")
+	private String enderecoDoObjeto;
+	
 	public Mensagem(String mensagem, String emailUsuario, String tipoMensagem, Voluntario voluntario) {
 		super();
 		this.mensagem = mensagem;
@@ -72,9 +75,6 @@ public class Mensagem implements BaseEntity<Long>{
 		this.emailUsuario = emailUsuario;
 	}
 	
-	public String toString() {
-		return "Mensagem [mensagem=" + mensagem + ", usuario=" + emailUsuario +"]";
-	}
 	public Long getId() {
 		return id;
 	}
@@ -104,5 +104,20 @@ public class Mensagem implements BaseEntity<Long>{
 	}
 	public void setVisualizado(Date visualizado) {
 		this.visualizado = visualizado;
+	}
+
+	public String getEnderecoDoObjeto() {
+		return enderecoDoObjeto;
+	}
+
+	public void setEnderecoDoObjeto(String enderecoDoObjeto) {
+		this.enderecoDoObjeto = enderecoDoObjeto;
+	}
+
+	@Override
+	public String toString() {
+		return "Mensagem [id=" + id + ", mensagem=" + mensagem + ", emailUsuario=" + emailUsuario + ", tipoMensagem="
+				+ tipoMensagem + ", voluntario=" + voluntario + ", enviado=" + enviado + ", visualizado=" + visualizado
+				+ ", enderecoDoObjeto=" + enderecoDoObjeto + "]";
 	}
 }

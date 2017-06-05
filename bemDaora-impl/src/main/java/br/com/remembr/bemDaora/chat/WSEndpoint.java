@@ -40,7 +40,8 @@ public class WSEndpoint {
 			for(Session s : session.getOpenSessions()){
 				if (s.isOpen()
 						&& login.equals(s.getUserProperties().get("login"))) {
-					s.getBasicRemote().sendObject(mensagem.getMensagem());
+					//s.getBasicRemote().sendObject(mensagem.getMensagem());
+					s.getBasicRemote().sendObject(mensagem);
 				}
 			}
 		} catch (Exception e) {

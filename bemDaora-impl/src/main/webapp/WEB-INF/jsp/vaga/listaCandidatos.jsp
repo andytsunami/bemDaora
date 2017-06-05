@@ -73,9 +73,9 @@
 						<td>${atividade.voluntario.profissao.nome}</td>
 						<td>${atividade.voluntario.level}</td>
 						<td><fmt:formatDate value="${atividade.dataAgendada}" pattern="dd/MM/yyyy HH:mm"/></td>
-						<td class="aprova acao" data-vaga="${vaga.id}" title="Aprovar candidato"><span class="material-icons">thumb_up</span></td>
-						<td class="reprova acao" data-vaga="${vaga.id}" title="Reprovar candidato"><span class="material-icons">thumb_down</span></td>
-						<td class="${atividade.aprovado ? 'conclui' : 'hidden'}" data-vaga="${vaga.id}" title="Atividade realizada"><span class="material-icons">done</span></td>
+						<td class="aprova acao" data-atividade="${atividade.id}" title="Aprovar candidato"><span class="material-icons">thumb_up</span></td>
+						<td class="reprova acao" data-atividade="${atividade.id}" title="Reprovar candidato"><span class="material-icons">thumb_down</span></td>
+						<td class="${atividade.aprovado ? 'conclui' : 'hidden'}" data-atividade="${atividade.id}" title="Atividade realizada"><span class="material-icons">done</span></td>
 					</tr>
 				</c:forEach>
 			</tbody>

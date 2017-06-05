@@ -13,8 +13,9 @@
 			 };
 			 ws.onmessage = function (evt) 
 			 { 			     	
-				var msg = evt.data;
-				alert("Mensagem recebida:" +  msg);
+				var msg = JSON.parse(evt.data);
+				alert("Quem é o ususario? " +  msg.usuario);
+				alert("Qual tipo? " +  msg.tipoMensagem);
 			 };
 			 ws.onclose = function()
 			 { 

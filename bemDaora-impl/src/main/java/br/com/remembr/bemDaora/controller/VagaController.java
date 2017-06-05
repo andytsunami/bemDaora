@@ -106,17 +106,18 @@ public class VagaController {
 	}
 	
 	@Transactional
-	@Post("/aprova/adm")
+	@Post("/vaga/aprova/adm")
 	public void aprovaCandidato(Long idAtividade) throws DAOException{
 		Atividade atividade = atividadeDAO.find(idAtividade);
 		atividade.setAprovado(true);
 		atividadeDAO.update(atividade);
 
 		Mensagem mensagem = new Mensagem();
-		mensagem.setMensagem("Sua solicitacao foi aceita1");
+		mensagem.setMensagem("Sua solicitacao foi aceita!");
 		mensagem.setEmailUsuario(atividade.getVoluntario().getEmail());
 		mensagem.setVoluntario(atividade.getVoluntario());
 		mensagem.setTipoMensagem("sucesso");
+		mensagem.setEnderecoDoObjeto("/vaga/"+atividade.getVaga().getId());
 		mensagemBusiness.enviarMensagem(mensagem);
 		
 		result.nothing();
