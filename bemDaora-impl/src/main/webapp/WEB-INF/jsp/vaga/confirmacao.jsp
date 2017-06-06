@@ -34,8 +34,8 @@
                     </a>
                </span>
             </div><!--top-layout-->
-            
-            
+
+
             <section class="perfil-timeline" style="height:100vh; padding-top: 30px;">
                <div class="card-perfil" style="max-width:350px; margin:auto">
                	  <table class="table-confirma">
@@ -55,7 +55,7 @@
                      </tr>
                      <tr>
                         <td><h5>Horário:</h5></td>
-                        <td><p><fmt:formatDate pattern="HH:mm" value="${atividade.dataAgendada}" /> às 18:00</p></td>
+                        <td><p><fmt:formatDate pattern="HH:mm" value="${atividade.dataAgendada}" /> àss ${atividade.dataTermino}</p></td>
                      </tr>
                      <tr>
                         <td><h5>Local:</h5></td>
@@ -68,12 +68,12 @@
                   <center><input type="button" value="CANCELAR" class="botao-cancelamento"></center>
                   <br/>
                </div><!--card-perfil-->
-               
-               
+
+
             </section>
-            
+
          </div><!--cont-->
       </div><!--container-->
-      
+
    </body>
 </html>
