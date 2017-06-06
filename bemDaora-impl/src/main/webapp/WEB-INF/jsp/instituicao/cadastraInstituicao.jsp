@@ -125,47 +125,6 @@
 				<a class="waves-effect waves-light btn blue" id="salvar"><i class="material-icons left">save</i>Salvar</a>			
 			</form>
 			
-			<c:if test="${not empty instituicao.vagas}">
-				<div class="row" id="listagemVagas">
-						<h2>Vagas da instituição</h2>
-						
-						<table class="bordered striped col s6">
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>Titulo</th>
-								<th>Quantidade</th>
-								<th>Ramo de atividade</th>
-								<th></th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach items="${instituicao.vagas}" var="vaga">
-								<tr id="tr-${vaga.id}">
-									<td>${vaga.id}</td>
-									<td>${vaga.titulo}</td>
-									<td>${vaga.quantidade}</td>
-									<td class="material-icons editaVaga acao" data-vaga="${vaga.id}" title="Editar">mode_edit</td>
-									<td class="material-icons excluiVaga acao" data-vaga="${vaga.id}" title="Excluir">delete</td>
-									<td></td>
-								</tr>
-							</c:forEach>
-						</tbody>
-						<tfoot>
-							<tr>
-								<th>ID</th>
-								<th>Titulo</th>
-								<th>Quantidade</th>
-								<th>Ramo de atividade</th>
-								<th></th>
-								<th></th>
-							</tr>
-						</tfoot>
-					</table>
-				</div>
-			</c:if>
-			
 			<c:if test="${not empty instituicao.id}">
 				<div class="fixed-action-btn">
 				    <a class="btn-floating btn-large green">
@@ -173,6 +132,7 @@
 				    </a>
 				    <ul>
       					<li><a class="btn-floating blue" id="listar"><i class="material-icons" title="Listar instituições">list</i></a></li>
+      					<li><a data-inst="${instituicao.id}" class="btn-floating red" id="candidatos"><i class="material-icons" title="Listar vagas">list</i></a></li>
       				</ul>
 			 	</div>
 		 	</c:if>

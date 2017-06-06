@@ -18,8 +18,6 @@ import br.com.caelum.vraptor.observer.download.ByteArrayDownload;
 import br.com.caelum.vraptor.observer.download.Download;
 import br.com.caelum.vraptor.observer.upload.UploadSizeLimit;
 import br.com.caelum.vraptor.observer.upload.UploadedFile;
-import br.com.remembr.bemDaora.chat.WSEndpoint;
-import br.com.remembr.bemDaora.chat.model.Mensagem;
 import br.com.remembr.bemDaora.dao.InstituicaoDAO;
 import br.com.remembr.bemDaora.dao.RamoAtividadeDAO;
 import br.com.remembr.bemDaora.dao.VagaDAO;

@@ -8,6 +8,8 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 
+import org.dom4j.dom.DOMNodeHelper.EmptyNodeList;
+
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
@@ -134,4 +136,43 @@ public class VagaController {
 		Atividade atividade = atividadeDAO.find(idAtividade);
 		result.include("atividade",atividade);
 	}
+	
+	@Path("/atividade/instrucao/{idAtividade}")
+	public void instrucoes(Long idAtividade){
+		result.include("voluntario",usuario);
+		result.include("idAtividade",idAtividade);
+	}
+	
+	@Path("/atividade/realizar/{idAtividade}")
+	public void realizarAtividade(Long idAtividade) throws DAOException{
+		Atividade atividade = atividadeDAO.find(idAtividade);
+		atividade.setRealizado(true);
+		result.redirectTo(VoluntarioController.class).voluntarioHome(usuario.getId());
+	}
+	
+	@Path("/atividade/marcaRealizado/{idAtividade}")
+	public void marcarRealizado(Long idAtividade) throws DAOException{
+		Atividade atividade = atividadeDAO.find(idAtividade);
+		result.include("atividade",atividade);
+	}
+	
+	@Transactional
+	@Post("/atividade/confirmaRealizado/adm")
+	public void confirmaRealizado(Long idAtividade, Long qtdHoras) throws DAOException{
+		Atividade atividade = atividadeDAO.find(idAtividade);
+		atividade.setConfirmadoInstituicao(true);
+		atividade.getVoluntario().setPontos(atividade.getVoluntario().getPontos() + qtdHoras);
+		
+		Mensagem mensagem = new Mensagem();
+		mensagem.setMensagem("Parabens pelo serviço realizado!");
+		mensagem.setEmailUsuario(atividade.getVoluntario().getEmail());
+		mensagem.setVoluntario(atividade.getVoluntario());
+		mensagem.setTipoMensagem("badge");
+		mensagem.setEnderecoDoObjeto("/bemdahora/atividade/confirmacao/"+atividade.getId());
+		mensagemBusiness.enviarMensagem(mensagem);
+		
+		result.nothing();
+		
+	}
+	
 }

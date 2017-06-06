@@ -35,6 +35,10 @@
  		window.location = $.paramsPage.contexto + "adm/listaInstituicao"
  	});
  	
+ 	$("#candidatos").click(function(){
+ 		window.location = $.paramsPage.contexto + "vaga/instituicao/"+$(this).attr("data-inst")+"/adm"
+ 	});
+ 	
  	$("#limpar").click(function(){
  		$.post($.paramsPage.contexto + "limparGaleria/adm",{idInstituicao: $("#idInstituicao").val()})
  		.done(function(){

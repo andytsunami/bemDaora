@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@taglib prefix="bd" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html>
 <html>
    <head>
@@ -11,12 +12,30 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <title>perfil</title>
+      <bd:import-jquery/>
       <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
       <link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet" type="text/css">
       <!-- FONT AWESOME -->
       <link rel="stylesheet" href="/bemdahora/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
       <!-- FONT AWESOME -->
+      <style type="text/css">
+      	.botao-confirmacao, .botao-cancelamento{
+      		cursor: pointer;
+      	}
+      </style>
+      <script type="text/javascript">
+      $(document).ready(function(){
+    	 	
+    	  $(".botao-confirmacao").click(function(){
+        	  window.location = "/bemdahora/atividade/instrucao/${atividade.id}";
+          });
+    	  
+    	  $(".botao-cancelamento").click(function(){
+        	  window.location = "/bemdahora/voluntario/home/${atividade.voluntario.id}";
+          });
+    	});
+      </script>
    </head>
    <body>
       <div class="container">
@@ -55,7 +74,7 @@
                      </tr>
                      <tr>
                         <td><h5>Horário:</h5></td>
-                        <td><p><fmt:formatDate pattern="HH:mm" value="${atividade.dataAgendada}" /> àss ${atividade.dataTermino}</p></td>
+                        <td><p><fmt:formatDate pattern="HH:mm" value="${atividade.dataAgendada}" /> às <fmt:formatDate pattern="HH:mm" value="${atividade.dataTermino}" /></p></td>
                      </tr>
                      <tr>
                         <td><h5>Local:</h5></td>

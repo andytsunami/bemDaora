@@ -1,0 +1,16 @@
+{
+  "short_name": "Bem da Hora",
+  "name": "Bem da Hora",
+  "icons": [
+    {
+      "src": "http://apresentacao.top/bemdahora/resources/images/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/bemdahora",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#007dbe",
+  "background_color": "#444"
+}

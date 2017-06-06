@@ -39,16 +39,19 @@ public class Atividade implements BaseEntity<Long>{
 	private Date dataAgendada;
 	
 	@Column(name = "APROVADO")
-	private boolean aprovado;
+	private boolean aprovado = false;
 	
 	@Column(name = "REALIZADO")
-	private boolean realizado;
+	private boolean realizado = false;
 	
 	@Column(name = "MOTIVO_REPROVACAO")
 	private String motivoReprovacao;
 	
 	@Column(name = "QUANTIDADE_HORA")
 	private Long quantidadeHora;
+	
+	@Column(name = "CONFIRMA_INSTITUICAO")
+	private boolean confirmadoInstituicao = false; 
 
 	public Long getId() {
 		return id;
@@ -117,10 +120,18 @@ public class Atividade implements BaseEntity<Long>{
 	public Date getDataTermino(){
 		if(this.dataAgendada != null && this.quantidadeHora != null){
 			DateTime dateTime = new DateTime(this.dataAgendada);
-			dateTime.plusHours(this.quantidadeHora.intValue());
-			return dateTime.toDate();
+			DateTime plusHours = dateTime.plusHours(this.quantidadeHora.intValue());
+			return plusHours.toDate();
 		} else {
 			return this.dataAgendada;
 		}
+	}
+
+	public boolean isConfirmadoInstituicao() {
+		return confirmadoInstituicao;
+	}
+
+	public void setConfirmadoInstituicao(boolean confirmadoInstituicao) {
+		this.confirmadoInstituicao = confirmadoInstituicao;
 	}
 }

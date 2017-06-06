@@ -20,9 +20,11 @@ public class MensagemBusiness {
 	private MensagemDAO mensagemDAO;
 	
 	public void enviarMensagem(Mensagem mensagem) throws DAOException{
-		if(wSEndpoint.enviaMensagem(mensagem)){
-			mensagem.setEnviado(new Date());
+		Mensagem mensagemBD = mensagemDAO.insert(mensagem);
+		if(wSEndpoint.enviaMensagem(mensagemBD)){
+			mensagemBD.setEnviado(new Date());
 		}
-		mensagemDAO.insert(mensagem);
+		
+		mensagemDAO.update(mensagemBD);
 	}
 }

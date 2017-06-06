@@ -12,7 +12,9 @@
 		<meta name="author" content="remembr">
 		<title>Vagas</title>
 		
-		<bd:import-materialize/>		
+		<bd:import-materialize/>
+		<link rel="stylesheet" type="text/css" href="/bemdahora/resources/jquery/fancybox/jquery.fancybox.css"/>
+		<script type="text/javascript" charset="utf-8" src="/bemdahora/resources/jquery/fancybox/jquery.fancybox.js"></script>		
 		<script type="text/javascript" src="<c:url value='/resources/js/listaVagas.js?v=3'/>"></script>
 		
 		<style>
@@ -45,6 +47,23 @@
         <link href="<c:url value='/resources/css/adm/main-adm.css?v=3'/>" rel="stylesheet" type="text/css">
 	</head>
 	<body>
+	<div class="row template hidden" id="conf">
+		<div class="contain">
+			<form method="post" id="form" class="col s12">
+				<div class="row">
+					<div class="input-field col s6">
+						<input type="hidden" id="atv" value=""/>
+						<input type="number" name="" id="quantidade" class="validate" value=""/>
+						<label for="razaoSocial">Quantidade de horas</label>
+					</div>
+				</div>
+				<br/><br/><br/>
+				<a class="waves-effect waves-light btn blue" id="confirmar"><i class="material-icons left">save</i>Confirmar</a>			
+			</form>
+		 </div>
+	</div>
+		
+		
 	<input type="hidden" id="idVaga" value="${vaga.id}">
     <div style="background:white; box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 7px; padding: 1px 0; margin-bottom: 40px; border-top: #007dbe 4px solid;">
         <div class="contain">
@@ -75,7 +94,7 @@
 						<td><fmt:formatDate value="${atividade.dataAgendada}" pattern="dd/MM/yyyy HH:mm"/></td>
 						<td class="aprova acao" data-atividade="${atividade.id}" title="Aprovar candidato"><span class="material-icons">thumb_up</span></td>
 						<td class="reprova acao" data-atividade="${atividade.id}" title="Reprovar candidato"><span class="material-icons">thumb_down</span></td>
-						<td class="${atividade.aprovado ? 'conclui' : 'hidden'}" data-atividade="${atividade.id}" title="Atividade realizada"><span class="material-icons">done</span></td>
+						<td class="${atividade.aprovado ? 'conclui' : 'hidden'}" data-atividade="${atividade.id}" data-quantidade="${atividade.quantidadeHora}" title="Atividade realizada"><span class="material-icons">done</span></td>
 					</tr>
 				</c:forEach>
 			</tbody>

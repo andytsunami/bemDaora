@@ -2,7 +2,8 @@
  	$.paramsPage = {
 		contextoVaga: "/bemdahora/vaga/",
 		contexto: "/bemdahora/",
-		uuid: ""
+		uuid: "",
+		box: ""
 	};
  	
  	$(".editaVaga").click(function(){
@@ -53,6 +54,30 @@
 	});
 	
 	$(".conclui").click(function(){
-		alert("Concluido!!");
+		$("#quantidade").val($(this).attr("data-quantidade"));
+		$("#atv").val($(this).attr("data-atividade"));
+		$.paramsPage.box = $.fancybox.open([{
+			href : "#conf",
+			type:'inline',
+			 afterClose : function() {
+				$(this).remove();
+		    },
+			tpl: { 
+				closeBtn: '<div title="Fechar" class="fancybox-item fancybox-close"></div>' 
+			}}], {padding : 10});
+	});
+	
+	$("#confirmar").click(function(){
+		$.post($.paramsPage.contexto + "atividade/confirmaRealizado/adm",{
+			idAtividade : $("#atv").val(),
+			qtdHoras : $("#quantidade").val(),
+			
+		})
+		.done(function(){
+			
+			$("#tr-"+$("#atv").val()).remove();
+			$.fancybox.close();
+		})
+		.fail();
 	});
 });

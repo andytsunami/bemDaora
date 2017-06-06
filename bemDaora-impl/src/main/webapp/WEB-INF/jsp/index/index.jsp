@@ -10,6 +10,23 @@
 	  	<meta name="viewport" content="width=device-width, initial-scale=1">
 	  	<meta name="description" content="">
 	  	<meta name="author" content="">
+	  	<link rel="manifest" href="<c:url value='/resources/js/manifest.json'/>">
+	  	
+	  	<!-- Add to homescreen for Chrome on Android -->
+	    <meta name="mobile-web-app-capable" content="yes">
+	    <link rel="icon" sizes="192x192" href="/bemdahora/resources/images/favicon.png">
+	    <meta name="theme-color" content="#007dbe">
+	
+	    <!-- Add to homescreen for Safari on iOS -->
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-title" content="Bem da Hora">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	    <link rel="apple-touch-icon-precomposed" href="/bemdahora/resources/images/favicon.png">
+	
+	    <!-- Tile icon for Win8 (144x144 + tile color) -->
+	    <meta name="msapplication-TileImage" href="/bemdahora/resources/images/favicon.png">
+	    <meta name="msapplication-TileColor" content="#007dbe">
 	
 		<title>Bem vindo ao Bemdahora</title>
 		  

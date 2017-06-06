@@ -8,6 +8,7 @@
 	  <meta charset="UTF-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="manifest" href="<c:url value='/resources/js/manifest.json'/>">
 	  <title>BemdaHora</title>
 		<bd:import-estilos/>
 		<script type="text/javascript" src="<c:url value='/resources/js/voluntarioHome.js?version=3'/>"></script>
@@ -15,6 +16,8 @@
 	  	<link href="<c:url value='/resources/css/main.css?version=3'/>" rel="stylesheet" type="text/css">
 	  	<link href="<c:url value='/resources/css/style.css?version=3'/>" rel="stylesheet" type="text/css">
 	  	
+	  	<link rel="stylesheet" type="text/css" href="/bemdahora/resources/jquery/fancybox/jquery.fancybox.css"/>
+		<script type="text/javascript" charset="utf-8" src="/bemdahora/resources/jquery/fancybox/jquery.fancybox.js"></script>
 	  	
 	  <style>
 		      #map {
@@ -70,6 +73,19 @@
 								<td><i class="fa fa-check fa-2x" aria-hidden="true"></i></td>
 								<td><h3 style="margin-left: 15px;">Sua solicitação foi aceita.</h3>
 		                        <p style="margin-left: 15px;">Clique aqui e confirme e receba suas instruções</p></td>
+							</tr>
+						</table>
+		            </a>
+		        </div>
+		        
+		        <div class="badge hidden">
+		        	<a href="solicitacao-aceita.html">
+						<table>
+							<tr>
+								<td><i aria-hidden="true"></i></td>
+								<td><h3 style="margin-left: 15px;">Sua solicitação foi aceita.</h3>
+		                        	<center><img alt="" src="/bemdahora/resources/images/badges/ser-um.png"></center>
+		                        </td>
 							</tr>
 						</table>
 		            </a>
@@ -136,70 +152,49 @@
 		        <table style="width: 200px; margin: 40px auto">
 		           	<tr>
 		               	<td>
-		                   	<center><a href="perfil.html"><img src="imgs/profile.jpg" class="img-ranking"/></a></center>
+		                   	<center><a href="perfil.html"><img src="${voluntario.avatarNoJeito}" class="img-ranking" width="90" height="90"/></a></center>
 		                </td>
 		            </tr>
 		            <tr>
 		              	<td>
-		       	    		<p class="name-profile" style="text-align:center; color:#999">ANDRÉ VASCONCELOS
+		       	    		<p class="name-profile" style="text-align:center; color:#999">${voluntario.nome}
 		                </td>
 		            </tr>
 		            <tr>
 		              	<td>
-		            	    <center>Nº 2</center>
+		            	    <center>Level ${voluntario.level}</center>
 		                </td>
 		            </tr>
 		        </table>
-		        <div class="top-ranking">
+		        <c:forEach items="${ranking}" var="usr" varStatus="i">
+		        <c:set var="i" value="${i.index + 1}"/>
+		        
+		        <c:set var="medalha" value="LATAO"/>
+		        <c:set var="estilo" value="ranking"/>
+		        
+		        <c:if test="${i == 1}">
+		        	<c:set var="estilo" value="top-ranking"/>
+		        	<c:set var="medalha" value="OURO"/>
+		        </c:if>
+		        <c:if test="${i == 2}">
+		        	<c:set var="estilo" value="top-ranking2"/>
+		        	<c:set var="medalha" value="PRATA"/>
+		        </c:if>
+		        <c:if test="${i == 3}">
+		        	<c:set var="estilo" value="top-ranking3"/>
+		        	<c:set var="medalha" value="BRONZE"/>
+		        </c:if>
+		        	<div class="${estilo}">
 		          	<table>
 		               	<tr>
-		                  	<td><span class="position">1</span></td>
-		                    <td><img src="imgs/profile.jpg" class="img-profile" /></td>
-		                    <td width="250px"><span class="nome-ranking">NOME</span></td>
-		                    <td><span class="medals">GOLD</span></td>
+		                  	<td><span class="position">${i}</span></td>
+		                    <td><img src="${usr.avatarNoJeito}" class="img-profile" width="45" height="45" /></td>
+		                    <td width="250px"><span class="nome-ranking">${usr.nome}</span></td>
+		                    <td><span class="medals">${medalha}</span></td>
 		                </tr>
 		            </table>
 		       	</div>
-		        <div class="top-ranking2">
-		           	<table>
-		        	   	<tr>
-		                  	<td><span class="position">2</span></td>
-		                    <td><img src="imgs/profile2.jpg" class="img-profile" /></td>
-		                    <td width="250px"><span class="nome-ranking">NOME</span></td>
-		                    <td><span class="medals">GOLD</span></td>
-		            	</tr>
-		            </table>
-		        </div>
-		        <div class="top-ranking3">
-		         	<table>
-		        	  	<tr>
-		                 	<td><span class="position">3</span></td>
-		                    <td><img src="imgs/profile3.jpg" class="img-profile" /></td>
-		                    <td width="250px"><span class="nome-ranking">NOME</span></td>
-		                    <td><span class="medals">GOLD</span></td>
-		                </tr>
-		            </table>
-		        </div>
-		        <div class="ranking">
-		          	<table>
-		              	<tr>
-		                 	<td><span class="position">4</span></td>
-		                    <td><img src="imgs/profile4.jpg" class="img-profile" /></td>
-		                    <td width="250px"><span class="nome-ranking">NOME</span></td>
-		                    <td><span class="medals">GOLD</span></td>
-		                </tr>
-		            </table>
-		        </div>
-		        <div class="ranking">
-		          	<table>
-		              	<tr>
-		        	        <td><span class="position">5</span></td>
-		                    <td><img src="imgs/profile5.jpg" class="img-profile" /></td>
-		                    <td width="250px"><span class="nome-ranking">NOME</span></td>
-		                    <td><span class="medals">GOLD</span></td>
-		                </tr>
-		            </table>
-		        </div>
+		        </c:forEach>
 		      </div><!--app-panel--three-->
 		      
 		      

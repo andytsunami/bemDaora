@@ -34,6 +34,7 @@ public class AplicacaoFilter implements Filter {
 			".pdf",
 			".ico",
 			".gif",
+			".json",
 			".jpg",
 			".jpeg",
 			".png",

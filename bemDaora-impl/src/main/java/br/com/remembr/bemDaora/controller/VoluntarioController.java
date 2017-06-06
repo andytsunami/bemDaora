@@ -15,8 +15,6 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.observer.download.ByteArrayDownload;
 import br.com.caelum.vraptor.observer.download.Download;
 import br.com.caelum.vraptor.observer.upload.UploadedFile;
-import br.com.remembr.bemDaora.chat.WSEndpoint;
-import br.com.remembr.bemDaora.chat.model.Mensagem;
 import br.com.remembr.bemDaora.dao.InstituicaoDAO;
 import br.com.remembr.bemDaora.dao.RamoAtividadeDAO;
 import br.com.remembr.bemDaora.dao.VoluntarioDAO;
@@ -54,8 +52,11 @@ public class VoluntarioController {
 		
 		if(voluntario.isSegundoCadastroCompleto() && voluntario.isUltimoCadastroCompleto()){
 			List<Instituicao> instituicoes = instituicaoDAO.listaCompleto();
+			List<Voluntario> ranking = voluntarioDAO.listaRanking();
 			result.include("instituicoes",instituicoes);
 			result.include("voluntario",voluntario);
+			result.include("ranking",ranking);
+			
 			
 		} else if(!voluntario.isSegundoCadastroCompleto()){
 			result.redirectTo(this).segundoCadastro(voluntario);
