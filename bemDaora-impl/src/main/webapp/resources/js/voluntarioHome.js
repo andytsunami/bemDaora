@@ -22,7 +22,7 @@
 				if(msg.tipoMensagem == "erro"){
 					$.erro(msg);
 				}
-				
+						
 			 };
 			 ws.onclose = function()
 			 { 

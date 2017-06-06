@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.joda.time.DateTime;
+
 @Entity
 @Table(name = "ATIVIDADE")
 public class Atividade implements BaseEntity<Long>{
@@ -44,6 +46,9 @@ public class Atividade implements BaseEntity<Long>{
 	
 	@Column(name = "MOTIVO_REPROVACAO")
 	private String motivoReprovacao;
+	
+	@Column(name = "QUANTIDADE_HORA")
+	private Long quantidadeHora;
 
 	public Long getId() {
 		return id;
@@ -99,5 +104,23 @@ public class Atividade implements BaseEntity<Long>{
 
 	public void setMotivoReprovacao(String motivoReprovacao) {
 		this.motivoReprovacao = motivoReprovacao;
+	}
+
+	public Long getQuantidadeHora() {
+		return quantidadeHora;
+	}
+
+	public void setQuantidadeHora(Long quantidadeHora) {
+		this.quantidadeHora = quantidadeHora;
+	}
+	
+	public Date getDataTermino(){
+		if(this.dataAgendada != null && this.quantidadeHora != null){
+			DateTime dateTime = new DateTime(this.dataAgendada);
+			dateTime.plusHours(this.quantidadeHora.intValue());
+			return dateTime.toDate();
+		} else {
+			return this.dataAgendada;
+		}
 	}
 }

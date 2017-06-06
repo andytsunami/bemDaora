@@ -18,6 +18,7 @@
 		<class>br.com.remembr.bemDaora.model.Vaga</class>
 		<class>br.com.remembr.bemDaora.model.RamoAtividade</class>
 		<class>br.com.remembr.bemDaora.model.Atividade</class>
+		<class>br.com.remembr.bemDaora.chat.model.Mensagem</class>
 		
 
 		<properties>

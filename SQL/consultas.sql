@@ -27,6 +27,10 @@ select * from FOTO_INSTITUICAO;
 
 SELECT * FROM MENSAGEM;
 
+select now();
+
+SELECT @@global.time_zone;
+SET @@global.time_zone = '-03:00';
 
 CREATE TABLE
     HT_USUARIO

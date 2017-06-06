@@ -23,6 +23,7 @@
 						idVaga : $("#idVaga").val(),
 						idVoluntario : $("#idVoluntario").val(),
 						dataAgendada : toDate($("#dataAgendada").val()),
+						qtdHora : $("#qtdHora").val()
 					})
 					.done(function(data){
 						if(data != undefined){

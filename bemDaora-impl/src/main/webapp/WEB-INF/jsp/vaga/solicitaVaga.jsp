@@ -69,6 +69,14 @@
                   <span class="input__label-content input__label-content--hoshi">Data e horario pretendido</span>
                   </label>
                   </span>
+                  
+                  <span class="input input--hoshi">
+	                  <input class="input__field input__field--hoshi" type="number" id="qtdHora"/>
+	                  <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-5">
+	                  	<span class="input__label-content input__label-content--hoshi">Quantidade para doar</span>
+	                  </label>
+                  </span>
+                  
                   <br/>
                   <h4 style="color:#378DB7;">Termos de responsabilidade</h4>
                   <p>Ao continuar declaro que li e concordo com os termos de responsabilidade</p>

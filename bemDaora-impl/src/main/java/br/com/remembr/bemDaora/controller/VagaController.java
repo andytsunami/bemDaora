@@ -67,7 +67,7 @@ public class VagaController {
 	
 	@Transactional
 	@Post("/vaga/agenda")
-	public void realizaAgendamento(Long idVaga, Long idVoluntario, String dataAgendada) throws DAOException, ParseException{
+	public void realizaAgendamento(Long idVaga, Long idVoluntario, String dataAgendada, Long qtdHora) throws DAOException, ParseException{
 		Vaga vaga = vagaDAO.find(idVaga);
 		
 		Atividade atividadeBd = atividadeDAO.buscaPorUsuarioVaga(idVaga,idVoluntario);
@@ -84,6 +84,12 @@ public class VagaController {
 			atividade.setDataAgendada(dtAgendada);
 			
 			vaga.setQuantidade(vaga.getQuantidade()-1);
+			
+			if(qtdHora != null && qtdHora > 0){
+				atividade.setQuantidadeHora(qtdHora);
+			} else {
+				atividade.setQuantidadeHora(1L);
+			}
 			
 			atividade = atividadeDAO.insert(atividade);
 			
@@ -117,9 +123,15 @@ public class VagaController {
 		mensagem.setEmailUsuario(atividade.getVoluntario().getEmail());
 		mensagem.setVoluntario(atividade.getVoluntario());
 		mensagem.setTipoMensagem("sucesso");
-		mensagem.setEnderecoDoObjeto("/vaga/"+atividade.getVaga().getId());
+		mensagem.setEnderecoDoObjeto("/bemdahora/atividade/confirmacao/"+atividade.getId());
 		mensagemBusiness.enviarMensagem(mensagem);
 		
 		result.nothing();
+	}
+	
+	@Path("/atividade/confirmacao/{idAtividade}")
+	public void confirmacao(Long idAtividade) throws DAOException{
+		Atividade atividade = atividadeDAO.find(idAtividade);
+		result.include("atividade",atividade);
 	}
 }

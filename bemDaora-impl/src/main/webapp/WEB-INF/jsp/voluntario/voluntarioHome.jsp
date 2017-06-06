@@ -11,8 +11,10 @@
 	  <title>BemdaHora</title>
 		<bd:import-estilos/>
 		<script type="text/javascript" src="<c:url value='/resources/js/voluntarioHome.js?version=3'/>"></script>
+		<script src="<c:url value='/resources/js/alerta.js?v=3'/>"> </script>
 	  	<link href="<c:url value='/resources/css/main.css?version=3'/>" rel="stylesheet" type="text/css">
 	  	<link href="<c:url value='/resources/css/style.css?version=3'/>" rel="stylesheet" type="text/css">
+	  	
 	  	
 	  <style>
 		      #map {
@@ -75,7 +77,7 @@
 		        
 		        <c:set value="${agendado =='true' ? 'ok' : 'hidden'}" var="hidden"/>       
 		        <div class="alerta ${hidden}">
-		        	<a href="solicitacao-analise.html">
+		        	<a href="#">
 						<table>
 							<tr>
 								<td><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i></td>
