@@ -13,10 +13,19 @@ select * from USUARIO ORDER BY ID DESC;
 select * from INSTITUICAO ORDER BY ID DESC;
 select * from VOLUNTARIO ORDER BY ID DESC;
 
+
+
+select * from USUARIO WHERE ID = 93;
+select * from VOLUNTARIO WHERE ID = 93;
+
+delete VOLUNTARIO WHERE ID = 92;
+DELETE FROM USUARIO WHERE ID = 92;
+
 select * from VAGA;
 
 select * from ACESSO;
 
+truncate table LOCK_LOGIN;
 select * from LOCK_LOGIN;
 
 SELECT * FROM RAMO_ATIVIDADE order by NOME;

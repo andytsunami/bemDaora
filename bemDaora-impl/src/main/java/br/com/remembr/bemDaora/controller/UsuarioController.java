@@ -17,6 +17,7 @@ import br.com.remembr.bemDaora.dao.VoluntarioDAO;
 import br.com.remembr.bemDaora.dao.generio.DAOException;
 import br.com.remembr.bemDaora.model.Usuario;
 import br.com.remembr.bemDaora.model.Voluntario;
+import br.com.remembr.bemDaora.utils.PasswordEncrypter;
 
 @Controller
 public class UsuarioController {
@@ -51,9 +52,10 @@ public class UsuarioController {
 		usuario.setNome(WordUtils.capitalizeFully(usuario.getNome()).trim());
 		
 		if(usuario.getId() == null){
+			usuario.setSenha(PasswordEncrypter.encrypt(usuario.getSenha().trim()));
 			Voluntario voluntario = voluntarioDAO.insert(usuario);
 			
-			usuarioDAO.alterarSenha(voluntario.getId(), usuario.getSenha());
+			//usuarioDAO.alterarSenha(voluntario.getId(), usuario.getSenha());
 			System.out.println("Usuario incluido com sucesso");
 		} else {
 			usuarioDAO.update(usuario);
